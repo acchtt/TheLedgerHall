@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900">
+  <defs>
+    <radialGradient id="paper" cx="50%" cy="42%" r="72%"><stop offset="0" stop-color="#f5e7c7"/><stop offset=".72" stop-color="#e5c992"/><stop offset="1" stop-color="#c79e62"/></radialGradient>
+    <filter id="texture"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="4" seed="12" result="n"/><feColorMatrix in="n" type="saturate" values="0" result="g"/><feComponentTransfer in="g" result="a"><feFuncA type="table" tableValues="0 .16"/></feComponentTransfer><feBlend in="SourceGraphic" in2="a" mode="multiply"/></filter>
+    <filter id="edge"><feTurbulence type="fractalNoise" baseFrequency=".018" numOctaves="3" seed="5" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter>
+  </defs>
+  <rect x="7" y="7" width="886" height="886" rx="8" fill="url(#paper)" filter="url(#edge)"/>
+  <rect x="17" y="17" width="866" height="866" rx="5" fill="none" stroke="#7c5a31" stroke-opacity=".45"/>
+  <g opacity=".12" fill="#78552d"><circle cx="86" cy="118" r="42"/><circle cx="794" cy="152" r="36"/><circle cx="115" cy="778" r="54"/><circle cx="775" cy="760" r="45"/></g>
+  <rect width="900" height="900" fill="transparent" filter="url(#texture)"/>
+</svg>
