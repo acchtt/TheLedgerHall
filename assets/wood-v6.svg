@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#24140c"/><stop offset=".22" stop-color="#4b2c19"/><stop offset=".52" stop-color="#321c10"/><stop offset=".78" stop-color="#54331e"/><stop offset="1" stop-color="#24140c"/></linearGradient>
+    <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency=".018 .22" numOctaves="3" seed="4" result="n"/><feColorMatrix in="n" type="matrix" values=".7 0 0 0 0  .35 0 0 0 0  .16 0 0 0 0  0 0 0 .55 0" result="c"/><feBlend in="SourceGraphic" in2="c" mode="multiply"/></filter>
+  </defs>
+  <rect width="320" height="320" fill="url(#base)"/>
+  <g opacity=".35" stroke="#8b5b31" fill="none">
+    <path d="M-20 35c58-24 114-12 170 1s109 26 190-1"/>
+    <path d="M-20 82c73-21 127-3 181 6s104 19 179-4"/>
+    <path d="M-20 131c54-14 100-5 155 5s119 21 205-2"/>
+    <path d="M-20 187c62-21 118-9 172 0s104 19 188-5"/>
+    <path d="M-20 242c68-18 120-2 176 4s111 13 184-8"/>
+    <path d="M-20 292c59-16 115-5 169 3s108 14 191-6"/>
+  </g>
+  <g fill="none" stroke="#140b07" stroke-width="3" opacity=".32"><ellipse cx="78" cy="98" rx="25" ry="11"/><ellipse cx="238" cy="226" rx="30" ry="12"/></g>
+  <rect width="320" height="320" fill="transparent" filter="url(#noise)" opacity=".85"/>
+</svg>
