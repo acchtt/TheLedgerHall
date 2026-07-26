@@ -8,19 +8,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="chat.css" />
+  <link rel="stylesheet" href="ledger-v5.css?v=5" />
 </head>
 <body>
-  <div class="landscape" aria-hidden="true">
-    <span class="distant-castle"></span>
-    <span class="distant-hills"></span>
-  </div>
+  <div class="landscape" aria-hidden="true"><span class="distant-castle"></span><span class="distant-hills"></span></div>
 
   <div class="page-frame">
     <header class="masthead">
-      <div class="hanging-banner" aria-hidden="true">
-        <img src="assets/tree-crest.svg" alt="" />
-      </div>
+      <div class="hanging-banner" aria-hidden="true"><img src="assets/tree-crest.svg" alt="" /></div>
 
       <section class="summary-card lifetime-card">
         <span class="eyebrow">Lifetime P/L</span>
@@ -45,21 +40,21 @@
       </section>
 
       <nav class="utility-nav" aria-label="Page controls">
-        <button type="button" aria-label="Chamber settings"><span>⚖</span>Chamber</button>
-        <button id="theme-button" type="button" aria-label="Change theme"><span>◉</span>Themes</button>
-        <button id="money-button" type="button" aria-label="Hide money"><span>◌</span>Hide $</button>
+        <button id="theme-button"><span>☼</span>Chamber</button>
+        <button><span>◉</span>Themes</button>
+        <button id="money-button"><span>◌</span>Hide $</button>
       </nav>
     </header>
 
     <main class="dashboard">
       <aside class="left-column">
         <section class="wood-panel">
-          <div class="panel-heading"><h2>Open Wagers</h2><button aria-label="Collapse Open Wagers">−</button></div>
+          <div class="panel-heading"><h2>Open Wagers</h2><button aria-label="Collapse">−</button></div>
           <div id="open-wagers" class="panel-body"></div>
         </section>
 
         <section class="wood-panel">
-          <div class="panel-heading"><h2>Trial Record</h2></div>
+          <div class="panel-heading"><h2>Trial Record</h2><button aria-label="Collapse">−</button></div>
           <dl id="trial-details" class="record-grid"></dl>
         </section>
 
@@ -70,24 +65,20 @@
         </section>
       </aside>
 
-      <section class="parchment chat-panel">
-        <div class="scroll-corner top-left" aria-hidden="true">❦</div>
-        <div class="scroll-corner top-right" aria-hidden="true">❦</div>
+      <section class="chat-panel">
+        <span class="scroll-corner top-left">❧</span><span class="scroll-corner top-right">❧</span>
         <h2><span>Council Notes</span></h2>
         <div id="chat-feed" class="chat-feed"></div>
         <form id="message-form" class="message-box">
           <input id="message-input" autocomplete="off" placeholder="Write your message…" />
-          <button type="submit" aria-label="Send">✒</button>
+          <button type="submit" aria-label="Send">➤</button>
         </form>
       </section>
 
       <aside class="right-column">
         <section class="wood-panel battle-panel">
-          <div class="panel-heading"><h2>Battle Report</h2><button aria-label="Collapse Battle Report">−</button></div>
-          <div class="battle-head">
-            <strong>G2 Esports vs Karmine Corp</strong>
-            <small>LEC 2026 Summer · Game 2</small>
-          </div>
+          <div class="panel-heading"><h2>Battle Report</h2><button aria-label="Collapse">−</button></div>
+          <div class="battle-head"><strong>G2 Esports vs Karmine Corp</strong><small>LEC 2026 Summer · Game 2</small></div>
           <div class="scoreboard">
             <span class="team-mark shield-mark">G2</span>
             <div class="score-center"><strong>10–4</strong><small>19:45</small></div>
@@ -103,14 +94,13 @@
           </div>
         </section>
 
-        <section class="wood-panel odds-panel">
+        <section class="wood-panel">
           <div class="panel-heading"><h2>Odds Snapshot</h2></div>
           <div id="odds-list" class="odds-list"></div>
         </section>
 
         <section class="wood-panel current-read">
-          <span>Current Read</span>
-          <strong>No Official Bet</strong>
+          <span>Current Read</span><strong>No Official Bet</strong>
           <img src="assets/council-shield.svg" alt="" />
         </section>
       </aside>
@@ -119,12 +109,12 @@
     <footer class="bottom-nav">
       <button class="active"><span>▤</span>Council Notes</button>
       <button><span>⚖</span>Open Wagers</button>
-      <button><span>▣</span>Closed Ledgers</button>
+      <button><span>▥</span>Closed Ledgers</button>
       <button><span>⚔</span>Battle Reports</button>
       <button><span>⚙</span>Chamber Settings</button>
     </footer>
   </div>
 
-  <script src="chat.js"></script>
+  <script src="chat.js?v=5"></script>
 </body>
 </html>
