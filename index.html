@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Ledger Hall</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Crimson+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="chat.css" />
+</head>
+<body>
+  <div class="landscape" aria-hidden="true"></div>
+  <div class="page-frame">
+    <header class="masthead">
+      <section class="summary-card">
+        <span class="eyebrow">Lifetime P/L</span>
+        <strong id="lifetime-pl">−2.882u</strong>
+        <small>Settled: <span id="lifetime-stake">9.234u</span></small>
+        <small>ROI: <span id="lifetime-roi">−31.2%</span></small>
+      </section>
+
+      <div class="brand">
+        <div class="crest">⚜</div>
+        <h1>The Ledger Hall</h1>
+        <p>Council Notes, Wagers &amp; Battle Reports</p>
+      </div>
+
+      <section class="summary-card positive">
+        <span class="eyebrow">Trial Record</span>
+        <strong id="trial-pl">+0.194u</strong>
+        <small>Record: <span id="trial-record">3W–2L</span></small>
+        <small>Pending: <span id="trial-pending">0.25u</span></small>
+      </section>
+
+      <nav class="utility-nav" aria-label="Page controls">
+        <button id="theme-button" title="Change theme">Theme</button>
+        <button id="money-button" title="Hide money">Hide $</button>
+      </nav>
+    </header>
+
+    <main class="dashboard">
+      <aside class="left-column">
+        <section class="wood-panel">
+          <h2>Open Wagers</h2>
+          <div id="open-wagers" class="panel-body"></div>
+        </section>
+
+        <section class="wood-panel">
+          <h2>Trial Record</h2>
+          <dl id="trial-details" class="record-grid"></dl>
+        </section>
+
+        <section class="wood-panel">
+          <h2>Recent Results</h2>
+          <ul id="recent-results" class="results-list"></ul>
+        </section>
+      </aside>
+
+      <section class="parchment chat-panel">
+        <h2>Council Notes</h2>
+        <div id="chat-feed" class="chat-feed"></div>
+        <form id="message-form" class="message-box">
+          <input id="message-input" autocomplete="off" placeholder="Write your message…" />
+          <button type="submit" aria-label="Send">➤</button>
+        </form>
+      </section>
+
+      <aside class="right-column">
+        <section class="wood-panel battle-panel">
+          <h2>Battle Report</h2>
+          <div class="battle-head">
+            <strong>G2 Esports vs Karmine Corp</strong>
+            <small>LEC 2026 Summer · Game 2</small>
+          </div>
+          <div class="scoreboard">
+            <span class="team-mark">G2</span>
+            <strong>10–4</strong>
+            <span class="team-mark cyan">KC</span>
+          </div>
+          <div class="battle-stats">
+            <div><span>Gold</span><b>38.4k</b><b>35.9k</b></div>
+            <div><span>Gold diff.</span><b colspan="2">+2.5k</b></div>
+            <div><span>Towers</span><b>4</b><b>1</b></div>
+            <div><span>Dragons</span><b>1</b><b>1</b></div>
+            <div><span>Barons</span><b>0</b><b>0</b></div>
+            <div><span>Inhibitors</span><b>0</b><b>0</b></div>
+          </div>
+        </section>
+
+        <section class="wood-panel">
+          <h2>Odds Snapshot</h2>
+          <div id="odds-list" class="odds-list"></div>
+        </section>
+
+        <section class="wood-panel current-read">
+          <span>Current Read</span>
+          <strong>No Official Bet</strong>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="bottom-nav">
+      <button class="active">Council Notes</button>
+      <button>Open Wagers</button>
+      <button>Closed Ledgers</button>
+      <button>Battle Reports</button>
+      <button>Chamber Settings</button>
+    </footer>
+  </div>
+
+  <script src="chat.js"></script>
+</body>
+</html>
