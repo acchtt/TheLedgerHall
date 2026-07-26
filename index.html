@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="ledger-v6.css?v=6" />
+  <link rel="stylesheet" href="ledger-v6.css?v=7" />
 </head>
 <body>
   <div class="landscape" aria-hidden="true"><span class="distant-castle"></span><span class="distant-hills"></span></div>
@@ -22,7 +22,7 @@
         <strong id="lifetime-pl" class="money">−2.882u</strong>
         <small>Settled: <span id="lifetime-stake" class="money">9.234u</span></small>
         <small>ROI: <span id="lifetime-roi">−31.2%</span></small>
-        <button class="help-dot" aria-label="About lifetime statistics">?</button>
+        <button class="help-dot" type="button" aria-label="About lifetime statistics">?</button>
       </section>
 
       <div class="brand">
@@ -36,25 +36,25 @@
         <strong id="trial-pl" class="money">+0.194u</strong>
         <small>Record: <span id="trial-record">3W–2L</span></small>
         <small>Pending: <span id="trial-pending" class="money">0.25u</span></small>
-        <button class="help-dot" aria-label="About trial statistics">?</button>
+        <button class="help-dot" type="button" aria-label="About trial statistics">?</button>
       </section>
 
       <nav class="utility-nav" aria-label="Page controls">
-        <button id="theme-button"><span>☼</span>Chamber</button>
-        <button><span>◉</span>Themes</button>
-        <button id="money-button"><span>◌</span>Hide $</button>
+        <button id="chamber-button" type="button"><span>☼</span>Chamber</button>
+        <button id="theme-button" type="button"><span>◉</span>Themes</button>
+        <button id="money-button" type="button"><span>◌</span>Hide $</button>
       </nav>
     </header>
 
     <main class="dashboard">
       <aside class="left-column">
         <section class="wood-panel">
-          <div class="panel-heading"><h2>Open Wagers</h2><button aria-label="Collapse">−</button></div>
+          <div class="panel-heading"><h2>Open Wagers</h2><button type="button" aria-label="Collapse Open Wagers">−</button></div>
           <div id="open-wagers" class="panel-body"></div>
         </section>
 
         <section class="wood-panel">
-          <div class="panel-heading"><h2>Trial Record</h2><button aria-label="Collapse">−</button></div>
+          <div class="panel-heading"><h2>Trial Record</h2><button type="button" aria-label="Collapse Trial Record">−</button></div>
           <dl id="trial-details" class="record-grid"></dl>
         </section>
 
@@ -70,14 +70,14 @@
         <h2><span>Council Notes</span></h2>
         <div id="chat-feed" class="chat-feed"></div>
         <form id="message-form" class="message-box">
-          <input id="message-input" autocomplete="off" placeholder="Write your message…" />
+          <input id="message-input" autocomplete="off" placeholder="Write your message…" aria-label="Council note" />
           <button type="submit" aria-label="Send">➤</button>
         </form>
       </section>
 
       <aside class="right-column">
         <section class="wood-panel battle-panel">
-          <div class="panel-heading"><h2>Battle Report</h2><button aria-label="Collapse">−</button></div>
+          <div class="panel-heading"><h2>Battle Report</h2><button type="button" aria-label="Collapse Battle Report">−</button></div>
           <div class="battle-head"><strong>G2 Esports vs Karmine Corp</strong><small>LEC 2026 Summer · Game 2</small></div>
           <div class="scoreboard">
             <span class="team-mark shield-mark">G2</span>
@@ -107,14 +107,14 @@
     </main>
 
     <footer class="bottom-nav">
-      <button class="active"><span>▤</span>Council Notes</button>
-      <button><span>⚖</span>Open Wagers</button>
-      <button><span>▥</span>Closed Ledgers</button>
-      <button><span>⚔</span>Battle Reports</button>
-      <button><span>⚙</span>Chamber Settings</button>
+      <button class="active" type="button"><span>▤</span>Council Notes</button>
+      <button type="button"><span>⚖</span>Open Wagers</button>
+      <button type="button"><span>▥</span>Closed Ledgers</button>
+      <button type="button"><span>⚔</span>Battle Reports</button>
+      <button type="button"><span>⚙</span>Chamber Settings</button>
     </footer>
   </div>
 
-  <script src="chat.js?v=6"></script>
+  <script src="chat.js?v=7"></script>
 </body>
 </html>
