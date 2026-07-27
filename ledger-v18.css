@@ -1,0 +1,329 @@
+@import url("ledger-v15.css?build=a798422");
+
+/* V18 — scene architecture pass. Team marks intentionally remain unchanged. */
+
+:root{
+  --ink:#2a2016;
+  --gold:#c89345;
+  --gold-soft:#e3bd72;
+  --wood-dark:#26130b;
+  --wood-mid:#432517;
+  --wood-edge:#130905;
+  --paper:#ead9ae;
+}
+
+body{
+  color:var(--ink);
+  background:
+    radial-gradient(ellipse at 50% -8%,rgba(214,195,139,.22),transparent 38%),
+    linear-gradient(90deg,#18271d 0 5%,#2b3c2b 11%,#211910 20% 80%,#2b3c2b 89%,#18271d 100%);
+}
+body::before{display:none!important}
+
+.page-frame{
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:9px 13px 12px;
+  border:0;
+  background:
+    linear-gradient(90deg,rgba(8,4,2,.94) 0 8px,rgba(91,59,29,.54) 8px 13px,transparent 13px calc(100% - 13px),rgba(91,59,29,.54) calc(100% - 13px) calc(100% - 8px),rgba(8,4,2,.94) calc(100% - 8px)),
+    linear-gradient(180deg,rgba(76,49,24,.40),rgba(20,10,5,.52)),
+    url("assets/wood-v16.svg") center/680px auto repeat;
+  box-shadow:
+    inset 0 0 0 2px #0d0704,
+    inset 22px 0 30px rgba(0,0,0,.25),
+    inset -22px 0 30px rgba(0,0,0,.25),
+    0 14px 55px rgba(0,0,0,.66);
+}
+.page-frame::before,.page-frame::after{
+  content:"";
+  position:absolute;
+  top:-3px;
+  width:42%;
+  height:31px;
+  border-top:12px solid #25130a;
+  filter:drop-shadow(0 4px 2px rgba(0,0,0,.45));
+}
+.page-frame::before{left:2%;border-radius:50% 12% 0 0}
+.page-frame::after{right:2%;border-radius:12% 50% 0 0}
+
+.vine-left,.vine-right,.lantern-decor,.props-left,.props-right{display:none!important}
+
+/* Header: scene first, UI second. */
+.masthead{
+  position:relative;
+  grid-template-columns:12.2% 16.8% 41.6% 17.2% 8.8%;
+  column-gap:.85%;
+  min-height:226px;
+  padding:7px 8px 11px;
+  overflow:hidden;
+  border:6px solid var(--wood-edge);
+  background:
+    linear-gradient(180deg,rgba(255,247,218,.08),transparent 38%,rgba(22,13,7,.22)),
+    url("assets/header-landscape-v16.svg") center 56%/cover no-repeat;
+  box-shadow:
+    inset 0 0 0 2px #8a5a2b,
+    inset 0 0 28px rgba(31,17,8,.18),
+    0 7px 13px rgba(0,0,0,.48);
+}
+.masthead::before{
+  content:"";
+  position:absolute;
+  inset:3px;
+  z-index:0;
+  pointer-events:none;
+  border:1px solid rgba(231,190,106,.38);
+  background:
+    radial-gradient(ellipse at 52% 32%,rgba(255,243,198,.14),transparent 35%),
+    linear-gradient(90deg,rgba(37,59,36,.16),transparent 17% 83%,rgba(37,59,36,.16));
+}
+.masthead>*{position:relative;z-index:1}
+
+/* Cloth standard with pole and pointed lower edge. */
+.hanging-banner{
+  align-self:start;
+  height:208px;
+  margin:-5px 0 0 -1px;
+  padding:27px 13px 50px;
+  overflow:visible;
+  border:5px solid #201107;
+  border-top-width:8px;
+  border-radius:0;
+  clip-path:polygon(0 0,100% 0,100% 78%,72% 88%,50% 100%,28% 88%,0 78%);
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.09),transparent 17% 78%,rgba(0,0,0,.30)),
+    linear-gradient(180deg,#274a2a,#12351d 70%,#0e2918);
+  box-shadow:inset 0 0 0 2px #b58a43,0 8px 13px rgba(0,0,0,.43);
+}
+.hanging-banner::before{
+  content:"";
+  position:absolute;
+  left:-18px;right:-18px;top:-14px;
+  height:14px;
+  border-radius:12px;
+  background:linear-gradient(#7c5730,#25130a 62%,#0d0704);
+  box-shadow:0 3px 3px rgba(0,0,0,.45);
+}
+.hanging-banner::after{
+  content:"";
+  position:absolute;
+  left:-8px;top:-7px;bottom:20px;
+  width:7px;
+  border-radius:5px;
+  background:linear-gradient(90deg,#9b7140,#301a0d);
+}
+.hanging-banner img{width:94px;filter:drop-shadow(0 3px 2px rgba(0,0,0,.45))}
+
+/* Original reference uses flatter manuscript sheets, not torn blobs. */
+.summary-card{
+  min-height:174px;
+  margin:16px 0 7px;
+  padding:24px 18px 20px;
+  clip-path:none;
+  border:2px solid rgba(76,48,22,.46);
+  border-radius:1px;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.16),transparent 31%),
+    url("assets/parchment-v16.svg") center/100% 100% no-repeat;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,244,210,.25),
+    inset 0 0 18px rgba(102,67,31,.08),
+    0 7px 10px rgba(42,24,11,.31);
+  filter:none;
+}
+.summary-card::after{inset:8px;border:1px solid rgba(93,60,28,.23)}
+.summary-card strong{font-size:37px}
+.summary-card small{font-size:17px;line-height:1.27}
+.eyebrow{font-size:13.5px;letter-spacing:.06em}
+
+.brand{padding:8px 5px 6px}
+.brand-crest{width:48px;height:56px;margin:0 auto 1px}
+.brand h1{
+  white-space:nowrap;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(49px,4.35vw,71px);
+  font-weight:500;
+  line-height:.92;
+  letter-spacing:.012em;
+  color:#302016;
+  text-shadow:0 1px #f8e7bb,0 3px 4px rgba(42,25,13,.30);
+}
+.brand::before,.brand::after{top:44%;width:18%;height:1px;background:linear-gradient(90deg,transparent,#77542d)}
+.brand p{
+  width:70%;
+  min-width:0;
+  margin:17px auto 0;
+  padding:10px 34px 11px;
+  border:1px solid #6a431f;
+  border-radius:0;
+  clip-path:none;
+  font-size:19px;
+  background:linear-gradient(180deg,#d6b06f,#edd09a 46%,#a87438 51%,#c89757);
+  box-shadow:inset 0 0 0 1px rgba(255,241,201,.53),0 5px 7px rgba(47,27,13,.34);
+}
+.brand p::before,.brand p::after{
+  content:"";
+  position:absolute;
+  top:7px;
+  width:39px;
+  height:calc(100% - 14px);
+  z-index:-1;
+  background:linear-gradient(#aa7c42,#69401e);
+}
+.brand p::before{left:-30px;clip-path:polygon(0 0,100% 14%,80% 50%,100% 86%,0 100%,20% 50%)}
+.brand p::after{right:-30px;clip-path:polygon(100% 0,0 14%,20% 50%,0 86%,100% 100%,80% 50%)}
+
+.utility-nav{
+  margin:-5px -2px 0 0;
+  border:5px solid #1c0e07;
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.04),transparent 20% 80%,rgba(0,0,0,.30)),
+    linear-gradient(180deg,#4a2b19,#24120b);
+  box-shadow:inset 0 0 0 1px #8d5f2e,0 6px 8px rgba(0,0,0,.35);
+}
+.utility-nav button{min-height:67px;font-size:12px;color:#e0bd75}
+.utility-nav span{font-size:25px;margin-bottom:4px}
+
+/* Main board: carved bays, no red-orange furniture look. */
+.dashboard{
+  grid-template-columns:26.2% 43.2% 26.2%;
+  column-gap:2.2%;
+  margin-top:10px;
+  align-items:stretch;
+}
+.left-column,.right-column{
+  border:7px solid #160b06;
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.025),transparent 12% 87%,rgba(0,0,0,.32)),
+    linear-gradient(180deg,rgba(85,52,25,.10),rgba(10,5,3,.18)),
+    url("assets/wood-v16.svg") center/520px auto repeat;
+  box-shadow:
+    inset 0 0 0 2px #80522a,
+    inset 13px 0 22px rgba(0,0,0,.27),
+    inset -13px 0 22px rgba(0,0,0,.27),
+    0 8px 14px rgba(0,0,0,.40);
+}
+.wood-panel+ .wood-panel{border-top:2px solid #1a0d07}
+.panel-heading{
+  min-height:51px;
+  border-bottom:1px solid rgba(221,166,76,.47);
+  background:
+    linear-gradient(180deg,rgba(167,103,38,.15),rgba(7,3,2,.53)),
+    linear-gradient(90deg,#3f2415,#211109 50%,#3f2415);
+  box-shadow:inset 0 -7px 12px rgba(0,0,0,.27),0 2px 3px rgba(0,0,0,.30);
+}
+.panel-heading h2{font-size:18px;letter-spacing:.055em;color:#e7b960;text-shadow:0 2px #170b06}
+.panel-heading::before,.panel-heading::after{content:"✣";color:#c38c3c;font-size:12px}
+
+.panel-body,.record-grid,.battle-head,.battle-stats,.odds-list{
+  margin:11px 13px 14px;
+  padding:17px;
+  clip-path:none;
+  border:1px solid rgba(75,46,21,.36);
+  border-radius:0;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.12),transparent 34%),
+    url("assets/parchment-v16.svg") center/100% 100% no-repeat;
+  box-shadow:inset 0 0 0 1px rgba(255,246,216,.20),0 5px 7px rgba(22,10,5,.25);
+  filter:none;
+}
+.wager-card{min-height:171px;padding:12px 74px 13px 48px}
+.wager-card strong{font-size:22px;line-height:1.15}
+.wager-card .selection{font-size:21px;margin:14px 0 11px}
+.record-grid{font-size:18px;gap:9px}
+.results-list{font-size:16px;padding:14px 15px;background:rgba(17,8,4,.25)}
+.results-list li{padding:7px 0 7px 15px}
+.recent-panel blockquote{font-size:16px;padding:18px 18px 22px}
+
+/* Central manuscript: narrower interior, clearer book frame, softer paper. */
+.chat-panel{
+  min-height:790px;
+  padding:14px 17px 16px;
+  border:8px solid #24130a;
+  border-radius:1px;
+  clip-path:none;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.11),transparent 30%),
+    url("assets/parchment-v16.svg") center/100% 100% no-repeat;
+  box-shadow:
+    inset 0 0 0 2px rgba(118,77,35,.38),
+    inset 0 0 40px rgba(83,51,23,.07),
+    0 10px 17px rgba(0,0,0,.35);
+  filter:none;
+}
+.chat-panel::before{
+  inset:12px;
+  border:1px solid rgba(82,50,23,.35);
+  background:
+    radial-gradient(circle at 20px 20px,#765029 0 2px,transparent 3px),
+    radial-gradient(circle at calc(100% - 20px) 20px,#765029 0 2px,transparent 3px),
+    radial-gradient(circle at 20px calc(100% - 20px),#765029 0 2px,transparent 3px),
+    radial-gradient(circle at calc(100% - 20px) calc(100% - 20px),#765029 0 2px,transparent 3px);
+  box-shadow:inset 0 0 0 1px rgba(255,246,214,.20);
+}
+.chat-panel::after{display:none}
+.chat-panel h2{font-size:21px;letter-spacing:.06em;padding:9px 0 13px}
+.chat-panel h2 span::before,.chat-panel h2 span::after{content:"—";margin:0 25px;color:#79552e}
+.scroll-corner{font-size:18px;color:#75502a;opacity:.75}
+
+.chat-feed{
+  gap:11px;
+  padding:8px 22px 11px;
+  justify-content:space-between;
+}
+.message{
+  min-height:99px;
+  padding:17px 78px 18px 83px;
+  border:1px solid rgba(91,59,29,.29);
+  border-radius:0;
+  background:rgba(255,249,229,.18)!important;
+  box-shadow:inset 0 0 0 1px rgba(255,248,221,.16),0 2px 3px rgba(70,43,19,.08);
+  font-size:18.5px;
+  line-height:1.33;
+}
+.message.user{min-height:88px;margin-left:14%!important;padding-left:25px;padding-right:84px}
+.message.council{min-height:109px;margin-right:2%!important}
+.message.official{min-height:132px;background:rgba(221,204,158,.20)!important}
+.message .meta{font-size:16px;margin-bottom:8px}
+.message .bet-line{font-size:21px;margin-top:8px}
+.message-box{min-height:54px;margin:10px 22px 12px;border:1px solid rgba(89,56,26,.34);background:rgba(255,248,226,.18)}
+
+/* Report remains structurally simple; no team-logo work in this pass. */
+.battle-panel .battle-head{margin-bottom:0;padding-bottom:12px}
+.battle-panel .scoreboard{
+  margin:0 13px;
+  padding:15px 20px 11px;
+  color:#302116;
+  border-left:1px solid rgba(84,52,24,.24);
+  border-right:1px solid rgba(84,52,24,.24);
+  background:url("assets/parchment-v16.svg") center/100% 250% no-repeat;
+}
+.battle-panel .battle-stats{margin-top:0;padding-top:13px}
+.score-center strong{font-size:46px}
+.battle-stats div{padding:6px 1px}
+.odds-list{font-size:15px}
+.current-read{min-height:148px;padding:21px 15px 17px}
+.current-read strong{font-size:22px}
+
+.bottom-nav{
+  width:93%;
+  min-height:90px;
+  margin:10px auto 0;
+  padding:7px 14px;
+  border:7px solid #160b06;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,.26)),
+    linear-gradient(90deg,#402316,#221109 50%,#402316);
+  box-shadow:inset 0 0 0 2px #83542a,inset 0 -10px 16px rgba(0,0,0,.28),0 10px 17px rgba(0,0,0,.48);
+}
+.bottom-nav button{min-height:68px;padding:12px 13px;font-size:13px;color:#e4c078}
+.bottom-nav button span{font-size:24px;margin-right:8px}
+.bottom-nav button.active{background:linear-gradient(180deg,rgba(196,135,55,.19),rgba(73,38,18,.18));box-shadow:inset 0 0 0 1px rgba(214,162,76,.38)}
+
+@media(max-width:1280px){
+  .masthead{min-height:208px;grid-template-columns:12% 17% 41% 17% 9%}
+  .dashboard{grid-template-columns:26% 43% 26%;column-gap:2.5%}
+  .message{font-size:17px}
+  .bottom-nav{width:96%}
+}
