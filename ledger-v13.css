@@ -1,0 +1,157 @@
+@import url("ledger-v12.css?v=12");
+
+/* V13: controlled scene polish. Preserve the locked v12 geometry. */
+html{background:#171008}
+body{
+  background:
+    radial-gradient(ellipse at 50% -7%,rgba(190,169,104,.34) 0 11%,transparent 37%),
+    linear-gradient(180deg,#314631 0%,#2c3022 38%,#241b12 71%,#17100a 100%);
+  background-attachment:fixed;
+}
+body::before{
+  background:linear-gradient(90deg,rgba(11,6,3,.13),transparent 9% 91%,rgba(11,6,3,.13));
+  box-shadow:inset 0 0 78px rgba(10,6,3,.43);
+}
+
+/* Integrate the roots into the wooden uprights instead of floating outside them. */
+.vine-left,.vine-right{
+  top:95px;
+  width:118px;
+  height:790px;
+  opacity:.62;
+  filter:saturate(.72) brightness(.72) drop-shadow(1px 5px 3px rgba(0,0,0,.34));
+  z-index:3;
+}
+.vine-left{left:-35px}
+.vine-right{right:-35px}
+.page-frame{
+  box-shadow:
+    inset 22px 0 34px rgba(17,8,4,.13),
+    inset -22px 0 34px rgba(17,8,4,.13),
+    0 0 0 2px #0b0604,
+    0 0 0 7px rgba(83,49,23,.58),
+    0 19px 68px rgba(0,0,0,.64);
+}
+.page-frame::before,.page-frame::after{opacity:.94}
+
+/* Warmer, more painterly hero without touching the header proportions. */
+.masthead{
+  background:
+    linear-gradient(180deg,rgba(255,249,218,.025),rgba(42,28,16,.01) 65%,rgba(25,14,8,.25)),
+    url("assets/header-landscape-v13.svg") center/cover no-repeat;
+  box-shadow:
+    inset 0 0 0 2px #966a38,
+    inset 0 -19px 29px rgba(27,15,8,.26),
+    inset 0 0 52px rgba(255,239,188,.085),
+    0 9px 19px rgba(0,0,0,.43);
+}
+.masthead::before{box-shadow:inset 0 0 60px rgba(52,31,15,.13)}
+.brand h1{
+  color:#38261a;
+  text-shadow:0 1px #f9ebc5,0 3px 3px rgba(47,29,16,.25),0 0 18px rgba(255,239,191,.10);
+}
+.brand p{filter:saturate(.94) brightness(1.03)}
+.summary-card{
+  background-image:
+    radial-gradient(circle at 13% 17%,rgba(103,67,31,.055) 0 7px,transparent 8px),
+    radial-gradient(circle at 86% 79%,rgba(103,67,31,.05) 0 11px,transparent 12px),
+    linear-gradient(145deg,rgba(255,255,255,.06),transparent 34%),
+    url("assets/parchment-v12.svg");
+}
+
+/* Carved bays gain depth but remain one continuous hall. */
+.left-column,.right-column{
+  background:
+    radial-gradient(ellipse at 50% 0,rgba(183,119,47,.08),transparent 31%),
+    linear-gradient(90deg,rgba(255,255,255,.025),transparent 12% 87%,rgba(0,0,0,.31)),
+    url("assets/wood-v6.svg") center/430px auto repeat;
+  box-shadow:
+    inset 0 0 0 2px #85592d,
+    inset 13px 0 22px rgba(14,7,4,.22),
+    inset -13px 0 22px rgba(14,7,4,.22),
+    inset 0 0 38px rgba(13,7,4,.38),
+    0 10px 21px rgba(0,0,0,.42);
+}
+.panel-heading{
+  background:
+    radial-gradient(ellipse at 50% -28%,rgba(211,150,59,.17),transparent 57%),
+    linear-gradient(180deg,rgba(123,72,31,.40),rgba(14,7,4,.61));
+}
+.panel-heading::before,.panel-heading::after{opacity:.88}
+.panel-heading h2{letter-spacing:.08em}
+.panel-body,.record-grid,.battle-head,.battle-stats,.odds-list{
+  background-image:
+    radial-gradient(circle at 12% 15%,rgba(104,68,32,.045) 0 14px,transparent 15px),
+    radial-gradient(circle at 88% 84%,rgba(104,68,32,.04) 0 17px,transparent 18px),
+    linear-gradient(145deg,rgba(255,255,255,.055),transparent 34%),
+    url("assets/parchment-v12.svg");
+}
+
+/* Restore layered depth to the central parchment without reintroducing card boxes. */
+.chat-panel{
+  background-image:
+    radial-gradient(ellipse at 50% 18%,rgba(255,246,211,.10),transparent 43%),
+    radial-gradient(circle at 10% 20%,rgba(109,72,35,.045) 0 28px,transparent 29px),
+    radial-gradient(circle at 91% 82%,rgba(109,72,35,.045) 0 34px,transparent 35px),
+    linear-gradient(112deg,rgba(255,250,224,.07),transparent 29%),
+    url("assets/parchment-v12.svg");
+  box-shadow:
+    inset 0 0 54px rgba(91,57,26,.11),
+    inset 0 1px rgba(255,247,218,.20),
+    0 0 0 1px rgba(139,91,43,.29);
+}
+.chat-panel::before{
+  border-color:rgba(74,47,23,.25);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,244,210,.13),
+    inset 0 0 32px rgba(111,73,35,.05);
+}
+.chat-feed::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:12%;
+  width:104px;
+  height:124px;
+  transform:translateX(-50%);
+  background:url("assets/tree-crest.svg") center/contain no-repeat;
+  opacity:.035;
+  filter:sepia(1) saturate(.55) brightness(.7);
+  pointer-events:none;
+}
+.message{z-index:1}
+.message.user{
+  background:linear-gradient(90deg,transparent 0,rgba(135,70,49,.018) 34%,rgba(135,70,49,.045) 100%)!important;
+}
+.message.council{
+  background:linear-gradient(90deg,rgba(66,102,51,.035),transparent 70%)!important;
+}
+.message.official{
+  background:linear-gradient(90deg,rgba(132,48,39,.055),transparent 59%)!important;
+}
+.message::after{
+  left:26%;
+  right:26%;
+  border-top-color:rgba(91,59,28,.16);
+  color:rgba(91,59,28,.34);
+}
+
+/* Improve report focus and footer integration. */
+.scoreboard{background:radial-gradient(circle at 50% 47%,rgba(177,115,43,.12),transparent 64%)}
+.current-read{box-shadow:inset 0 1px rgba(227,184,94,.08)}
+.bottom-nav{
+  background:
+    radial-gradient(ellipse at 50% -35%,rgba(196,132,51,.15),transparent 54%),
+    linear-gradient(180deg,rgba(255,255,255,.05),rgba(0,0,0,.29)),
+    url("assets/wood-v6.svg") center/cover;
+  box-shadow:
+    inset 0 0 0 2px #875a2d,
+    inset 0 -9px 13px rgba(0,0,0,.21),
+    0 10px 17px rgba(0,0,0,.49);
+}
+.props-left,.props-right{opacity:.58}
+.lantern-decor{opacity:.87}
+
+@media(max-width:1280px){
+  .vine-left,.vine-right{opacity:.43}
+}
