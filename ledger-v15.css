@@ -1,0 +1,228 @@
+@import url("ledger-v14.css?build=e121662");
+
+/* V15 — density, typography and report-detail pass against the approved original. */
+
+/* Preserve the verified original-reference geometry. */
+.dashboard{
+  grid-template-columns:26.4% 42.8% 26.4%;
+  column-gap:2.2%;
+}
+
+/* The original header is taller, warmer and less mechanically clean. */
+.masthead{
+  min-height:232px;
+  padding:9px 11px 13px;
+  background:
+    linear-gradient(180deg,rgba(255,247,214,.18),rgba(255,239,190,.035) 47%,rgba(31,18,9,.20)),
+    radial-gradient(ellipse at 49% 57%,rgba(239,218,160,.20),transparent 41%),
+    url("assets/header-landscape-v13.svg") center 52%/cover no-repeat;
+}
+.hanging-banner{
+  height:214px;
+  padding:20px 17px 50px;
+}
+.hanging-banner img{width:91px}
+.summary-card{
+  min-height:177px;
+  margin:16px 0 8px;
+  padding:23px 18px 20px;
+}
+.summary-card strong{font-size:37px}
+.summary-card small{font-size:17.5px;line-height:1.28}
+.brand{padding:8px 4px 9px}
+.brand-crest{width:55px;height:63px}
+.brand h1{font-size:clamp(49px,4.05vw,69px)}
+.brand p{
+  min-width:70%;
+  margin-top:15px;
+  padding:11px 40px 12px;
+  font-size:19.5px;
+}
+.utility-nav button{min-height:69px;font-size:12.5px}
+.utility-nav span{font-size:27px}
+
+/* Side ledgers: straighter parchment, larger book typography, deeper carved bays. */
+.left-column,.right-column{
+  box-shadow:
+    inset 0 0 0 2px #86592c,
+    inset 17px 0 27px rgba(13,7,4,.25),
+    inset -17px 0 27px rgba(13,7,4,.25),
+    inset 0 0 35px rgba(10,5,3,.24),
+    0 10px 21px rgba(0,0,0,.42);
+}
+.panel-heading{min-height:52px}
+.panel-heading h2{font-size:18.5px;letter-spacing:.065em;padding:12px 10px 11px}
+.panel-heading::before,.panel-heading::after{font-size:14px}
+.panel-body,.record-grid,.battle-head,.battle-stats,.odds-list{
+  margin:12px 13px 14px;
+  padding:18px;
+  clip-path:polygon(.8% 1.2%,16% .4%,35% 1%,52% .3%,70% .9%,86% .3%,99.2% 1.1%,99.6% 24%,99.1% 50%,99.6% 76%,99.1% 98.7%,82% 99.4%,63% 98.8%,45% 99.5%,25% 98.8%,.7% 99%,.2% 75%,.7% 50%,.2% 25%);
+  border:1px solid rgba(74,46,21,.20);
+  box-shadow:inset 0 0 0 1px rgba(255,247,218,.18);
+}
+.wager-card{min-height:176px;padding:12px 79px 14px 51px}
+.wager-card strong{font-size:23px;line-height:1.12}
+.wager-card .selection{font-size:21.5px;line-height:1.16;margin:14px 0 12px}
+.wager-meta{font-size:16.5px}
+.badge{width:66px;height:66px;right:3px;bottom:7px}
+.record-grid{font-size:18.4px;gap:10px}
+.record-grid dt,.record-grid dd{padding-bottom:4px;border-bottom:1px dotted rgba(76,47,22,.24)}
+.results-list{font-size:16.4px;padding:14px 16px}
+.results-list li{padding:7.5px 0 7.5px 16px}
+.recent-panel blockquote{font-size:16.3px;padding:19px 19px 23px}
+
+/* Council Notes: five substantial framed entries fill the parchment like the reference. */
+.chat-panel{
+  min-height:792px;
+  padding:13px 16px 16px;
+  clip-path:polygon(.5% 1.1%,12% .45%,25% 1%,39% .35%,54% .9%,68% .35%,83% 1%,99.4% .8%,99.7% 18%,99.2% 37%,99.7% 56%,99.2% 78%,99.5% 98.8%,84% 99.4%,68% 98.8%,51% 99.5%,35% 98.8%,18% 99.5%,.5% 98.8%,.2% 79%,.6% 58%,.2% 37%);
+}
+.chat-panel::before{
+  inset:12px;
+  border:1px solid rgba(77,48,22,.34);
+  box-shadow:inset 0 0 0 1px rgba(255,248,221,.25),inset 0 0 24px rgba(104,66,29,.04);
+}
+.scroll-corner{font-size:23px;color:#76512d;opacity:.84}
+.scroll-corner.top-left{top:17px;left:17px}
+.scroll-corner.top-right{top:17px;right:17px}
+.chat-panel h2{font-size:21px;padding:10px 0 13px;letter-spacing:.075em}
+.chat-panel h2 span::before,.chat-panel h2 span::after{margin:0 28px}
+.chat-feed{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:13px;
+  padding:9px 22px 12px;
+  min-height:0;
+}
+.chat-feed:has(.message:nth-child(7)){justify-content:flex-start}
+.message{
+  min-height:102px;
+  padding:18px 80px 19px 86px;
+  border-color:rgba(91,59,29,.30);
+  background:
+    linear-gradient(110deg,rgba(255,253,243,.36),rgba(211,180,128,.075))!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,249,226,.23),
+    inset 0 0 18px rgba(117,77,36,.025),
+    0 2px 4px rgba(71,43,19,.09);
+  font-size:19.2px;
+  line-height:1.34;
+  justify-content:center;
+}
+.message.user{
+  min-height:88px;
+  margin-left:14%!important;
+  padding-left:27px;
+  padding-right:87px;
+}
+.message.council{min-height:113px;margin-right:1.5%!important}
+.message.official{
+  min-height:139px;
+  background:linear-gradient(110deg,rgba(247,240,216,.42),rgba(205,173,116,.11))!important;
+}
+.message.council:last-of-type{min-height:118px}
+.message.user::before{width:64px;height:64px;right:12px}
+.message.council::before{width:56px;height:67px;left:16px}
+.message .meta{font-size:16.5px;margin-bottom:9px}
+.message .bet-line{font-size:21.5px;line-height:1.2;margin-top:8px}
+.message-box{
+  min-height:55px;
+  margin:10px 22px 12px;
+}
+.message-box input{padding:15px 17px;font-size:18.5px}
+.message-box button{width:60px}
+.message-box button::before{font-size:31px}
+
+/* Battle Report: one parchment sheet, visual stat divider, larger team marks. */
+.battle-panel .battle-head{
+  margin:12px 13px 0;
+  padding:18px 16px 14px;
+  clip-path:polygon(.7% 1%,99.4% .5%,99.8% 99%,.3% 99.5%);
+}
+.battle-panel .scoreboard{
+  margin:0 13px;
+  min-height:116px;
+  padding:17px 21px 12px;
+  border-left:1px solid rgba(84,52,24,.23);
+  border-right:1px solid rgba(84,52,24,.23);
+  background:
+    linear-gradient(rgba(255,251,234,.31),rgba(224,196,144,.08)),
+    url("assets/parchment-v12.svg") center/100% 270% no-repeat;
+}
+.battle-panel .battle-stats{
+  margin:0 13px 15px;
+  padding:13px 15px 17px;
+  clip-path:polygon(.3% .2%,99.7% .2%,99.1% 99%,.7% 99%);
+}
+.battle-head strong{font-size:20px;line-height:1.2}
+.battle-head small{font-size:13.5px;margin-top:6px}
+.score-center strong{font-size:49px}
+.score-center small{font-size:15px}
+.team-mark{font-size:22px}
+.shield-mark::before,.cyan::before{font-size:38px}
+.battle-stats{font-size:15.5px}
+.battle-stats div{
+  position:relative;
+  grid-template-columns:1.25fr .72fr 42px .72fr;
+  gap:7px;
+  padding:7px 1px;
+}
+.battle-stats div span{font-size:11px}
+.battle-stats div b:first-of-type{grid-column:2}
+.battle-stats div b:last-of-type{grid-column:4}
+.battle-stats div::after{
+  grid-column:3;
+  grid-row:1;
+  align-self:center;
+  justify-self:center;
+  color:#8c602c;
+  font-size:16px;
+  line-height:1;
+  text-shadow:0 1px rgba(255,242,203,.55);
+}
+.battle-stats div:nth-child(1)::after{
+  content:"";
+  width:40px;
+  height:4px;
+  border:1px solid rgba(69,42,20,.24);
+  background:linear-gradient(90deg,#668a3d 0 58%,#9f4b43 58% 100%);
+}
+.battle-stats div:nth-child(2)::after{content:"✦"}
+.battle-stats div:nth-child(3)::after{content:"♜"}
+.battle-stats div:nth-child(4)::after{content:"♞"}
+.battle-stats div:nth-child(5)::after{content:"♛";color:#655083}
+.battle-stats div:nth-child(6)::after{content:"◉";color:#66538a}
+.odds-list{font-size:15.5px;padding:15px 17px}
+.odds-row{padding:7px 1px}
+.current-read{min-height:154px;padding:22px 16px 18px}
+.current-read span{font-size:13px}
+.current-read strong{font-size:23px;margin-top:8px}
+.current-read img{width:48px;height:57px;margin-top:10px}
+
+/* The original footer is a substantial carved navigation beam. */
+.bottom-nav{
+  width:91%;
+  min-height:92px;
+  margin:11px auto 0;
+  padding:7px 14px;
+  border-width:7px;
+  box-shadow:
+    inset 0 0 0 2px #8b5d2e,
+    inset 0 -11px 16px rgba(0,0,0,.24),
+    0 11px 18px rgba(0,0,0,.50);
+}
+.bottom-nav button{
+  min-height:70px;
+  padding:13px 13px;
+  font-size:13.5px;
+  letter-spacing:.015em;
+}
+.bottom-nav button span{font-size:25px;margin-right:9px}
+
+@media(max-width:1280px){
+  .masthead{min-height:208px}
+  .dashboard{grid-template-columns:26% 43% 26%;column-gap:2.5%}
+  .message{font-size:17.5px}
+  .bottom-nav{width:95%}
+}
