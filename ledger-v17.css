@@ -1,0 +1,161 @@
+@import url("ledger-v15.css?build=a798422");
+
+/* V17 — use real repository assets. This intentionally bypasses the failed v16 data-URI layer. */
+
+body{
+  background:
+    radial-gradient(ellipse at 50% -8%,rgba(208,188,126,.28) 0 10%,transparent 38%),
+    linear-gradient(180deg,#29402f 0 31%,#271f16 67%,#110b07 100%);
+}
+
+.page-frame,
+.left-column,
+.right-column,
+.utility-nav,
+.bottom-nav{
+  background-image:
+    linear-gradient(90deg,rgba(255,255,255,.035),transparent 14% 86%,rgba(0,0,0,.28)),
+    url("assets/wood-v16.svg");
+  background-position:center;
+  background-size:cover;
+}
+.page-frame{
+  box-shadow:
+    inset 26px 0 42px rgba(12,6,3,.18),
+    inset -26px 0 42px rgba(12,6,3,.18),
+    0 0 0 2px #090503,
+    0 14px 48px rgba(0,0,0,.64);
+}
+
+.masthead{
+  background:
+    linear-gradient(180deg,rgba(255,248,217,.08),rgba(255,240,190,.01) 48%,rgba(30,17,9,.19)),
+    url("assets/header-landscape-v16.svg") center 51%/cover no-repeat;
+  box-shadow:
+    inset 0 0 0 2px #9a6b34,
+    inset 0 -18px 28px rgba(22,12,7,.26),
+    0 7px 17px rgba(0,0,0,.45);
+}
+.masthead::before{
+  opacity:.07;
+  background:url("assets/parchment-v16.svg") center/cover;
+  mix-blend-mode:multiply;
+}
+
+.summary-card,
+.panel-body,
+.record-grid,
+.battle-head,
+.battle-stats,
+.odds-list,
+.chat-panel{
+  background-image:
+    linear-gradient(145deg,rgba(255,255,255,.09),transparent 33%),
+    url("assets/parchment-v16.svg");
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+}
+.summary-card,
+.panel-body,
+.record-grid,
+.battle-head,
+.battle-stats,
+.odds-list{
+  filter:drop-shadow(0 6px 6px rgba(24,12,6,.28));
+}
+
+.chat-panel{
+  position:relative;
+  box-shadow:
+    inset 0 0 50px rgba(83,51,23,.095),
+    inset 0 1px rgba(255,247,217,.18),
+    0 11px 22px rgba(0,0,0,.34);
+}
+.chat-panel::before{
+  background:
+    url("assets/ornament-corner-v16.svg") left top/78px 78px no-repeat,
+    url("assets/ornament-corner-v16.svg") right top/78px 78px no-repeat,
+    url("assets/ornament-corner-v16.svg") left bottom/78px 78px no-repeat,
+    url("assets/ornament-corner-v16.svg") right bottom/78px 78px no-repeat;
+  border:1px solid rgba(79,49,22,.30);
+}
+
+.message{
+  background:
+    linear-gradient(110deg,rgba(255,253,242,.25),rgba(203,169,110,.065)),
+    url("assets/parchment-v16.svg") center/100% 100% no-repeat!important;
+  border-color:rgba(88,56,27,.31);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,248,221,.18),
+    0 2px 4px rgba(70,43,19,.10);
+}
+.message.official{
+  background:
+    linear-gradient(110deg,rgba(248,240,214,.36),rgba(193,150,83,.09)),
+    url("assets/parchment-v16.svg") center/100% 100% no-repeat!important;
+}
+
+.panel-heading{
+  background:
+    linear-gradient(180deg,rgba(178,112,43,.18),rgba(11,5,3,.54)),
+    url("assets/wood-v16.svg") center/cover;
+  border-bottom-color:rgba(227,176,82,.48);
+  box-shadow:inset 0 -9px 14px rgba(0,0,0,.24),0 2px 5px rgba(0,0,0,.27);
+}
+.panel-heading h2{
+  color:#efc56f;
+  text-shadow:0 2px #150a05,0 0 8px rgba(210,151,58,.10);
+}
+
+.scoreboard{
+  background:
+    radial-gradient(circle at 50% 47%,rgba(172,112,43,.10),transparent 63%),
+    url("assets/parchment-v16.svg") center/100% 240% no-repeat!important;
+}
+.shield-mark::before,
+.cyan::before{
+  content:""!important;
+  display:block;
+  width:54px;
+  height:54px;
+  margin:0 auto 4px;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+.shield-mark::before{background-image:url("assets/team-g2-v16.svg")}
+.cyan::before{background-image:url("assets/team-kc-v16.svg")}
+
+.badge{
+  background:
+    radial-gradient(circle at 38% 32%,rgba(255,220,174,.23),transparent 30%),
+    radial-gradient(circle,#a83d32 0 52%,#6d211b 53% 68%,#3a120e 69% 100%);
+  box-shadow:
+    inset 0 0 0 2px rgba(255,205,139,.15),
+    inset 0 -8px 14px rgba(59,12,8,.35),
+    0 5px 7px rgba(0,0,0,.33);
+}
+
+.bottom-nav{
+  background-image:
+    radial-gradient(ellipse at 50% -30%,rgba(190,128,49,.14),transparent 54%),
+    linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,.28)),
+    url("assets/wood-v16.svg");
+  background-size:auto,auto,cover;
+}
+
+/* Make the asset pass impossible to confuse with v15. */
+.masthead,
+.left-column,
+.right-column,
+.bottom-nav{
+  outline:1px solid rgba(214,157,68,.16);
+  outline-offset:-4px;
+}
+
+@media(max-width:1280px){
+  .chat-panel::before{
+    background-size:58px 58px;
+  }
+}
