@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 320" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d8d1a7"/>
+      <stop offset=".48" stop-color="#c8c79c"/>
+      <stop offset="1" stop-color="#9ba477"/>
+    </linearGradient>
+    <linearGradient id="mountain" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b8e73"/>
+      <stop offset="1" stop-color="#686f56"/>
+    </linearGradient>
+    <linearGradient id="farHill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7f8b61"/>
+      <stop offset="1" stop-color="#566548"/>
+    </linearGradient>
+    <linearGradient id="nearHill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#66794f"/>
+      <stop offset="1" stop-color="#35472f"/>
+    </linearGradient>
+    <linearGradient id="river" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b9c0a5"/>
+      <stop offset=".55" stop-color="#819889"/>
+      <stop offset="1" stop-color="#526f65"/>
+    </linearGradient>
+    <linearGradient id="warmWash" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f2dfad" stop-opacity=".34"/>
+      <stop offset=".48" stop-color="#fff2c4" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#e7c98d" stop-opacity=".22"/>
+    </linearGradient>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
+    <filter id="paint" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".018 .23" numOctaves="3" seed="41" result="texture"/>
+      <feColorMatrix in="texture" type="saturate" values="0" result="grey"/>
+      <feComponentTransfer in="grey" result="faded"><feFuncA type="table" tableValues="0 .10"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="faded" mode="multiply"/>
+    </filter>
+  </defs>
+  <g filter="url(#paint)">
+    <rect width="1600" height="320" fill="url(#sky)"/>
+    <rect width="1600" height="320" fill="url(#warmWash)"/>
+
+    <g fill="#efe7c7" opacity=".50" filter="url(#soft)">
+      <ellipse cx="245" cy="54" rx="102" ry="31"/>
+      <ellipse cx="805" cy="40" rx="116" ry="29"/>
+      <ellipse cx="1328" cy="65" rx="92" ry="27"/>
+    </g>
+
+    <path d="M0 201 116 139 205 171 300 78 405 183 535 111 625 164 734 87 853 177 974 103 1087 163 1205 63 1324 169 1442 103 1600 188V320H0Z" fill="#868a70" opacity=".73"/>
+    <path d="M0 228c170-47 304-34 447 4 149 40 299 17 447-22 190-50 405-50 706 5v105H0Z" fill="url(#mountain)"/>
+    <path d="M0 249c190-37 355-16 510 27 160 45 315 31 468-13 184-53 372-53 622-21v78H0Z" fill="url(#farHill)"/>
+    <path d="M0 278c211-28 395-3 562 28 176 33 337 23 500-10 186-38 351-41 538-19v43H0Z" fill="url(#nearHill)"/>
+    <path d="M586 320c81-67 158-99 238-103 91-4 175 24 284 69-141 5-282 15-424 34Z" fill="url(#river)" opacity=".94"/>
+
+    <g transform="translate(305 84)" fill="#665c43" stroke="#3f392c" stroke-width="2">
+      <rect x="38" y="55" width="105" height="84"/>
+      <rect x="9" y="76" width="39" height="63"/>
+      <rect x="134" y="69" width="42" height="70"/>
+      <rect x="60" y="24" width="31" height="115"/>
+      <rect x="101" y="37" width="27" height="102"/>
+      <path d="M60 24 76 1l15 23ZM101 37l14-18 13 18ZM9 76l20-24 19 24ZM134 69l21-25 21 25Z"/>
+      <g fill="#d2bd78" stroke="none" opacity=".78">
+        <rect x="69" y="51" width="8" height="13"/><rect x="109" y="60" width="8" height="12"/>
+        <rect x="67" y="90" width="8" height="12"/><rect x="109" y="94" width="8" height="12"/>
+        <rect x="23" y="96" width="7" height="11"/><rect x="151" y="90" width="7" height="11"/>
+      </g>
+    </g>
+
+    <g transform="translate(1215 180)" opacity=".82">
+      <rect x="0" y="35" width="40" height="33" fill="#65543d"/>
+      <rect x="48" y="22" width="48" height="46" fill="#5b4b36"/>
+      <rect x="102" y="31" width="42" height="37" fill="#6a563c"/>
+      <path d="M-3 35 20 16l23 19M45 22 72 3l27 19M99 31 123 13l25 18" fill="#4e4232"/>
+      <rect x="18" y="45" width="7" height="10" fill="#d1b86e"/><rect x="67" y="37" width="7" height="10" fill="#d1b86e"/><rect x="119" y="44" width="7" height="9" fill="#d1b86e"/>
+    </g>
+
+    <g fill="#2f442d" opacity=".94">
+      <path d="M0 0h242l-50 28-47 9-30 35-34-15-28 30L0 111Z"/>
+      <path d="M1600 0h-244l52 28 50 10 27 35 36-16 27 31 52 21Z"/>
+    </g>
+    <g stroke="#49311e" stroke-width="12" fill="none" stroke-linecap="round" opacity=".92">
+      <path d="M0 14c72 17 115 38 163 76 42 34 93 33 158 24"/>
+      <path d="M1600 12c-77 17-119 39-167 77-44 34-94 33-157 26"/>
+    </g>
+    <g fill="#57703f" opacity=".93">
+      <ellipse cx="92" cy="42" rx="34" ry="16" transform="rotate(17 92 42)"/>
+      <ellipse cx="175" cy="74" rx="31" ry="14" transform="rotate(-12 175 74)"/>
+      <ellipse cx="1507" cy="44" rx="34" ry="16" transform="rotate(-18 1507 44)"/>
+      <ellipse cx="1427" cy="76" rx="31" ry="14" transform="rotate(12 1427 76)"/>
+    </g>
+    <g fill="none" stroke="#433d32" stroke-width="2" opacity=".72">
+      <path d="M492 61q10-11 20 0q10-11 20 0M892 51q10-11 20 0q10-11 20 0M1080 78q9-10 18 0q9-10 18 0"/>
+    </g>
+  </g>
+</svg>
