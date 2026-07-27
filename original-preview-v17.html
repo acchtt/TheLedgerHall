@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#2b190f" />
+  <title>The Ledger Hall — Original Match V17</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ledger-v17.css?build=b7ed78e" />
+  <style>.build-marker{position:fixed;right:9px;bottom:7px;z-index:9999;padding:4px 7px;border:1px solid #b9883c;background:#211208;color:#efd18e;font:600 10px/1 Cinzel,serif;letter-spacing:.08em;box-shadow:0 2px 5px #0008;pointer-events:none}</style>
+</head>
+<body>
+  <div class="build-marker">EXTERNAL ASSETS · V17</div>
+  <div class="landscape" aria-hidden="true"><span class="distant-castle"></span><span class="distant-hills"></span></div>
+  <div class="page-frame">
+    <span class="frame-decor vine-left" aria-hidden="true"></span><span class="frame-decor vine-right" aria-hidden="true"></span><span class="frame-decor lantern-decor" aria-hidden="true"></span><span class="frame-decor props-left" aria-hidden="true"></span><span class="frame-decor props-right" aria-hidden="true"></span>
+    <header class="masthead">
+      <div class="hanging-banner" aria-hidden="true"><img src="assets/tree-crest.svg" alt="" /></div>
+      <section class="summary-card lifetime-card"><span class="eyebrow">Lifetime P/L</span><strong id="lifetime-pl" class="money">−2.882u</strong><small>Settled: <span id="lifetime-stake" class="money">9.234u</span></small><small>ROI: <span id="lifetime-roi">−31.2%</span></small><button class="help-dot" type="button" aria-label="About lifetime statistics">?</button></section>
+      <div class="brand"><img class="brand-crest" src="assets/tree-crest.svg" alt="" /><h1>The Ledger Hall</h1><p>Council Notes, Wagers &amp; Battle Reports</p></div>
+      <section class="summary-card positive"><span class="eyebrow">Trial Record <small>(Current Phase)</small></span><strong id="trial-pl" class="money">+0.194u</strong><small>Record: <span id="trial-record">3W–2L</span></small><small>Pending: <span id="trial-pending" class="money">0.25u</span></small><button class="help-dot" type="button" aria-label="About trial statistics">?</button></section>
+      <nav class="utility-nav" aria-label="Page controls"><button id="chamber-button" type="button"><span>☼</span>Chamber</button><button id="theme-button" type="button"><span>◉</span>Themes</button><button id="money-button" type="button"><span>◌</span>Hide $</button></nav>
+    </header>
+    <main class="dashboard">
+      <aside class="left-column">
+        <section class="wood-panel"><div class="panel-heading"><h2>Open Wagers</h2><button type="button" aria-label="Collapse Open Wagers">−</button></div><div id="open-wagers" class="panel-body"></div></section>
+        <section class="wood-panel"><div class="panel-heading"><h2>Trial Record</h2><button type="button" aria-label="Collapse Trial Record">−</button></div><dl id="trial-details" class="record-grid"></dl></section>
+        <section class="wood-panel recent-panel"><div class="panel-heading"><h2>Recent Results</h2></div><ul id="recent-results" class="results-list"></ul><blockquote>“Fortune favors the prepared mind.”<cite>— The Old Scrolls</cite></blockquote></section>
+      </aside>
+      <section class="chat-panel"><span class="scroll-corner top-left">❧</span><span class="scroll-corner top-right">❧</span><h2><span>Council Notes</span></h2><div id="chat-feed" class="chat-feed"></div><form id="message-form" class="message-box"><input id="message-input" autocomplete="off" placeholder="Write your message…" aria-label="Council note" /><button type="submit" aria-label="Send">➤</button></form></section>
+      <aside class="right-column">
+        <section class="wood-panel battle-panel"><div class="panel-heading"><h2>Battle Report</h2><button type="button" aria-label="Collapse Battle Report">−</button></div><div class="battle-head"><strong>G2 Esports vs Karmine Corp</strong><small>LEC 2026 Summer · Game 2</small></div><div class="scoreboard"><span class="team-mark shield-mark">G2</span><div class="score-center"><strong>10–4</strong><small>19:45</small></div><span class="team-mark cyan">KC</span></div><div class="battle-stats"><div><span>Gold</span><b>38.4k</b><b>35.9k</b></div><div><span>Gold diff.</span><b></b><b class="positive-text">+2.5k</b></div><div><span>Towers</span><b>4</b><b>1</b></div><div><span>Dragons</span><b>1</b><b>1</b></div><div><span>Barons</span><b>0</b><b>0</b></div><div><span>Inhibitors</span><b>0</b><b>0</b></div></div></section>
+        <section class="wood-panel"><div class="panel-heading"><h2>Odds Snapshot</h2></div><div id="odds-list" class="odds-list"></div></section>
+        <section class="wood-panel current-read"><span>Current Read</span><strong>No Official Bet</strong><img src="assets/council-shield.svg" alt="" /></section>
+      </aside>
+    </main>
+    <footer class="bottom-nav"><button class="active" type="button"><span>▤</span>Council Notes</button><button type="button"><span>⚖</span>Open Wagers</button><button type="button"><span>▥</span>Closed Ledgers</button><button type="button"><span>⚔</span>Battle Reports</button><button type="button"><span>⚙</span>Chamber Settings</button></footer>
+  </div>
+  <script src="chat.js?build=b7ed78e"></script>
+</body>
+</html>
