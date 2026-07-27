@@ -1,0 +1,201 @@
+@import url("ledger-v9.css?v=9");
+
+/* Final near-preview material and proportion pass. */
+body{
+  background:
+    radial-gradient(circle at 50% -10%,#a79a69 0 8%,transparent 33%),
+    linear-gradient(180deg,#35422c 0 34%,#2b261a 66%,#18100a 100%);
+}
+body::before{
+  box-shadow:inset 0 0 82px rgba(13,8,4,.48);
+}
+.page-frame{
+  width:min(1660px,calc(100% - 8px));
+  padding:12px 14px 12px;
+  background:
+    linear-gradient(90deg,#130a06 0 9px,#4b2b17 9px 16px,transparent 16px calc(100% - 16px),#4b2b17 calc(100% - 16px) calc(100% - 9px),#130a06 calc(100% - 9px)),
+    linear-gradient(180deg,rgba(111,80,41,.32),rgba(20,11,6,.22));
+  box-shadow:0 0 0 2px #0d0704,0 0 0 6px rgba(82,49,24,.52),0 18px 58px rgba(0,0,0,.60);
+}
+.page-frame::before,.page-frame::after{width:32%;height:36px;border-top-width:14px}
+
+/* Keep framing behind the content and close to the wooden shell. */
+.frame-decor{z-index:2}
+.vine-left,.vine-right{
+  top:170px;
+  width:88px;
+  height:690px;
+  opacity:.46;
+  filter:saturate(.72) brightness(.78);
+}
+.vine-left{left:-25px}
+.vine-right{right:-25px}
+.lantern-decor{
+  right:-27px;
+  top:62px;
+  width:67px;
+  height:138px;
+  z-index:7;
+  opacity:.90;
+}
+.props-right{right:-1px;bottom:-3px;width:145px;height:106px;opacity:.72}
+.props-left{left:-7px;bottom:-4px;width:132px;height:99px;opacity:.64}
+
+/* A wider, more illustrative hero scene. */
+.masthead{
+  grid-template-columns:94px 252px minmax(600px,1fr) 252px 104px;
+  gap:9px;
+  min-height:230px;
+  padding:8px 10px 11px;
+  background:
+    linear-gradient(180deg,rgba(255,247,216,.03),rgba(39,27,16,.02) 67%,rgba(25,14,8,.29)),
+    url("assets/header-landscape-v10.svg") center/cover no-repeat;
+  border-width:5px;
+  box-shadow:inset 0 0 0 2px #8d6233,inset 0 -15px 22px rgba(28,16,8,.30),0 8px 17px rgba(0,0,0,.40);
+}
+.hanging-banner{height:194px;padding:14px 10px 39px}
+.hanging-banner img{width:72px}
+.summary-card{
+  min-height:160px;
+  margin:13px 0 8px;
+  padding:20px 16px 18px;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.10),transparent 34%),
+    url("assets/parchment-v10.svg") center/100% 100% no-repeat;
+  filter:drop-shadow(0 7px 6px rgba(42,25,12,.36));
+}
+.summary-card::after{inset:14px 16px;border-color:rgba(96,63,31,.28)}
+.summary-card strong{font-size:35px}
+.summary-card small{font-size:16.5px}
+.brand{padding:8px 4px 8px}
+.brand-crest{width:52px;height:58px}
+.brand h1{
+  font-size:clamp(40px,3.35vw,56px);
+  letter-spacing:.028em;
+  color:#332319;
+  text-shadow:0 1px #f4e7c0,0 3px 3px rgba(52,33,18,.22);
+}
+.brand p{margin-top:14px;padding:8px 32px 9px;font-size:18px}
+.utility-nav{
+  margin:-5px -1px 1px 0;
+  border-width:4px;
+  z-index:8;
+}
+.utility-nav button{min-height:61px;font-size:10.5px;line-height:1.05;padding:4px 3px}
+.utility-nav span{font-size:19px}
+
+/* Restore breathing room to the rails without shrinking the ledger too far. */
+.dashboard{
+  grid-template-columns:302px minmax(690px,1fr) 318px;
+  gap:10px;
+  margin-top:11px;
+}
+.left-column,.right-column{
+  border-width:5px;
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.035),transparent 12% 87%,rgba(0,0,0,.29)),
+    url("assets/wood-v6.svg") center/430px auto repeat;
+  box-shadow:inset 0 0 0 2px #785028,inset 0 0 28px rgba(14,7,4,.39),0 9px 18px rgba(0,0,0,.38);
+}
+.panel-heading{
+  min-height:46px;
+  background:linear-gradient(180deg,rgba(110,65,28,.36),rgba(15,8,4,.56));
+  box-shadow:inset 0 1px rgba(240,199,109,.12),inset 0 -8px 13px rgba(0,0,0,.19);
+}
+.panel-heading h2{font-size:16px;letter-spacing:.07em;padding:10px 8px}
+.panel-heading button{width:24px;height:24px}
+
+/* Fibrous parchment replaces the flat beige cards. */
+.panel-body,.record-grid,.battle-head,.battle-stats,.odds-list{
+  margin:10px 11px 12px;
+  padding:14px;
+  color:#342417;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.08),transparent 34%),
+    url("assets/parchment-v10.svg") center/100% 100% no-repeat;
+  filter:drop-shadow(0 5px 5px rgba(18,9,5,.29));
+}
+.panel-body::after,.record-grid::after,.battle-head::after,.battle-stats::after,.odds-list::after{border-color:rgba(89,58,28,.22)}
+.wager-card{min-height:149px;padding:6px 62px 9px 40px}
+.wager-card strong{font-size:19.5px;line-height:1.08}
+.wager-card .selection{font-size:18.5px}
+.wager-meta{font-size:14.5px}
+.badge{width:54px;height:54px;right:1px;bottom:4px}
+.record-grid{font-size:16.5px;gap:7px}
+.results-list{font-size:14.4px;padding:11px 12px}
+.results-list li{padding:6px 0 6px 14px}
+.recent-panel blockquote{font-size:14.5px}
+
+/* Main parchment should feel like one physical scroll, not a CSS panel. */
+.chat-panel{
+  min-height:780px;
+  padding:11px 13px 14px;
+  color:#342417;
+  background:
+    linear-gradient(112deg,rgba(255,250,224,.10),transparent 27%),
+    url("assets/parchment-v10.svg") center/100% 100% no-repeat;
+  border-width:5px;
+  box-shadow:inset 0 0 44px rgba(100,66,31,.12);
+  filter:drop-shadow(0 10px 9px rgba(0,0,0,.34));
+}
+.chat-panel::before{inset:16px 20px 18px 18px;border-color:rgba(78,51,25,.25);box-shadow:inset 0 0 0 1px rgba(255,244,210,.16)}
+.chat-panel::after{top:53px;right:10px;bottom:60px;width:8px}
+.chat-panel h2{font-size:16.5px;padding-top:8px}
+.chat-feed{padding:9px 29px 8px 25px}
+.message{padding:15px 18px 22px;font-size:17.2px;line-height:1.34}
+.message.user{margin-left:16%;padding-right:73px}
+.message.council{margin-right:4%;padding-left:71px}
+.message .meta{margin-bottom:8px}
+.message .bet-line{font-size:19px}
+.message-box{margin:7px 28px 12px 23px;background:rgba(255,245,216,.07)}
+.message-box input{font-size:17px}
+
+/* Right rail gets enough type size to read as a report, not a thumbnail. */
+.battle-head{padding:15px 12px 13px}
+.battle-head strong{font-size:16px;line-height:1.18}
+.battle-head small{font-size:12.3px}
+.scoreboard{padding:9px 15px 8px}
+.score-center strong{font-size:38px}
+.score-center small{font-size:14px}
+.team-mark{font-size:19px}
+.shield-mark::before,.cyan::before{font-size:31px}
+.battle-stats{padding:12px 13px;font-size:14.5px}
+.battle-stats div{grid-template-columns:1.35fr .88fr .88fr;padding:5.5px 1px}
+.battle-stats span{font-size:9.8px}
+.odds-list{padding:12px 13px;font-size:14px}
+.odds-row{padding:5.5px 1px}
+.current-read{min-height:130px}
+.current-read strong{font-size:18.5px}
+
+/* Footer is part of the carved base beam. */
+.bottom-nav{
+  width:min(1060px,calc(100% - 280px));
+  margin:8px auto 0;
+  padding:4px 13px;
+  border-width:5px;
+  box-shadow:inset 0 0 0 2px #7c5027,0 8px 14px rgba(0,0,0,.44);
+}
+.bottom-nav button{padding:10px 10px;font-size:10.7px}
+
+@media(max-width:1460px){
+  .masthead{grid-template-columns:88px 228px minmax(530px,1fr) 228px 92px}
+  .dashboard{grid-template-columns:286px minmax(640px,1fr) 300px}
+  .brand h1{font-size:47px}
+}
+@media(max-width:1280px){
+  .page-frame{width:100%;padding:8px}
+  .masthead{grid-template-columns:80px 206px 1fr 206px 80px}
+  .brand h1{font-size:39px}
+  .dashboard{grid-template-columns:285px minmax(560px,1fr)}
+  .right-column{grid-column:1/-1;display:grid;grid-template-columns:1.15fr 1fr .72fr}
+  .right-column .wood-panel{border-bottom:0;border-right:3px ridge rgba(31,17,9,.85)}
+  .right-column .wood-panel:last-child{border-right:0}
+  .lantern-decor{display:none}
+  .bottom-nav{width:calc(100% - 150px)}
+}
+@media(max-width:930px){
+  .frame-decor{display:none}
+  .dashboard,.right-column{grid-template-columns:1fr}
+  .right-column .wood-panel{border-right:0;border-bottom:3px ridge rgba(31,17,9,.85)}
+  .bottom-nav{width:100%}
+}
