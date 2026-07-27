@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f1dfb7"/>
+      <stop offset=".42" stop-color="#e7cc98"/>
+      <stop offset=".72" stop-color="#ddbd82"/>
+      <stop offset="1" stop-color="#c89d62"/>
+    </linearGradient>
+    <radialGradient id="light" cx="48%" cy="35%" r="78%">
+      <stop offset="0" stop-color="#fff4d2" stop-opacity=".42"/>
+      <stop offset=".7" stop-color="#e4c48c" stop-opacity=".04"/>
+      <stop offset="1" stop-color="#8b5e31" stop-opacity=".20"/>
+    </radialGradient>
+    <filter id="paperTexture" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency=".018 .36" numOctaves="3" seed="24" result="fibers"/>
+      <feColorMatrix in="fibers" type="matrix" values=".7 0 0 0 .15  0 .62 0 0 .11  0 0 .48 0 .06  0 0 0 .16 0" result="fiberTone"/>
+      <feBlend in="SourceGraphic" in2="fiberTone" mode="multiply"/>
+    </filter>
+    <filter id="roughEdge" x="-4%" y="-4%" width="108%" height="108%">
+      <feTurbulence type="fractalNoise" baseFrequency=".012" numOctaves="3" seed="9" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g filter="url(#roughEdge)">
+    <rect x="8" y="8" width="1184" height="1184" rx="10" fill="url(#paper)"/>
+    <rect x="8" y="8" width="1184" height="1184" rx="10" fill="url(#light)"/>
+    <g opacity=".10" fill="#7c542b">
+      <circle cx="105" cy="160" r="56"/><circle cx="1070" cy="125" r="39"/>
+      <circle cx="1005" cy="1040" r="69"/><circle cx="188" cy="1015" r="47"/>
+      <ellipse cx="780" cy="360" rx="38" ry="23"/><ellipse cx="360" cy="705" rx="31" ry="19"/>
+    </g>
+    <g opacity=".16" stroke="#8c6337" stroke-width="1">
+      <path d="M74 210c174-22 325-20 488-5s330 20 552-2"/>
+      <path d="M86 932c210 18 424 12 603 0s301-10 430 4"/>
+      <path d="M285 80c-9 199-8 390 3 571s11 326-2 477"/>
+      <path d="M910 72c10 211 9 421-2 601s-11 313 4 453"/>
+    </g>
+    <rect x="12" y="12" width="1176" height="1176" rx="9" fill="transparent" filter="url(#paperTexture)"/>
+  </g>
+  <rect x="24" y="24" width="1152" height="1152" rx="7" fill="none" stroke="#7b552d" stroke-opacity=".34" stroke-width="2"/>
+</svg>
