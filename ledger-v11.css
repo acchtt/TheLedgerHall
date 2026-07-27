@@ -1,0 +1,111 @@
+@import url("ledger-v10.css?v=10");
+
+/* V11: material-quality pass. Preserve the v10 geometry. */
+body{
+  background:
+    radial-gradient(circle at 50% -12%,#b0a274 0 8%,transparent 34%),
+    linear-gradient(180deg,#35452f 0 34%,#2a2519 66%,#171009 100%);
+}
+body::before{
+  box-shadow:inset 0 0 74px rgba(12,7,4,.43);
+}
+
+/* Softer illustrated hero: less vector contrast, more atmospheric depth. */
+.masthead{
+  background:
+    linear-gradient(180deg,rgba(255,250,224,.035),rgba(39,27,16,.015) 66%,rgba(25,14,8,.28)),
+    url("assets/header-landscape-v11.svg") center/cover no-repeat;
+  box-shadow:
+    inset 0 0 0 2px #8b6032,
+    inset 0 -17px 25px rgba(28,16,8,.26),
+    inset 0 0 42px rgba(255,241,197,.07),
+    0 8px 17px rgba(0,0,0,.40);
+}
+.brand h1{
+  color:#35251b;
+  text-shadow:0 1px #f6e9c4,0 3px 3px rgba(48,31,17,.24);
+}
+.brand p{
+  background:
+    linear-gradient(90deg,rgba(91,57,25,.15),transparent 10% 90%,rgba(91,57,25,.15)),
+    linear-gradient(#dfbd7d,#efd4a0 47%,#bd8748 53%,#d7aa6b);
+}
+
+/* Replace visible fold lines with subtle fiber, staining and edge wear. */
+.summary-card,
+.panel-body,
+.record-grid,
+.battle-head,
+.battle-stats,
+.odds-list,
+.chat-panel{
+  background-image:
+    linear-gradient(145deg,rgba(255,255,255,.075),transparent 34%),
+    url("assets/parchment-v11.svg");
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+}
+.summary-card{
+  filter:drop-shadow(0 7px 6px rgba(42,25,12,.34));
+}
+.panel-body,.record-grid,.battle-head,.battle-stats,.odds-list{
+  filter:drop-shadow(0 5px 5px rgba(18,9,5,.27));
+}
+.chat-panel{
+  background-image:
+    linear-gradient(112deg,rgba(255,250,224,.095),transparent 28%),
+    url("assets/parchment-v11.svg");
+  box-shadow:
+    inset 0 0 38px rgba(96,62,29,.10),
+    inset 0 1px rgba(255,246,216,.19);
+  filter:drop-shadow(0 10px 9px rgba(0,0,0,.33));
+}
+.chat-panel::before{
+  border-color:rgba(78,51,25,.21);
+  box-shadow:inset 0 0 0 1px rgba(255,244,210,.12);
+}
+
+/* Let the parchment breathe instead of reading as ruled cardboard. */
+.message::after{
+  left:27%;
+  right:27%;
+  border-top-color:rgba(92,61,31,.15);
+  color:rgba(92,61,31,.30);
+}
+.message.official{
+  border-left-color:rgba(130,48,39,.58);
+  background:linear-gradient(90deg,rgba(128,47,38,.045),transparent 52%)!important;
+}
+.message-box{
+  border-top-color:rgba(101,68,35,.31);
+  background:rgba(255,245,216,.045);
+}
+
+/* Slightly warmer wood and cleaner report contrast. */
+.left-column,.right-column{
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.03),transparent 12% 87%,rgba(0,0,0,.27)),
+    url("assets/wood-v6.svg") center/430px auto repeat;
+  box-shadow:
+    inset 0 0 0 2px #79512a,
+    inset 0 0 26px rgba(14,7,4,.36),
+    0 9px 18px rgba(0,0,0,.37);
+}
+.panel-heading{
+  background:
+    linear-gradient(180deg,rgba(118,70,31,.37),rgba(15,8,4,.55));
+}
+.battle-head strong{color:#362519}
+.battle-head small{color:#6b4c2d}
+.battle-stats,.odds-list{color:#382719}
+
+/* Keep props subordinate to the ledger. */
+.vine-left,.vine-right{opacity:.39}
+.props-right{opacity:.66}
+.props-left{opacity:.57}
+.lantern-decor{opacity:.84}
+
+@media(max-width:1280px){
+  .masthead{background-position:center}
+}
