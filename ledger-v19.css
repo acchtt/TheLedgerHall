@@ -1,0 +1,611 @@
+@import url("ledger-v15.css?build=a798422");
+
+/* V19 — composite reconstruction from the approved reference. */
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(125, 109, 72, .20), transparent 42%),
+    #15110c;
+}
+
+body::before,
+.landscape,
+.frame-decor {
+  display: none !important;
+}
+
+.page-frame {
+  container-type: inline-size;
+  position: relative;
+  width: min(100vw, calc(100vh * 1.333333));
+  max-width: none;
+  aspect-ratio: 1448 / 1086;
+  min-height: 0;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background-color: #26170f;
+  background-image: var(--ledger-composite-v19);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  box-shadow: 0 0 58px rgba(0, 0, 0, .82);
+}
+
+.page-frame::before,
+.page-frame::after {
+  display: none !important;
+}
+
+/* Header: the painted scenery, banner, title, ribbon and toolbar live in the composite. */
+.masthead {
+  position: absolute;
+  inset: 0 0 auto 0;
+  display: block;
+  width: 100%;
+  height: 19.1%;
+  min-height: 0;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.masthead::before,
+.masthead::after,
+.hanging-banner,
+.brand {
+  display: none !important;
+}
+
+.summary-card {
+  position: absolute;
+  top: 22.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 13.1%;
+  min-height: 0;
+  height: 69%;
+  margin: 0;
+  padding: 0 1.1%;
+  border: 0;
+  clip-path: none;
+  background: transparent !important;
+  filter: none;
+  box-shadow: none;
+  color: #2a2118;
+  text-shadow: none;
+}
+
+.lifetime-card {
+  left: 13.7%;
+}
+
+.summary-card.positive {
+  left: 71.2%;
+  width: 15.4%;
+}
+
+.summary-card .eyebrow {
+  margin-bottom: .55cqw;
+  font: 600 .88cqw/1.1 Georgia, "Times New Roman", serif;
+  letter-spacing: .03em;
+  color: #2b2218;
+}
+
+.summary-card .eyebrow small {
+  font-size: .72cqw;
+}
+
+.summary-card strong {
+  margin: 0 0 .58cqw;
+  font: 600 2.05cqw/1 Georgia, "Times New Roman", serif;
+}
+
+.summary-card small {
+  font: 400 1.04cqw/1.36 Georgia, "Times New Roman", serif;
+  color: #281f17;
+}
+
+.summary-card .help-dot {
+  display: none;
+}
+
+.utility-nav {
+  position: absolute;
+  top: 1.4%;
+  right: 3.5%;
+  width: 7.9%;
+  height: 96%;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.utility-nav button {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: transparent;
+  text-shadow: none;
+  opacity: .015;
+}
+
+.utility-nav button span {
+  color: transparent;
+}
+
+/* Main reference geometry. */
+.dashboard {
+  position: absolute;
+  top: 19.25%;
+  left: .45%;
+  width: 96.55%;
+  height: 69.75%;
+  display: grid;
+  grid-template-columns: 26.75% 42.7% 27.05%;
+  column-gap: 1.75%;
+  align-items: stretch;
+  padding: 0;
+  margin: 0;
+}
+
+.left-column,
+.right-column,
+.chat-panel,
+.wood-panel {
+  min-height: 0;
+  border: 0;
+  background: transparent !important;
+  box-shadow: none;
+}
+
+.left-column,
+.right-column {
+  position: relative;
+  display: block;
+  overflow: visible;
+}
+
+.wood-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.left-column .wood-panel:nth-child(1) {
+  top: 0;
+  height: 31.2%;
+}
+
+.left-column .wood-panel:nth-child(2) {
+  top: 31.2%;
+  height: 28.1%;
+}
+
+.left-column .wood-panel:nth-child(3) {
+  top: 59.3%;
+  height: 40.7%;
+}
+
+.right-column .wood-panel:nth-child(1) {
+  top: 0;
+  height: 53.2%;
+}
+
+.right-column .wood-panel:nth-child(2) {
+  top: 53.2%;
+  height: 27.4%;
+}
+
+.right-column .wood-panel:nth-child(3) {
+  top: 80.6%;
+  height: 19.4%;
+}
+
+.panel-heading {
+  position: relative;
+  height: 22%;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent !important;
+  box-shadow: none;
+}
+
+.recent-panel .panel-heading {
+  height: 15.5%;
+}
+
+.right-column .wood-panel:nth-child(2) .panel-heading {
+  height: 20%;
+}
+
+.panel-heading h2,
+.panel-heading::before,
+.panel-heading::after {
+  visibility: hidden;
+}
+
+.panel-heading button {
+  opacity: .01;
+}
+
+.panel-body,
+.record-grid,
+.battle-head,
+.battle-stats,
+.odds-list {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  clip-path: none;
+  background: transparent !important;
+  filter: none;
+  box-shadow: none;
+}
+
+/* Left ledger content. */
+#open-wagers {
+  position: absolute;
+  top: 23%;
+  left: 5.5%;
+  right: 5.8%;
+  bottom: 5.5%;
+}
+
+.wager-card {
+  min-height: 100%;
+  padding: 1.1cqw 5.3cqw 1cqw 2.9cqw;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.wager-card strong {
+  font-size: 1.35cqw;
+  line-height: 1.18;
+}
+
+.wager-card .selection {
+  margin: 1.12cqw 0 .9cqw;
+  font-size: 1.32cqw;
+  line-height: 1.3;
+}
+
+.wager-meta {
+  font-size: 1.02cqw;
+}
+
+.wager-card::before {
+  left: .45cqw;
+  top: .58cqw;
+  width: 2.4cqw;
+  height: 2.9cqw;
+}
+
+.badge {
+  width: 4.65cqw;
+  height: 4.65cqw;
+  right: .5cqw;
+  bottom: .75cqw;
+  font-size: .55cqw;
+}
+
+#trial-details {
+  position: absolute;
+  top: 25%;
+  left: 9.5%;
+  right: 8.2%;
+  bottom: 8.5%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-content: center;
+  row-gap: .62cqw;
+  font: 400 1.18cqw/1.25 Georgia, "Times New Roman", serif;
+}
+
+#trial-details dt,
+#trial-details dd {
+  padding: 0 0 .28cqw;
+  border-bottom: 1px solid rgba(70, 51, 28, .16);
+}
+
+#recent-results {
+  position: absolute;
+  top: 17%;
+  left: 8.5%;
+  right: 7%;
+  bottom: 34%;
+  padding: 0;
+  font: 400 .96cqw/1.15 Georgia, "Times New Roman", serif;
+}
+
+#recent-results li {
+  padding: .46cqw 0 .42cqw 1.1cqw;
+  border-bottom: 1px solid rgba(198, 164, 98, .14);
+}
+
+.recent-panel blockquote {
+  display: none;
+}
+
+/* Central manuscript. */
+.chat-panel {
+  position: relative;
+  height: 100%;
+  padding: 0;
+  overflow: visible;
+  clip-path: none;
+}
+
+.chat-panel::before,
+.chat-panel::after,
+.scroll-corner,
+.chat-panel h2 {
+  display: none !important;
+}
+
+.chat-feed {
+  position: absolute;
+  top: 8.2%;
+  left: 4.4%;
+  right: 3.2%;
+  bottom: 11.8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25%;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.message {
+  flex: 0 0 auto;
+  min-height: 0;
+  margin: 0 !important;
+  padding: 1.05cqw 5.2cqw 1.02cqw 5.45cqw;
+  border: 1px solid rgba(93, 71, 42, .27);
+  border-radius: 0;
+  background: rgba(246, 235, 206, .19) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 250, 229, .13);
+  font: 400 1.08cqw/1.3 Georgia, "Times New Roman", serif;
+  color: #2c2218;
+}
+
+.message:nth-child(1) {
+  width: 79%;
+  min-height: 13.4%;
+  margin-left: 16% !important;
+  padding-left: 1.5cqw;
+}
+
+.message:nth-child(2) {
+  width: 94%;
+  min-height: 15.2%;
+}
+
+.message:nth-child(3) {
+  width: 94%;
+  min-height: 20.6%;
+}
+
+.message:nth-child(4) {
+  width: 79%;
+  min-height: 9.2%;
+  margin-left: 16% !important;
+  padding-left: 1.5cqw;
+}
+
+.message:nth-child(5) {
+  width: 94%;
+  min-height: 15.8%;
+}
+
+.message .meta {
+  margin-bottom: .52cqw;
+  font-size: .94cqw;
+}
+
+.message .bet-line {
+  margin-top: .45cqw;
+  font-size: 1.24cqw;
+}
+
+.message.user::before {
+  right: .8cqw;
+  width: 4.1cqw;
+  height: 4.1cqw;
+}
+
+.message.council::before {
+  left: .65cqw;
+  width: 3.75cqw;
+  height: 4.35cqw;
+}
+
+.message-box {
+  position: absolute;
+  left: 4.4%;
+  right: 9.7%;
+  bottom: 2.2%;
+  min-height: 0;
+  height: 6.4%;
+  margin: 0;
+  border: 1px solid rgba(93, 71, 42, .26);
+  background: rgba(244, 232, 201, .22);
+  box-shadow: none;
+}
+
+.message-box input {
+  padding: .85cqw 1.1cqw;
+  font: italic 1.08cqw/1 Georgia, "Times New Roman", serif;
+}
+
+.message-box button {
+  width: 4.2cqw;
+  background: transparent;
+}
+
+/* Battle report and odds. Team marks are deliberately left alone. */
+.battle-panel .panel-heading {
+  height: 13.5%;
+}
+
+.battle-head {
+  position: absolute;
+  top: 13.5%;
+  left: 6%;
+  right: 4.6%;
+  height: 18%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.battle-head strong {
+  font: 400 1.28cqw/1.15 Georgia, "Times New Roman", serif;
+}
+
+.battle-head small {
+  margin-top: .45cqw;
+  font: 400 .72cqw/1 Georgia, "Times New Roman", serif;
+}
+
+.scoreboard {
+  position: absolute;
+  top: 31.5%;
+  left: 6%;
+  right: 4.6%;
+  height: 23%;
+  margin: 0;
+  padding: .55cqw 1.1cqw;
+  border: 0;
+  background: transparent !important;
+}
+
+.score-center strong {
+  font: 400 2.65cqw/1 Georgia, "Times New Roman", serif;
+}
+
+.score-center small,
+.team-mark {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.battle-stats {
+  position: absolute;
+  top: 54.5%;
+  left: 6%;
+  right: 4.6%;
+  bottom: 4.3%;
+  display: grid;
+  align-content: center;
+  font: 400 .93cqw/1.1 Georgia, "Times New Roman", serif;
+}
+
+.battle-stats div {
+  padding: .42cqw .35cqw;
+}
+
+.right-column .wood-panel:nth-child(2) .panel-heading {
+  height: 20%;
+}
+
+#odds-list {
+  position: absolute;
+  top: 22%;
+  left: 7.5%;
+  right: 5%;
+  bottom: 8%;
+  display: grid;
+  align-content: center;
+  font: 400 .86cqw/1.1 Georgia, "Times New Roman", serif;
+}
+
+.odds-row {
+  padding: .42cqw .3cqw;
+}
+
+.current-read {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2cqw 1cqw .6cqw;
+  color: #d6ad61;
+  background: transparent !important;
+}
+
+.current-read span {
+  font-size: .84cqw;
+}
+
+.current-read strong {
+  margin-top: .55cqw;
+  font: 400 1.48cqw/1.1 Georgia, "Times New Roman", serif;
+}
+
+.current-read img {
+  width: 3.25cqw;
+  height: auto;
+  margin-top: .6cqw;
+}
+
+/* The original footer artwork remains visible; buttons are transparent hit areas. */
+.bottom-nav {
+  position: absolute;
+  top: 91.1%;
+  left: 10.2%;
+  width: 77.2%;
+  height: 7.25%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent !important;
+  box-shadow: none;
+}
+
+.bottom-nav button {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent !important;
+  color: transparent;
+  text-shadow: none;
+  opacity: .015;
+}
+
+.bottom-nav button span {
+  color: transparent;
+}
+
+.composite-v19-failed .page-frame {
+  background-image: none;
+}
+
+@media (max-aspect-ratio: 4 / 3) {
+  .page-frame {
+    width: 100vw;
+    height: auto;
+  }
+}
