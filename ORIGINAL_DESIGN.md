@@ -12,7 +12,7 @@ A production-first medieval fantasy dashboard built from reusable HTML, CSS, and
 
 ## Composition
 
-Desktop reference canvas: **1448 × 1086** (4:3), proportionally scaled inside wider screens.
+Desktop reference canvas: approximately **3:2**, proportionally scaled inside wider screens while retaining the original 29% / 42% / 27% main-column balance.
 
 - Header: approximately 20% height
 - Main content: approximately 70% height
@@ -74,4 +74,12 @@ One integrated carved navigation beam with five destinations.
 
 ## Current build target
 
-`original-v26.html`
+`original-v27.html`
+
+## V27 refinement priorities
+
+- Fill more of a 16:9 desktop viewport without distorting the interface
+- Increase type scale and ledger readability
+- Remove excessive vertical gaps between Council Notes messages
+- Give the Battle Report stronger hierarchy and density
+- Keep ivy slim and confined to the outer frame
