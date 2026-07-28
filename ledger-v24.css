@@ -1,0 +1,120 @@
+@import url("ledger-v23-final.css?build=blob24");
+
+/* V24 — stable illustrated skin with clean, opaque live-data surfaces. */
+body.theme-dusk,
+body.theme-dusk .page-frame{
+  filter:none!important;
+}
+body.theme-dusk::after{display:none!important}
+
+.page-frame{
+  background-image:var(--ledger-skin-v23)!important;
+}
+
+/* Prevent sample values baked into the art from showing beneath live content. */
+.summary-card{
+  background:
+    linear-gradient(rgba(247,234,199,.965),rgba(226,201,153,.965)),
+    url("assets/parchment-v12.svg") center/cover no-repeat!important;
+  border:1px solid rgba(77,51,25,.34)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,248,218,.35),
+    inset 0 0 18px rgba(91,58,26,.09)!important;
+}
+
+#open-wagers,
+#trial-details{
+  box-sizing:border-box;
+  background:
+    linear-gradient(rgba(247,234,199,.97),rgba(226,201,153,.97)),
+    url("assets/parchment-v12.svg") center/cover no-repeat!important;
+  border:1px solid rgba(77,51,25,.32)!important;
+  box-shadow:inset 0 0 20px rgba(91,58,26,.08)!important;
+}
+#open-wagers{padding:.35cqw}
+#trial-details{padding:.85cqw 1cqw!important}
+
+#recent-results{
+  background:
+    linear-gradient(rgba(30,17,10,.965),rgba(42,24,13,.965)),
+    url("assets/wood-v16.svg") center/cover no-repeat!important;
+}
+
+.chat-panel::before{
+  content:""!important;
+  display:block!important;
+  position:absolute;
+  top:5.8%;
+  right:2.8%;
+  bottom:2.8%;
+  left:2.8%;
+  z-index:0;
+  pointer-events:none;
+  background:
+    linear-gradient(rgba(241,222,181,.975),rgba(226,198,148,.975)),
+    url("assets/parchment-v12.svg") center/cover no-repeat!important;
+  border:1px solid rgba(83,55,27,.34);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,248,218,.28),
+    inset 0 0 30px rgba(91,58,26,.08);
+}
+.chat-feed,.message-box{z-index:2}
+.message{
+  background:rgba(247,234,202,.90)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,249,227,.18),
+    0 .12cqw .24cqw rgba(57,35,16,.10)!important;
+}
+.message.official{
+  background:rgba(239,220,177,.94)!important;
+}
+.message-box{
+  background:rgba(240,220,177,.91)!important;
+  border:1px solid rgba(83,55,27,.28)!important;
+}
+
+.battle-panel::before,
+.right-column .wood-panel:nth-child(2)::before,
+.current-read::before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  pointer-events:none;
+}
+.battle-panel::before{
+  top:13.2%;right:5.1%;bottom:3.8%;left:5.2%;
+  background:
+    linear-gradient(rgba(247,234,199,.97),rgba(226,201,153,.97)),
+    url("assets/parchment-v12.svg") center/cover no-repeat!important;
+  border:1px solid rgba(77,51,25,.32);
+  box-shadow:inset 0 0 20px rgba(91,58,26,.08);
+}
+.right-column .wood-panel:nth-child(2)::before{
+  top:20.5%;right:5.3%;bottom:5.5%;left:5.3%;
+  background:
+    linear-gradient(rgba(247,234,199,.97),rgba(226,201,153,.97)),
+    url("assets/parchment-v12.svg") center/cover no-repeat!important;
+  border:1px solid rgba(77,51,25,.32);
+}
+.current-read::before{
+  inset:0;
+  background:
+    linear-gradient(rgba(31,18,10,.96),rgba(42,24,13,.96)),
+    url("assets/wood-v16.svg") center/cover no-repeat!important;
+  border:1px solid rgba(166,111,43,.26);
+}
+.battle-head,.scoreboard,.battle-stats,#odds-list,.current-read>span,.current-read>strong,.current-read>img{
+  position:relative;
+  z-index:2;
+}
+
+/* Keep the painted frame crisp while live text remains readable. */
+.wager-card strong,.message,.record-grid,.battle-panel,.odds-list{
+  text-shadow:0 1px rgba(255,246,215,.22);
+}
+
+.skin-v23-failed .page-frame{
+  background:
+    linear-gradient(180deg,#44301c,#201108),
+    url("assets/wood-v16.svg") center/cover!important;
+}
