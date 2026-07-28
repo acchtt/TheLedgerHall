@@ -1,50 +1,52 @@
 # The Ledger Hall — Original Design
 
 **Status:** Approved source of truth  
-**Version:** Original Design 1.0  
-**Locked:** 2026-07-28
+**Version:** Fantasy Concept 1.0  
+**Locked:** 2026-07-29
 
-This document replaces all earlier screenshot-matching attempts as the visual source of truth for The Ledger Hall.
+This document replaces the earlier approximation passes. The visual source of truth is the **main fantasy Ledger Hall interface** from the approved concept image. The design-board notes, layout diagrams, palettes, and documentation panels around that interface are not part of the live page.
 
 ## Design direction
 
-A production-first medieval fantasy dashboard built from reusable HTML, CSS, and SVG components. It should feel like an illustrated council ledger without depending on a full-page screenshot, base64 loader, or baked-in text.
+A polished medieval-fantasy game dashboard built from reusable HTML, CSS, and normal local SVG assets. It must capture the illustrated valley, carved architecture, parchment surfaces, gold trim, crest banner, wax seals, and dense council-hall composition without using a full-page screenshot or baking live text into artwork.
 
 ## Composition
 
-Desktop reference canvas: approximately **3:2**, proportionally scaled inside wider screens.
+Desktop reference canvas: approximately **4:3**, proportionally scaled inside wider screens.
 
-- Hero header: approximately **23%** height
-- Main content: approximately **66%** height
-- Footer navigation: approximately **11%** height
-- Main columns: approximately **28% / 43% / 28%**
+- Hero header: approximately **22.5%** height
+- Main content: approximately **67.5%** height
+- Footer navigation: approximately **10%** height
+- Main columns: approximately **27% / 44% / 27%**
 
 ### Header
 
-1. Hanging forest-green banner with gold tree crest
-2. Lifetime P/L parchment card
-3. Central crest, monumental title, and dimensional parchment ribbon
-4. Trial Record parchment card
+1. Hanging forest-green banner with ornate gold tree crest
+2. Lifetime P/L parchment plaque
+3. Central crest, monumental title, and dimensional ribbon subtitle
+4. Trial Record parchment plaque
 5. Vertical carved utility panel: Chamber, Themes, Hide $
+6. Cinematic valley, river, layered mountains, distant castle, tree canopy, haze, and warm daylight
 
 ### Left ledger
 
-1. Open Wagers
-2. Trial Record
-3. Recent Results and quote
+1. Open Wagers parchment card with shield and wax seal
+2. Trial Record parchment table
+3. Recent Results dark carved ledger and quote
 
 ### Center ledger
 
 - Dominant irregular-edged Council Notes manuscript
-- Five framed notes with deliberate height rhythm
+- Five framed manuscript notes with deliberate height rhythm
 - Official Bet Candidate receives restrained green emphasis
+- Council shields and user wax seals remain live components
 - Attached manuscript-style message input
 
 ### Right ledger
 
 1. Featured Battle Report with distinct title, score, and statistics zones
-2. Compact Odds Snapshot
-3. Anchored Current Read section
+2. Compact Odds Snapshot parchment table
+3. Anchored Current Read carved section
 
 ### Footer
 
@@ -52,10 +54,11 @@ One substantial carved navigation beam with five destinations and a lit inset ac
 
 ## Visual system
 
-- Dark carved oak with restrained gold inlay
-- Warm fibrous parchment with irregular edges
-- Cinematic valley header with river, layered mountains, distant castle, branches, haze, and birds
-- Decorative foliage confined to the scenery and outer architecture only
+- Very dark carved oak with restrained antique-gold inlay
+- Warm fibrous parchment with worn irregular edges
+- Cinematic painted valley header rather than flat geometric mountains
+- Controlled vines, roots, canopy, and lantern details confined to the outer frame
+- Ornate forest-green and gold tree crest
 - Forest green for positive values
 - Muted red for negative values
 - Antique gold for headings and active controls
@@ -64,7 +67,8 @@ One substantial carved navigation beam with five destinations and a lit inset ac
 
 ## Non-negotiable implementation rules
 
-- No full-page image backgrounds
+- Follow the **main fantasy UI**, not the surrounding design-board documentation
+- No full-page screenshot backgrounds
 - No base64 image loaders
 - No sample text embedded in artwork
 - No inherited V22–V25 styles
@@ -75,14 +79,13 @@ One substantial carved navigation beam with five destinations and a lit inset ac
 
 ## Current build target
 
-`original-v31.html`
+`original-v32.html`
 
-## V31 acceptance targets
+## V32 acceptance targets
 
-- Header must read as a cinematic hero scene rather than a row of cards
-- Council Notes must be the obvious focal artifact
+- Graphics must use the new cinematic landscape, carved oak, parchment, crest, and outer-frame asset kit
+- Overall canvas and density must resemble the approved fantasy concept rather than V31's generic medieval dashboard
+- Council Notes must remain the focal artifact
 - Battle Report must feel like a featured report wing
 - Footer must read as a substantial carved architectural beam
-- Parchment and wood silhouettes must feel less rectangular and more handcrafted
-- No decorative foliage may cross readable content
-- Existing V30 data, storage, and interaction behavior must remain intact
+- All live data and interaction behavior must remain intact
