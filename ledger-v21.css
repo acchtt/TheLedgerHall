@@ -1,0 +1,208 @@
+@import url("ledger-v19.css?build=composite19");
+
+/* V21 — stable illustrated hybrid: original architecture + clean live surfaces. */
+
+html,body{width:100%;height:100%;margin:0}
+body{
+  overflow:hidden;
+  background:#100c08;
+}
+body.theme-dusk,
+body.theme-dusk .page-frame{
+  filter:none!important;
+}
+body.theme-dusk::after{display:none!important}
+
+.page-frame{
+  width:min(100vw,calc(100vh * 1.333333));
+  height:min(100vh,calc(100vw * .75));
+  aspect-ratio:4/3;
+  margin:auto;
+  background-color:#24170f;
+  background-image:var(--ledger-composite-v19)!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+  background-size:100% 100%!important;
+}
+
+/* Clean header data parchment; painted title and scenery remain visible. */
+.summary-card{
+  box-sizing:border-box;
+  background:
+    linear-gradient(rgba(246,232,196,.96),rgba(228,204,157,.96)),
+    url("assets/parchment-v12.svg") center/cover no-repeat!important;
+  border:1px solid rgba(78,53,27,.36)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,249,225,.42),
+    inset 0 0 22px rgba(91,58,25,.10),
+    0 2px 6px rgba(31,18,8,.18)!important;
+}
+.summary-card .help-dot{display:grid!important}
+.utility-nav button{opacity:.01!important}
+
+/* Keep the illustrated frame, but blank every live data zone. */
+.left-column,.right-column,.chat-panel,.wood-panel{
+  background:transparent!important;
+}
+
+#open-wagers{
+  box-sizing:border-box;
+  padding:.45cqw;
+  background:
+    linear-gradient(rgba(246,232,196,.97),rgba(228,205,160,.97)),
+    url("assets/parchment-v12.svg") center/cover no-repeat!important;
+  border:1px solid rgba(79,53,27,.34)!important;
+  box-shadow:inset 0 0 18px rgba(93,59,25,.08)!important;
+}
+.wager-card{
+  background:transparent!important;
+}
+
+#trial-details{
+  box-sizing:border-box;
+  padding:1.05cqw 1.15cqw!important;
+  background:
+    linear-gradient(rgba(246,232,196,.97),rgba(228,205,160,.97)),
+    url("assets/parchment-v12.svg") center/cover no-repeat!important;
+  border:1px solid rgba(79,53,27,.34)!important;
+  box-shadow:inset 0 0 18px rgba(93,59,25,.08)!important;
+}
+
+#recent-results{
+  box-sizing:border-box;
+  padding:.35cqw .55cqw!important;
+  background:
+    linear-gradient(rgba(34,21,12,.965),rgba(45,27,15,.965)),
+    url("assets/wood-v16.svg") center/cover no-repeat!important;
+  border:1px solid rgba(180,127,60,.34);
+  box-shadow:inset 0 0 20px rgba(0,0,0,.30);
+}
+
+/* Rebuild the manuscript surface so baked reference messages cannot bleed through. */
+.chat-panel::before{
+  content:""!important;
+  display:block!important;
+  position:absolute;
+  inset:1.7% 1.6% 1.6%;
+  z-index:0;
+  background:
+    linear-gradient(rgba(239,219,177,.985),rgba(226,199,149,.985)),
+    url("assets/parchment-v12.svg") center/cover no-repeat!important;
+  border:1px solid rgba(80,54,28,.40);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,248,221,.38),
+    inset 0 0 34px rgba(91,59,28,.11),
+    0 3px 10px rgba(30,18,9,.18);
+}
+.chat-panel h2{
+  display:block!important;
+  position:absolute;
+  z-index:2;
+  top:2.5%;
+  left:0;
+  right:0;
+  margin:0;
+  padding:0;
+  text-align:center;
+  color:#342519;
+  font:500 1.26cqw/1.2 Georgia,"Times New Roman",serif;
+  letter-spacing:.07em;
+}
+.chat-panel h2 span::before,
+.chat-panel h2 span::after{
+  content:"";
+  display:inline-block;
+  width:4.5cqw;
+  height:1px;
+  margin:0 1cqw .28cqw;
+  background:rgba(77,51,27,.38);
+}
+.chat-feed,.message-box{z-index:2}
+.chat-feed{
+  top:8.8%!important;
+  left:4.7%!important;
+  right:4.3%!important;
+  bottom:11.2%!important;
+}
+.message{
+  background:
+    linear-gradient(rgba(246,232,199,.98),rgba(233,211,169,.98)),
+    url("assets/parchment-v12.svg") center/cover no-repeat!important;
+  border:1px solid rgba(81,55,29,.36)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,249,227,.32),
+    0 2px 5px rgba(55,34,15,.11)!important;
+}
+.message.official{
+  background:
+    linear-gradient(rgba(237,222,186,.99),rgba(220,194,145,.99)),
+    url("assets/parchment-v12.svg") center/cover no-repeat!important;
+}
+.message-box{
+  background:rgba(232,211,170,.96)!important;
+  border:1px solid rgba(81,55,29,.34)!important;
+}
+
+/* One clean report sheet over the illustrated right-hand frame. */
+.battle-panel::before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  top:13.2%;
+  left:5.6%;
+  right:4.6%;
+  bottom:3.8%;
+  background:
+    linear-gradient(rgba(246,232,196,.985),rgba(228,205,160,.985)),
+    url("assets/parchment-v12.svg") center/cover no-repeat;
+  border:1px solid rgba(79,53,27,.36);
+  box-shadow:inset 0 0 22px rgba(92,58,25,.09);
+}
+.battle-head,.scoreboard,.battle-stats{
+  z-index:2;
+  background:transparent!important;
+}
+
+.right-column .wood-panel:nth-child(2)::before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  top:20.5%;
+  left:6.3%;
+  right:4.9%;
+  bottom:6.5%;
+  background:
+    linear-gradient(rgba(246,232,196,.985),rgba(228,205,160,.985)),
+    url("assets/parchment-v12.svg") center/cover no-repeat;
+  border:1px solid rgba(79,53,27,.36);
+  box-shadow:inset 0 0 18px rgba(92,58,25,.08);
+}
+#odds-list{z-index:2}
+
+.current-read::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background:
+    linear-gradient(rgba(34,21,12,.97),rgba(45,27,15,.97)),
+    url("assets/wood-v16.svg") center/cover no-repeat;
+  border:1px solid rgba(174,119,51,.28);
+  box-shadow:inset 0 0 22px rgba(0,0,0,.36);
+}
+.current-read span,.current-read strong,.current-read img{position:relative;z-index:2}
+
+/* Live footer remains transparent over the illustrated footer artwork. */
+.bottom-nav button{opacity:.01!important}
+
+.composite-v19-failed .page-frame{
+  background-image:
+    linear-gradient(#2c1b10,#1b1009)!important;
+}
+
+@media (max-aspect-ratio:4/3){
+  .page-frame{
+    width:100vw;
+    height:75vw;
+  }
+}
