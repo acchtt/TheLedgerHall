@@ -12,18 +12,18 @@ A production-first medieval fantasy dashboard built from reusable HTML, CSS, and
 
 ## Composition
 
-Desktop reference canvas: approximately **3:2**, proportionally scaled inside wider screens while retaining the original 29% / 42% / 27% main-column balance.
+Desktop reference canvas: approximately **3:2**, proportionally scaled inside wider screens.
 
-- Header: approximately 20% height
-- Main content: approximately 70% height
-- Footer navigation: approximately 10% height
-- Main columns: approximately **29% / 42% / 27%**
+- Hero header: approximately **23%** height
+- Main content: approximately **66%** height
+- Footer navigation: approximately **11%** height
+- Main columns: approximately **28% / 43% / 28%**
 
 ### Header
 
 1. Hanging forest-green banner with gold tree crest
 2. Lifetime P/L parchment card
-3. Central crest, title, and parchment ribbon subtitle
+3. Central crest, monumental title, and dimensional parchment ribbon
 4. Trial Record parchment card
 5. Vertical carved utility panel: Chamber, Themes, Hide $
 
@@ -35,26 +35,27 @@ Desktop reference canvas: approximately **3:2**, proportionally scaled inside wi
 
 ### Center ledger
 
-- Large Council Notes parchment
-- Five framed manuscript messages
-- Attached message input
+- Dominant irregular-edged Council Notes manuscript
+- Five framed notes with deliberate height rhythm
+- Official Bet Candidate receives restrained green emphasis
+- Attached manuscript-style message input
 
 ### Right ledger
 
-1. Battle Report
-2. Odds Snapshot
-3. Current Read
+1. Featured Battle Report with distinct title, score, and statistics zones
+2. Compact Odds Snapshot
+3. Anchored Current Read section
 
 ### Footer
 
-One integrated carved navigation beam with five destinations.
+One substantial carved navigation beam with five destinations and a lit inset active state.
 
 ## Visual system
 
 - Dark carved oak with restrained gold inlay
 - Warm fibrous parchment with irregular edges
-- Painted valley header with river, mountains, castle, and subtle branches
-- Restrained ivy around the outside frame only
+- Cinematic valley header with river, layered mountains, distant castle, branches, haze, and birds
+- Decorative foliage confined to the scenery and outer architecture only
 - Forest green for positive values
 - Muted red for negative values
 - Antique gold for headings and active controls
@@ -70,16 +71,18 @@ One integrated carved navigation beam with five destinations.
 - Normal local SVG/CSS assets only
 - Decorative elements must never overlap live content
 - Components must remain reusable and data-driven
-- The existing ledger functions must remain possible: messages, wager detection, unit conversion, persistence, themes, hidden-money mode, collapsible panels, and navigation
+- Existing ledger functions must remain possible: messages, wager detection, unit conversion, persistence, themes, hidden-money mode, collapsible panels, and navigation
 
 ## Current build target
 
-`original-v30.html`
+`original-v31.html`
 
-## V30 refinement priorities
+## V31 acceptance targets
 
-- Prevent Trial Record and Odds Snapshot rows from clipping beneath their carved headings
-- Improve side-ledger text scale without altering the established column geometry
-- Divide the Battle Report into clear title, score, and statistic zones
-- Add subtle parchment variation using ordinary CSS and local SVG assets
-- Preserve the V29 composition, storage, and interaction layer
+- Header must read as a cinematic hero scene rather than a row of cards
+- Council Notes must be the obvious focal artifact
+- Battle Report must feel like a featured report wing
+- Footer must read as a substantial carved architectural beam
+- Parchment and wood silhouettes must feel less rectangular and more handcrafted
+- No decorative foliage may cross readable content
+- Existing V30 data, storage, and interaction behavior must remain intact
