@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1448 1086" preserveAspectRatio="none">
+  <defs><linearGradient id="vine" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5a351e"/><stop offset="1" stop-color="#23120b"/></linearGradient><linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#647a41"/><stop offset="1" stop-color="#274329"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity=".55"/></filter></defs>
+  <g filter="url(#s)">
+    <g fill="none" stroke="url(#vine)" stroke-linecap="round"><path d="M34 34c-21 110 22 188 2 286-21 103-13 171 3 268 12 74-16 143-8 219 7 64 26 131 2 243" stroke-width="15"/><path d="M1414 34c21 110-22 188-2 286 21 103 13 171-3 268-12 74 16 143 8 219-7 64-26 131-2 243" stroke-width="15"/></g>
+    <g fill="url(#leaf)">
+      <ellipse cx="47" cy="112" rx="30" ry="13" transform="rotate(-26 47 112)"/><ellipse cx="31" cy="182" rx="26" ry="12" transform="rotate(22 31 182)"/><ellipse cx="49" cy="269" rx="29" ry="13" transform="rotate(-23 49 269)"/><ellipse cx="30" cy="377" rx="27" ry="12" transform="rotate(26 30 377)"/><ellipse cx="48" cy="494" rx="29" ry="13" transform="rotate(-24 48 494)"/><ellipse cx="31" cy="635" rx="27" ry="12" transform="rotate(23 31 635)"/><ellipse cx="47" cy="776" rx="29" ry="13" transform="rotate(-24 47 776)"/><ellipse cx="30" cy="925" rx="27" ry="12" transform="rotate(22 30 925)"/>
+      <ellipse cx="1401" cy="112" rx="30" ry="13" transform="rotate(26 1401 112)"/><ellipse cx="1417" cy="182" rx="26" ry="12" transform="rotate(-22 1417 182)"/><ellipse cx="1399" cy="269" rx="29" ry="13" transform="rotate(23 1399 269)"/><ellipse cx="1418" cy="377" rx="27" ry="12" transform="rotate(-26 1418 377)"/><ellipse cx="1400" cy="494" rx="29" ry="13" transform="rotate(24 1400 494)"/><ellipse cx="1417" cy="635" rx="27" ry="12" transform="rotate(-23 1417 635)"/><ellipse cx="1401" cy="776" rx="29" ry="13" transform="rotate(24 1401 776)"/><ellipse cx="1418" cy="925" rx="27" ry="12" transform="rotate(-22 1418 925)"/>
+    </g>
+  </g>
+</svg>
