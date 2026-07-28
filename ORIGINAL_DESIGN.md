@@ -74,12 +74,12 @@ One integrated carved navigation beam with five destinations.
 
 ## Current build target
 
-`original-v27.html`
+`original-v28.html`
 
-## V27 refinement priorities
+## V28 refinement priorities
 
-- Fill more of a 16:9 desktop viewport without distorting the interface
-- Increase type scale and ledger readability
-- Remove excessive vertical gaps between Council Notes messages
-- Give the Battle Report stronger hierarchy and density
-- Keep ivy slim and confined to the outer frame
+- Fill the default Council Notes parchment without leaving a large unused lower area
+- Improve Battle Report hierarchy and make its statistics easier to scan
+- Increase side-ledger and footer readability
+- Add parchment depth without introducing flat cards or full-page artwork
+- Keep ivy subtle and outside all live content
