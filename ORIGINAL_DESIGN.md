@@ -1,18 +1,18 @@
 # The Ledger Hall — Original Design
 
 **Status:** Approved source of truth  
-**Version:** Fantasy Concept 1.0  
+**Version:** Fantasy Concept 1.1  
 **Locked:** 2026-07-29
 
-This document replaces the earlier approximation passes. The visual source of truth is the **main fantasy Ledger Hall interface** from the approved concept image. The design-board notes, layout diagrams, palettes, and documentation panels around that interface are not part of the live page.
+The visual source of truth is the **main fantasy Ledger Hall interface** from the approved concept image. The surrounding design-board notes, diagrams, palettes, and documentation are not part of the live page.
 
 ## Design direction
 
-A polished medieval-fantasy game dashboard built from reusable HTML, CSS, and normal local SVG assets. It must capture the illustrated valley, carved architecture, parchment surfaces, gold trim, crest banner, wax seals, and dense council-hall composition without using a full-page screenshot or baking live text into artwork.
+A polished medieval-fantasy game dashboard with a painted raster environment and reusable live HTML components. The raster layer supplies the valley, castle, canopy, carved architecture, lantern, banner, panel framing, headings, and footer. Blank raster parchment and wood surfaces sit beneath all live figures, wagers, notes, odds, and controls.
 
 ## Composition
 
-Desktop reference canvas: approximately **4:3**, proportionally scaled inside wider screens.
+Desktop reference canvas: **4:3**, proportionally scaled inside wider screens.
 
 - Hero header: approximately **22.5%** height
 - Main content: approximately **67.5%** height
@@ -22,70 +22,68 @@ Desktop reference canvas: approximately **4:3**, proportionally scaled inside wi
 ### Header
 
 1. Hanging forest-green banner with ornate gold tree crest
-2. Lifetime P/L parchment plaque
-3. Central crest, monumental title, and dimensional ribbon subtitle
-4. Trial Record parchment plaque
-5. Vertical carved utility panel: Chamber, Themes, Hide $
-6. Cinematic valley, river, layered mountains, distant castle, tree canopy, haze, and warm daylight
+2. Lifetime P/L live parchment plaque
+3. Central painted crest, monumental title, and ribbon subtitle
+4. Trial Record live parchment plaque
+5. Vertical carved utility panel with live click targets
+6. Cinematic valley, river, layered mountains, distant castle, canopy, haze, and warm daylight
 
 ### Left ledger
 
-1. Open Wagers parchment card with shield and wax seal
-2. Trial Record parchment table
-3. Recent Results dark carved ledger and quote
+1. Open Wagers live parchment card with shield and wax seal
+2. Trial Record live parchment table
+3. Recent Results live list over blank raster wood
 
 ### Center ledger
 
-- Dominant irregular-edged Council Notes manuscript
-- Five framed manuscript notes with deliberate height rhythm
+- Painted Council Notes manuscript shell
+- Five live manuscript notes with deliberate height rhythm
 - Official Bet Candidate receives restrained green emphasis
 - Council shields and user wax seals remain live components
-- Attached manuscript-style message input
+- Attached live message input
 
 ### Right ledger
 
-1. Featured Battle Report with distinct title, score, and statistics zones
-2. Compact Odds Snapshot parchment table
-3. Anchored Current Read carved section
+1. Live Battle Report over blank raster parchment
+2. Live Odds Snapshot over blank raster parchment
+3. Live Current Read over blank raster wood
 
 ### Footer
 
-One substantial carved navigation beam with five destinations and a lit inset active state.
+One painted carved navigation beam with five transparent, accessible live click regions and a subtle active glow.
 
 ## Visual system
 
-- Very dark carved oak with restrained antique-gold inlay
-- Warm fibrous parchment with worn irregular edges
-- Cinematic painted valley header rather than flat geometric mountains
-- Controlled vines, roots, canopy, and lantern details confined to the outer frame
-- Ornate forest-green and gold tree crest
+- Painted fantasy hall raster skin
+- Very dark carved-oak raster texture
+- Warm fibrous blank parchment raster texture
+- Controlled vines, roots, canopy, and lantern confined to the painted architecture
 - Forest green for positive values
 - Muted red for negative values
 - Antique gold for headings and active controls
 - Cinzel for headings
-- Crimson Text or a similarly readable classic serif for body content
+- Crimson Text for body content
 
 ## Non-negotiable implementation rules
 
 - Follow the **main fantasy UI**, not the surrounding design-board documentation
-- No full-page screenshot backgrounds
-- No base64 image loaders
-- No sample text embedded in artwork
-- No inherited V22–V25 styles
-- Normal local SVG/CSS assets only
-- Decorative elements must never overlap live content
+- Painted environment may be raster, but all changing data must remain HTML
+- Blank raster surfaces must prevent baked sample data from bleeding through
+- No base64 or browser-side image reconstruction loaders
+- Assets must be normal repository WebP/SVG files
+- Decorative artwork must never block live content or controls
 - Components must remain reusable and data-driven
-- Existing ledger functions must remain possible: messages, wager detection, unit conversion, persistence, themes, hidden-money mode, collapsible panels, and navigation
+- Existing ledger functions must remain available: messages, wager detection, unit conversion, persistence, themes, hidden-money mode, collapsible panels, and navigation
 
 ## Current build target
 
-`original-v32.html`
+`original-v33.html`
 
-## V32 acceptance targets
+## V33 acceptance targets
 
-- Graphics must use the new cinematic landscape, carved oak, parchment, crest, and outer-frame asset kit
-- Overall canvas and density must resemble the approved fantasy concept rather than V31's generic medieval dashboard
+- The WebP skin must load as one normal repository asset without corruption
+- All live areas must use blank raster parchment or wood, not baked sample text
+- Overlay coordinates must align with the painted architecture at the 4:3 reference ratio
 - Council Notes must remain the focal artifact
-- Battle Report must feel like a featured report wing
-- Footer must read as a substantial carved architectural beam
-- All live data and interaction behavior must remain intact
+- Battle Report and footer controls must remain fully functional
+- The existing interaction and persistence layer must remain intact
