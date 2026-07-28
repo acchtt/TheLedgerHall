@@ -1,0 +1,1 @@
+V33 binary re-upload in progress. Expected RIFF/WebP and JPEG signatures will be verified before preview handoff.
