@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 300" preserveAspectRatio="xMidYMid slice">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f5e7bd"/><stop offset=".45" stop-color="#d8c58f"/><stop offset="1" stop-color="#718064"/></linearGradient>
+  <linearGradient id="far" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#a8a388"/><stop offset="1" stop-color="#6d7660"/></linearGradient>
+  <linearGradient id="near" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#697657"/><stop offset="1" stop-color="#33472f"/></linearGradient>
+  <linearGradient id="water" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e0dfc2"/><stop offset=".45" stop-color="#9da89a"/><stop offset="1" stop-color="#547064"/></linearGradient>
+  <linearGradient id="castle" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#76694e"/><stop offset="1" stop-color="#40382b"/></linearGradient>
+  <filter id="paint"><feTurbulence type="fractalNoise" baseFrequency=".018" numOctaves="3" seed="25" result="n"/><feColorMatrix in="n" type="saturate" values="0" result="g"/><feComponentTransfer in="g" result="a"><feFuncA type="table" tableValues="0 .12"/></feComponentTransfer><feBlend in="SourceGraphic" in2="a" mode="multiply"/></filter>
+  <filter id="mist"><feGaussianBlur stdDeviation="8"/></filter>
+</defs>
+<g filter="url(#paint)">
+  <rect width="1600" height="300" fill="url(#sky)"/>
+  <g fill="#fff5d2" opacity=".38" filter="url(#mist)"><ellipse cx="310" cy="56" rx="230" ry="44"/><ellipse cx="820" cy="45" rx="260" ry="54"/><ellipse cx="1300" cy="62" rx="220" ry="42"/></g>
+  <path d="M0 205 120 122 240 170 360 55 500 190 645 92 790 174 920 70 1060 180 1190 84 1325 163 1450 58 1600 178V300H0Z" fill="url(#far)" opacity=".8"/>
+  <path d="M0 224c190-54 360-47 530 5 175 54 345 44 520-5 208-58 388-60 550-24v100H0Z" fill="url(#near)"/>
+  <path d="M665 300c72-62 151-88 236-80 80 7 150 38 226 74-151-2-306 0-462 6Z" fill="url(#water)" opacity=".92"/>
+  <path d="M745 300c47-31 95-45 144-42 50 3 96 18 143 39-96-1-191 0-287 3Z" fill="#eef0d9" opacity=".23"/>
+  <g transform="translate(1215 45) scale(.86)" fill="url(#castle)" stroke="#342e24" stroke-width="2.2" opacity=".92">
+    <rect x="38" y="70" width="148" height="116"/><rect x="0" y="100" width="54" height="86"/><rect x="176" y="88" width="56" height="98"/><rect x="67" y="25" width="42" height="161"/><rect x="120" y="43" width="38" height="143"/>
+    <path d="M67 25 88 0l21 25ZM120 43l19-25 19 25ZM0 100l27-34 27 34ZM176 88l28-35 28 35Z"/>
+    <g fill="#d8c57d" stroke="none" opacity=".82"><rect x="79" y="60" width="10" height="16"/><rect x="134" y="76" width="10" height="15"/><rect x="80" y="116" width="10" height="15"/><rect x="134" y="123" width="10" height="15"/><rect x="18" y="123" width="9" height="14"/><rect x="199" y="116" width="9" height="14"/></g>
+  </g>
+  <g fill="#2d4630" opacity=".98"><path d="M0 0h315l-72 30-58 8-47 49-43-17-35 35L0 128Z"/><path d="M1600 0h-305l70 30 59 10 44 48 45-17 32 35 55 21Z"/></g>
+  <g stroke="#3f291a" stroke-width="15" fill="none" stroke-linecap="round" opacity=".95"><path d="M0 13c88 18 143 50 202 99 51 43 115 46 189 27"/><path d="M1600 13c-89 17-146 49-205 98-52 43-113 45-186 28"/></g>
+  <g fill="#6c874c"><ellipse cx="108" cy="43" rx="38" ry="17" transform="rotate(18 108 43)"/><ellipse cx="202" cy="82" rx="35" ry="15" transform="rotate(-14 202 82)"/><ellipse cx="1492" cy="44" rx="38" ry="17" transform="rotate(-18 1492 44)"/><ellipse cx="1397" cy="82" rx="34" ry="15" transform="rotate(14 1397 82)"/></g>
+  <g fill="none" stroke="#3f392f" stroke-width="2.4" opacity=".65"><path d="M490 61q12-13 24 0q12-13 24 0M940 53q12-13 24 0q12-13 24 0M1135 79q11-12 22 0q11-12 22 0"/></g>
+</g>
+</svg>
