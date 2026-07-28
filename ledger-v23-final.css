@@ -1,0 +1,11 @@
+@import url("ledger-v23.css?build=skin23");
+
+/* Header percentages are relative to the masthead, not the full canvas. */
+.summary-card{
+  top:16%;
+  height:74%;
+}
+.utility-nav{
+  top:2%;
+  height:96%;
+}
