@@ -74,12 +74,12 @@ One integrated carved navigation beam with five destinations.
 
 ## Current build target
 
-`original-v28.html`
+`original-v29.html`
 
-## V28 refinement priorities
+## V29 refinement priorities
 
-- Fill the default Council Notes parchment without leaving a large unused lower area
-- Improve Battle Report hierarchy and make its statistics easier to scan
-- Increase side-ledger and footer readability
-- Add parchment depth without introducing flat cards or full-page artwork
-- Keep ivy subtle and outside all live content
+- Keep all ivy and root decoration behind live content
+- Increase side-ledger, Battle Report, Odds Snapshot, and footer readability
+- Give the right report column slightly more usable width
+- Strengthen parchment edges and manuscript depth without introducing modern cards
+- Preserve the V28 composition and interaction layer
