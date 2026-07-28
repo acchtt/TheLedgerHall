@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 190">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f0d27a"/><stop offset="1" stop-color="#9e6c22"/></linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#244d2b"/><stop offset="1" stop-color="#102a18"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity=".55"/></filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <path d="M80 8 136 29v63c0 39-23 71-56 90-33-19-56-51-56-90V29L80 8Z" fill="url(#green)" stroke="#1a0d07" stroke-width="9"/>
+    <path d="M80 17 127 34v56c0 33-18 59-47 77-29-18-47-44-47-77V34L80 17Z" fill="none" stroke="#c39438" stroke-width="3"/>
+    <g fill="none" stroke="url(#gold)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5">
+      <path d="M80 139V67M80 72 57 54M80 80l24-24M70 65 52 41M91 66l18-26M64 82 43 72M96 82l21-10M80 96 57 90M80 96l24-7M72 111l-17 12M87 111l17 12M80 67V41"/>
+      <path d="M60 139c12-10 28-10 40 0M68 146h24"/>
+    </g>
+    <g fill="#d8b85a"><circle cx="52" cy="41" r="5"/><circle cx="109" cy="40" r="5"/><circle cx="43" cy="72" r="5"/><circle cx="117" cy="72" r="5"/><circle cx="57" cy="90" r="5"/><circle cx="104" cy="89" r="5"/></g>
+  </g>
+</svg>
