@@ -1,0 +1,133 @@
+@import url("original-v29.css?build=base30");
+
+/* Original Design V30 — clipping fixes, readable side ledgers, stronger report structure. */
+
+/* More convincing parchment surfaces without changing geometry. */
+.parchment-area,
+.council-book{
+  background-image:
+    radial-gradient(circle at 12% 18%,rgba(122,78,31,.07) 0 .18cqw,transparent .2cqw),
+    radial-gradient(circle at 84% 72%,rgba(122,78,31,.055) 0 .14cqw,transparent .17cqw),
+    linear-gradient(100deg,rgba(255,250,230,.16),rgba(180,126,66,.025) 52%,rgba(255,247,218,.1)),
+    url("assets/original-v26-parchment.svg");
+  background-position:center,center,center,center;
+  background-size:100% 100%,100% 100%,100% 100%,100% 100%;
+}
+
+/* Prevent the carved headings from covering the first data row. */
+#trial-section,
+#odds-section,
+#battle-section{overflow:hidden}
+
+#trial-details{
+  position:absolute;
+  top:2.72cqw;
+  right:.66cqw;
+  bottom:.38cqw;
+  left:.66cqw;
+  width:auto;
+  height:auto;
+  margin:0;
+  padding:.72cqw 1.02cqw .62cqw;
+  align-content:space-evenly;
+  overflow:hidden;
+}
+
+#odds-list{
+  position:absolute;
+  top:2.72cqw;
+  right:.62cqw;
+  bottom:.38cqw;
+  left:.62cqw;
+  width:auto;
+  height:auto;
+  margin:0;
+  padding:.38cqw .72cqw;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-evenly;
+  overflow:hidden;
+}
+.odds-row{flex:1;min-height:0;display:flex;align-items:center}
+
+.battle-sheet{
+  position:absolute;
+  top:2.72cqw;
+  right:.62cqw;
+  bottom:.4cqw;
+  left:.62cqw;
+  width:auto;
+  height:auto;
+  margin:0;
+  display:grid;
+  grid-template-rows:auto auto minmax(0,1fr);
+  overflow:hidden;
+}
+
+/* Increase side-ledger readability while preserving the composition. */
+.wager-card strong{font-size:1.43cqw}
+.selection{font-size:1.31cqw}
+.wager-meta{font-size:1cqw}
+.record-grid{font-size:1.08cqw}
+.results-list{font-size:.94cqw}
+.results-section blockquote{font-size:.9cqw}
+.odds-list{font-size:.88cqw}
+.current-section>span{font-size:.82cqw}
+.current-section>strong{font-size:1.46cqw}
+
+/* Battle Report now reads as three deliberate manuscript zones. */
+.battle-title{
+  padding:.18cqw .2cqw .7cqw;
+  border-bottom:1px solid rgba(103,68,31,.27);
+}
+.battle-title strong{font-size:1.16cqw;letter-spacing:.015em}
+.battle-title small{display:block;margin-top:.18cqw;font-size:.76cqw;color:#6b4c2c}
+.score-row{
+  margin:0;
+  padding:.72cqw .15cqw .62cqw;
+  border-bottom:1px solid rgba(103,68,31,.25);
+  background:linear-gradient(90deg,rgba(137,91,39,.035),rgba(255,249,226,.16),rgba(137,91,39,.035));
+}
+.score-row>div strong{font-size:3.18cqw;letter-spacing:.01em}
+.score-row>div small{font-size:.82cqw}
+.team{font-size:1.23cqw}
+.team::before{font-size:1.88cqw}
+.battle-table{
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-evenly;
+  padding-top:.2cqw;
+  font-size:.86cqw;
+}
+.battle-row{
+  flex:1;
+  min-height:0;
+  align-items:center;
+  padding:.2cqw .08cqw;
+}
+
+/* Give headings and controls a slightly crisper engraved hierarchy. */
+.carved-heading{font-size:1.2cqw}
+.collapse{top:.44cqw}
+.footer-beam button{font-size:.88cqw}
+.footer-beam button span{font-size:1.3cqw}
+.utility-panel button{font-size:.7cqw}
+.utility-panel button span{font-size:1.42cqw}
+
+/* Keep the ornamental layer quiet and safely behind the UI. */
+.ivy-overlay{opacity:.24;filter:saturate(.74) brightness(.74)}
+
+/* Refine the central manuscript without adding extra layout churn. */
+.message{font-size:.99cqw}
+.message .meta{font-size:.93cqw}
+.bet-line{font-size:1.09cqw}
+.message-form input{font-size:.96cqw}
+
+@media(max-width:1320px){
+  .wager-card strong{font-size:1.34cqw}
+  .record-grid{font-size:1cqw}
+  .results-list{font-size:.87cqw}
+  .battle-table{font-size:.8cqw}
+  .odds-list{font-size:.81cqw}
+}
