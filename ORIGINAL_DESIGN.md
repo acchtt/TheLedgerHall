@@ -74,12 +74,12 @@ One integrated carved navigation beam with five destinations.
 
 ## Current build target
 
-`original-v29.html`
+`original-v30.html`
 
-## V29 refinement priorities
+## V30 refinement priorities
 
-- Keep all ivy and root decoration behind live content
-- Increase side-ledger, Battle Report, Odds Snapshot, and footer readability
-- Give the right report column slightly more usable width
-- Strengthen parchment edges and manuscript depth without introducing modern cards
-- Preserve the V28 composition and interaction layer
+- Prevent Trial Record and Odds Snapshot rows from clipping beneath their carved headings
+- Improve side-ledger text scale without altering the established column geometry
+- Divide the Battle Report into clear title, score, and statistic zones
+- Add subtle parchment variation using ordinary CSS and local SVG assets
+- Preserve the V29 composition, storage, and interaction layer
