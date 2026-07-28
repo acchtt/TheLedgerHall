@@ -1,0 +1,136 @@
+@import url("original-v26.css?build=base27");
+
+/* Original Design V27 — first refinement from the verified V26 screenshot. */
+
+html,body{min-width:1180px}
+.stage{padding:4px}
+.hall{
+  width:min(98vw,calc(96vh * 1.5));
+  min-width:1180px;
+  aspect-ratio:3/2;
+  grid-template-rows:20.5% 69.5% 10%;
+  border-width:.62cqw;
+}
+.hall::before{inset:.28cqw}
+.ivy-overlay{
+  background-image:url("assets/original-v27-ivy.svg");
+  opacity:.72;
+}
+
+.hero{
+  grid-template-columns:12.2% 17.4% 1fr 17.4% 7.8%;
+  gap:.7%;
+  padding:.45cqw .72cqw .58cqw;
+  background:
+    linear-gradient(180deg,rgba(255,248,217,.12),rgba(58,70,43,.16)),
+    url("assets/original-v27-landscape.svg") center 54%/cover no-repeat;
+}
+.banner-cloth{height:90%;margin-top:.05cqw}
+.banner-cloth img{width:67%}
+.stat-sheet{height:76%;padding:.8cqw}
+.stat-label{font-size:.8cqw}
+.stat-label em{font-size:.47cqw}
+.stat-sheet strong{font-size:1.75cqw}
+.stat-sheet small{font-size:.86cqw}
+.brand-lockup>img{width:3.25cqw}
+.brand-lockup h1{font-size:3.25cqw;margin:-.08cqw 0 .36cqw;letter-spacing:.018em}
+.ribbon{width:72%;padding:.48cqw 1.15cqw;font-size:1.02cqw}
+.utility-panel button{font-size:.67cqw}
+.utility-panel button span{font-size:1.35cqw}
+
+.dashboard{
+  grid-template-columns:28.7% 43.1% 26.2%;
+  gap:1%;
+  padding:.42cqw .62cqw .34cqw;
+}
+.left-ledger{grid-template-rows:31.5% 27.5% 1fr}
+.right-ledger{grid-template-rows:54.5% 26% 1fr}
+.ledger-column{gap:.4cqw}
+.wood-section{padding-top:2.45cqw}
+.carved-heading{height:2.4cqw;font-size:1.12cqw}
+.collapse{width:1.4cqw;height:1.4cqw}
+
+#open-wagers{margin:.26cqw .58cqw .34cqw}
+.wager-card{padding:1.05cqw 4.4cqw .72cqw 3.05cqw}
+.wager-card strong{font-size:1.3cqw}
+.selection{font-size:1.22cqw;margin:.78cqw 0 .5cqw}
+.wager-meta{font-size:.91cqw}
+.wager-card::before{width:2.32cqw;height:2.7cqw}
+.badge{width:3.95cqw;height:3.95cqw;font-size:.5cqw}
+.record-grid{font-size:1cqw;gap:.38cqw;padding:.7cqw 1.05cqw}
+.results-list{font-size:.86cqw;height:61%;padding:.22cqw .58cqw}
+.results-list li{padding:.37cqw 0 .34cqw .9cqw}
+.results-section blockquote{font-size:.82cqw;margin-top:.48cqw}
+
+.council-book{
+  padding:2.65cqw 1.5cqw .92cqw;
+  background:
+    linear-gradient(rgba(255,247,220,.08),rgba(137,87,38,.035)),
+    url("assets/original-v26-parchment.svg") center/100% 100%;
+  box-shadow:
+    inset 0 0 0 .1cqw #6d492870,
+    inset 0 0 2cqw rgba(104,67,31,.08),
+    0 .42cqw .48cqw #0009;
+}
+.council-book h2{top:.62cqw;font-size:1.34cqw}
+.council-book h2 span::before,.council-book h2 span::after{width:4.7cqw}
+.corner{top:.5cqw;font-size:1.18cqw}
+.messages{
+  height:calc(100% - 3.1cqw);
+  justify-content:flex-start;
+  gap:.62cqw;
+  padding:.05cqw .1cqw .15cqw;
+}
+.message{
+  flex:0 0 auto;
+  width:100%;
+  min-height:13.5%;
+  padding:.82cqw 4.15cqw .78cqw 4.15cqw;
+  font-size:.93cqw;
+  line-height:1.24;
+  background:linear-gradient(100deg,rgba(255,249,226,.45),rgba(220,188,132,.09))!important;
+  border-color:rgba(92,61,30,.34);
+}
+.message:nth-child(2){min-height:15.5%}
+.message:nth-child(3){min-height:18.5%}
+.message:nth-child(4){min-height:13.5%}
+.message:nth-child(5){min-height:16.5%}
+.message.user{width:82%;margin-left:auto!important;padding-left:1.05cqw}
+.message .meta{font-size:.88cqw;margin-bottom:.32cqw}
+.bet-line{font-size:1.02cqw;margin-top:.38cqw}
+.message.council::before{width:2.65cqw;height:3.08cqw}
+.message.user::after{width:2.95cqw;height:2.95cqw}
+.message-form{height:2.28cqw;bottom:.58cqw}
+.message-form input{font-size:.9cqw}
+.message-form button{font-size:1.2cqw}
+
+.battle-sheet{padding:.78cqw 1cqw;margin:.3cqw .58cqw .32cqw}
+.battle-title strong{font-size:1.04cqw}
+.battle-title small{font-size:.68cqw}
+.score-row{margin:.72cqw 0 .58cqw}
+.score-row>div strong{font-size:2.75cqw}
+.score-row>div small{font-size:.75cqw}
+.team{font-size:1.12cqw;padding-top:1.95cqw}
+.team::before{font-size:1.72cqw}
+.battle-table{font-size:.76cqw;line-height:1.12}
+.battle-row{padding:.3cqw 0}
+.odds-list{font-size:.78cqw;padding:.52cqw .75cqw}
+.odds-row{padding:.34cqw 0}
+.current-section>span{font-size:.72cqw}
+.current-section>strong{font-size:1.28cqw}
+.current-section>img{width:2.35cqw}
+
+.footer-beam{
+  width:88%;
+  min-height:0;
+  margin:.55cqw auto .42cqw;
+  border-width:.35cqw;
+  box-shadow:inset 0 0 0 .1cqw #a8783290,inset 0 -.6cqw 1cqw #0007,0 .5cqw .7cqw #0008;
+}
+.footer-beam button{font-size:.74cqw;padding:.45cqw .3cqw}
+.footer-beam button span{font-size:1.18cqw}
+.build-mark{font-size:.46cqw}
+
+@media(max-aspect-ratio:4/3){
+  .hall{width:96vw;min-width:1060px;aspect-ratio:4/3}
+}
