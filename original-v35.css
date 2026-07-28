@@ -1,0 +1,81 @@
+@import url("original-v33.css?build=base35");
+
+/* V35 — validated compact raster transport.
+   The painted hall is reconstructed from eight small text chunks, checked at
+   byte level, and loaded as a Blob URL. Stable SVG materials remain available
+   as a guaranteed fallback for every live surface. */
+
+.hall{
+  background-color:#171008;
+  background-image:var(--v35-skin, none);
+  background-position:center;
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+}
+
+/* Never leave the hall blank while loading or after a failed validation. */
+html:not(.v35-skin-ready) .hall,
+html.v35-skin-error .hall{
+  background-image:
+    linear-gradient(rgba(14,8,4,.15),rgba(14,8,4,.15)),
+    url("assets/original-v32-landscape.svg"),
+    url("assets/original-v32-wood.svg");
+  background-position:center,center top,center;
+  background-size:100% 100%,100% 26%,cover;
+  background-repeat:no-repeat,no-repeat,repeat;
+}
+
+/* Replace the malformed V33 WebP live-surface files with stable assets. */
+.stat-sheet,
+.parchment-area,
+.message,
+.message.official,
+.message-form{
+  background-image:url("assets/original-v32-parchment.svg")!important;
+  background-position:center!important;
+  background-size:100% 100%!important;
+  background-repeat:no-repeat!important;
+}
+
+.results-section,
+.current-section{
+  background-image:url("assets/original-v32-wood.svg")!important;
+  background-position:center!important;
+  background-size:cover!important;
+  background-repeat:repeat!important;
+}
+
+/* Opaque live areas fully conceal the sample data painted into the skin. */
+.stat-sheet,
+.parchment-area,
+.message,
+.message-form{
+  background-color:#ead2a3!important;
+}
+.message.official{background-color:#e3c994!important}
+.results-section,.current-section{background-color:#211008!important}
+
+.stat-sheet,
+.parchment-area,
+.message,
+.message-form{
+  box-shadow:
+    inset 0 0 0 .08cqw rgba(255,243,211,.28),
+    inset 0 0 .85cqw rgba(82,46,18,.1),
+    0 .14cqw .24cqw rgba(0,0,0,.24);
+}
+
+/* Status remains visible rather than failing silently. */
+html:not(.v35-skin-ready) .build-mark::before{content:"LOADING · "}
+html.v35-skin-error .build-mark::before{content:"FALLBACK · "}
+html.v35-skin-ready .build-mark::before{content:""}
+
+html.v35-skin-error .build-mark{
+  opacity:1;
+  border-color:#bd7a31;
+  background:#2c1208;
+}
+
+@media(max-width:1250px){
+  .hall{min-width:920px}
+}
