@@ -10,8 +10,11 @@ This baseline was captured before integrating any audited locked asset.
 - Integration branch: `integration/locked-assets-r01`
 - Deployed baseline: `https://acchtt.github.io/TheLedgerHall/?v=23`
 - Audited handoff: `The_Ledger_Hall_Locked_Assets_01-28_2026-07-31_v6_audited`
+- Integration controls: `docs/integration-controls/`
 
 No production HTML, CSS, JavaScript, or locked asset binary was changed in Phase 0.
+
+The corrected manifest, integration allowlist, audit results, and audit report were compared against the handoff copies and found byte-for-byte identical before being added to the branch.
 
 ## Captured viewports
 

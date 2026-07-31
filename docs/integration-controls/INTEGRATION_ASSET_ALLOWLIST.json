@@ -1,0 +1,253 @@
+{
+  "project": "The Ledger Hall",
+  "status": "INTEGRATION ALLOWLIST",
+  "rule": "Only files listed here may be wired into the live page.",
+  "active_asset_count": 26,
+  "canonical_file_count": 50,
+  "assets": [
+    {
+      "asset_number": 1,
+      "name": "Production Header Panorama \u2014 Reworked",
+      "preferred_format": "PNG background",
+      "canonical_files": [
+        "01_locked_assets/asset_01_header_panorama/asset_01_header_panorama.png"
+      ]
+    },
+    {
+      "asset_number": 2,
+      "name": "Thin Transparent Outer Frame",
+      "preferred_format": "PNG",
+      "canonical_files": [
+        "01_locked_assets/asset_02_thin_outer_frame/asset_02_thin_outer_frame.png"
+      ]
+    },
+    {
+      "asset_number": 3,
+      "name": "Main Council Notes Parchment",
+      "preferred_format": "PNG",
+      "canonical_files": [
+        "01_locked_assets/asset_03_main_council_parchment/asset_03_main_council_parchment.png"
+      ]
+    },
+    {
+      "asset_number": 4,
+      "name": "Shallow Carved Section Header",
+      "preferred_format": "PNG",
+      "canonical_files": [
+        "01_locked_assets/asset_04_shallow_section_header/asset_04_shallow_section_header.png"
+      ]
+    },
+    {
+      "asset_number": 5,
+      "name": "Reusable Wood Panel Body",
+      "preferred_format": "PNG",
+      "canonical_files": [
+        "01_locked_assets/asset_05_reusable_wood_panel/asset_05_reusable_wood_panel.png"
+      ]
+    },
+    {
+      "asset_number": 6,
+      "name": "Bottom Navigation Beam",
+      "preferred_format": "SVG where available; PNG fallback",
+      "canonical_files": [
+        "01_locked_assets/asset_06_bottom_navigation/asset_06_bottom_navigation.png",
+        "01_locked_assets/asset_06_bottom_navigation/asset_06_bottom_navigation_master.svg"
+      ]
+    },
+    {
+      "asset_number": 7,
+      "name": "Hanging Crest Banner",
+      "preferred_format": "PNG",
+      "canonical_files": [
+        "01_locked_assets/asset_07_hanging_crest_banner/asset_07_hanging_crest_banner.png"
+      ]
+    },
+    {
+      "asset_number": 8,
+      "name": "Header Stat Plaque",
+      "preferred_format": "PNG",
+      "canonical_files": [
+        "01_locked_assets/asset_08_header_stat_plaque/asset_08_header_stat_plaque.png"
+      ]
+    },
+    {
+      "asset_number": 9,
+      "name": "Heraldic Shield Crest",
+      "preferred_format": "PNG",
+      "canonical_files": [
+        "01_locked_assets/asset_09_heraldic_shield/asset_09_heraldic_shield.png"
+      ]
+    },
+    {
+      "asset_number": 10,
+      "name": "Crimson Wax Seal",
+      "preferred_format": "PNG",
+      "canonical_files": [
+        "01_locked_assets/asset_10_crimson_wax_seal/asset_10_crimson_wax_seal.png"
+      ]
+    },
+    {
+      "asset_number": 11,
+      "name": "Council Message Strip",
+      "preferred_format": "PNG",
+      "canonical_files": [
+        "01_locked_assets/asset_11_council_message_strip/asset_11_council_message_strip.png"
+      ]
+    },
+    {
+      "asset_number": 12,
+      "name": "Council Input Bar",
+      "preferred_format": "PNG",
+      "canonical_files": [
+        "01_locked_assets/asset_12_council_input_bar/asset_12_council_input_bar.png"
+      ]
+    },
+    {
+      "asset_number": 13,
+      "name": "Subtitle Scroll Ribbon",
+      "preferred_format": "PNG",
+      "canonical_files": [
+        "01_locked_assets/asset_13_subtitle_scroll/asset_13_subtitle_scroll.png"
+      ]
+    },
+    {
+      "asset_number": 14,
+      "name": "Vertical Utility Panel",
+      "preferred_format": "PNG",
+      "canonical_files": [
+        "01_locked_assets/asset_14_vertical_utility_panel/asset_14_vertical_utility_panel.png"
+      ]
+    },
+    {
+      "asset_number": 15,
+      "name": "Wall Lantern",
+      "preferred_format": "PNG",
+      "canonical_files": [
+        "01_locked_assets/asset_15_wall_lantern/asset_15_wall_lantern.png"
+      ]
+    },
+    {
+      "asset_number": 16,
+      "name": "Vertical Vine Overlay",
+      "preferred_format": "PNG",
+      "canonical_files": [
+        "01_locked_assets/asset_16_vertical_vine/asset_16_vertical_vine.png"
+      ]
+    },
+    {
+      "asset_number": 18,
+      "name": "Side Parchment Family v2",
+      "preferred_format": "Matching fixed-ratio PNG variant",
+      "canonical_files": [
+        "01_locked_assets/asset_18_side_parchment_family/asset_18_deep_side_parchment_v2.png",
+        "01_locked_assets/asset_18_side_parchment_family/asset_18_medium_side_parchment_v2.png",
+        "01_locked_assets/asset_18_side_parchment_family/asset_18_shallow_side_parchment_v2.png"
+      ]
+    },
+    {
+      "asset_number": 19,
+      "name": "Tall Battle Report Parchment",
+      "preferred_format": "PNG",
+      "canonical_files": [
+        "01_locked_assets/asset_19_tall_battle_report_parchment/asset_19_tall_battle_report_parchment.png"
+      ]
+    },
+    {
+      "asset_number": 20,
+      "name": "Section Header Beam v3",
+      "preferred_format": "PNG",
+      "canonical_files": [
+        "01_locked_assets/asset_20_section_header_v3/asset_20_section_header_v3.png"
+      ]
+    },
+    {
+      "asset_number": 21,
+      "name": "Compact Status / Readout Panel",
+      "preferred_format": "PNG",
+      "canonical_files": [
+        "01_locked_assets/asset_21_compact_status_panel/asset_21_compact_status_panel.png"
+      ]
+    },
+    {
+      "asset_number": 23,
+      "name": "Compact Utility / Action Button Frame",
+      "preferred_format": "SVG where available; PNG fallback",
+      "canonical_files": [
+        "01_locked_assets/asset_23_compact_utility_action_button/asset_23_utility_action_button_frame.svg",
+        "01_locked_assets/asset_23_compact_utility_action_button/asset_23_utility_action_button_frame.png"
+      ]
+    },
+    {
+      "asset_number": 24,
+      "name": "Utility Action Icon Set",
+      "preferred_format": "SVG where available; PNG fallback",
+      "canonical_files": [
+        "01_locked_assets/asset_24_utility_action_icon_set/asset_24_chamber_scales.png",
+        "01_locked_assets/asset_24_utility_action_icon_set/asset_24_chamber_scales.svg",
+        "01_locked_assets/asset_24_utility_action_icon_set/asset_24_hide_show_eye.png",
+        "01_locked_assets/asset_24_utility_action_icon_set/asset_24_hide_show_eye.svg",
+        "01_locked_assets/asset_24_utility_action_icon_set/asset_24_themes_gear.png",
+        "01_locked_assets/asset_24_utility_action_icon_set/asset_24_themes_gear.svg"
+      ]
+    },
+    {
+      "asset_number": 25,
+      "name": "Bottom Navigation Supplemental Icon Set",
+      "preferred_format": "SVG where available; PNG fallback",
+      "canonical_files": [
+        "01_locked_assets/asset_25_bottom_navigation_icon_set/asset_25_battle_reports_swords.png",
+        "01_locked_assets/asset_25_bottom_navigation_icon_set/asset_25_battle_reports_swords.svg",
+        "01_locked_assets/asset_25_bottom_navigation_icon_set/asset_25_closed_ledgers_book.png",
+        "01_locked_assets/asset_25_bottom_navigation_icon_set/asset_25_closed_ledgers_book.svg",
+        "01_locked_assets/asset_25_bottom_navigation_icon_set/asset_25_council_notes_scroll.png",
+        "01_locked_assets/asset_25_bottom_navigation_icon_set/asset_25_council_notes_scroll.svg"
+      ]
+    },
+    {
+      "asset_number": 26,
+      "name": "Generic Micro-Control Button Frame",
+      "preferred_format": "SVG where available; PNG fallback",
+      "canonical_files": [
+        "01_locked_assets/asset_26_micro_control_button_frame/asset_26_micro_control_button_frame.svg",
+        "01_locked_assets/asset_26_micro_control_button_frame/asset_26_micro_control_button_frame.png"
+      ]
+    },
+    {
+      "asset_number": 27,
+      "name": "Micro-Control Glyph Set",
+      "preferred_format": "SVG where available; PNG fallback",
+      "canonical_files": [
+        "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_add_glyph.png",
+        "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_add_glyph.svg",
+        "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_collapse_glyph.png",
+        "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_collapse_glyph.svg",
+        "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_expand_glyph.png",
+        "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_expand_glyph.svg",
+        "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_help_glyph.png",
+        "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_help_glyph.svg",
+        "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_menu_glyph.png",
+        "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_menu_glyph.svg"
+      ]
+    },
+    {
+      "asset_number": 28,
+      "name": "Minimal Comparison Meter v2",
+      "preferred_format": "PNG frame with live CSS/SVG fills",
+      "canonical_files": [
+        "01_locked_assets/asset_28_minimal_comparison_meter_v2/asset_28_minimal_comparison_meter_v2.png"
+      ]
+    }
+  ],
+  "retired_assets": [
+    17,
+    22
+  ],
+  "forbidden_patterns": [
+    "*review*",
+    "*preview*",
+    "*test*",
+    "*state_*",
+    "*reference*",
+    "any file under 02_retired_assets/"
+  ]
+}

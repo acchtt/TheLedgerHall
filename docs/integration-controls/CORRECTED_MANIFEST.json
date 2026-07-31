@@ -1,0 +1,1288 @@
+{
+  "project": "The Ledger Hall",
+  "created": "2026-07-30",
+  "current_page": "https://acchtt.github.io/TheLedgerHall/?v=23",
+  "design_reference": "00_reference/original_design_direction.png",
+  "workflow": "Review and lock individual high-resolution assets before applying them to the live page.",
+  "assets": [
+    {
+      "asset_number": 1,
+      "name": "Production Header Panorama \u2014 Reworked",
+      "status": "LOCKED",
+      "notes": "Reworked panorama with stronger integrated upper branches and foliage. Replaces the earlier panorama and makes Asset 17 unnecessary.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_01_header_panorama/asset_01_header_panorama.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_01_Rework_Final_Review/asset_01_header_panorama.png",
+          "bytes": 2532600,
+          "sha256": "774f7d8d03b113f8cc60658b5a139942f665ae57f8d2999f5e7d1aceb8a681c5",
+          "dimensions": {
+            "width": 1877,
+            "height": 838
+          },
+          "mode": "RGB",
+          "has_alpha": false
+        },
+        {
+          "file": "01_locked_assets/asset_01_header_panorama/asset_01_header_panorama_reworked_spec.json",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_01_Rework_Final_Review/asset_01_header_panorama_reworked_spec.json",
+          "bytes": 2222,
+          "sha256": "f7ed27418198a7b9526831b5f30d8f7d213000c9745845b80414b5432e7e4ba4"
+        },
+        {
+          "file": "01_locked_assets/asset_01_header_panorama/asset_01_header_panorama_reworked_final_review.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_01_Rework_Final_Review/asset_01_header_panorama_reworked_final_review.png",
+          "bytes": 6732115,
+          "sha256": "6c188e60ba0c4a7b392fa60ee998ab5b65984270cececf3cc55f5d915fdd3435",
+          "dimensions": {
+            "width": 1920,
+            "height": 3164
+          },
+          "mode": "RGB",
+          "has_alpha": false
+        }
+      ]
+    },
+    {
+      "asset_number": 2,
+      "name": "Thin Transparent Outer Frame",
+      "status": "LOCKED",
+      "notes": "Dark carved oak, restrained antique-gold trim, sparse ivy, and a small right-side lantern; first accepted version.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_02_thin_outer_frame/asset_02_thin_outer_frame.png",
+          "source": "/mnt/data/a_digital_painting_in_fantasy_style_displays_an_or.png",
+          "bytes": 1641911,
+          "sha256": "40406a2afc5a26d7f08f59f9ef6be43b5945e6259db83da0f8b69bd64ac2832c",
+          "dimensions": {
+            "width": 1536,
+            "height": 1024
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "asset_number": 3,
+      "name": "Main Council Notes Parchment",
+      "status": "LOCKED",
+      "notes": "Large text-free front-facing parchment with worn edges, subtle fibers, restrained corner engraving, and a clean writing area.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_03_main_council_parchment/asset_03_main_council_parchment.png",
+          "source": "/mnt/data/a_digital_2d_image_of_an_aged_parchment_scroll_fil.png",
+          "bytes": 2568688,
+          "sha256": "3156d57b6e12f6cd0a78afafd4fe59ca051b0f3398fa1c591fda435181f13d27",
+          "dimensions": {
+            "width": 1024,
+            "height": 1536
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "asset_number": 4,
+      "name": "Shallow Carved Section Header",
+      "status": "LOCKED",
+      "notes": "Blank horizontal carved section-header bar with antique-gold crest and the accepted ivy density.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_04_shallow_section_header/asset_04_shallow_section_header.png",
+          "source": "/mnt/data/a_high_resolution_digital_2d_illustration_features.png",
+          "bytes": 2204807,
+          "sha256": "5c0be81b0c42eab30f115de723809f96161fefc85d923f58c4c442b3faba1272",
+          "dimensions": {
+            "width": 1536,
+            "height": 1024
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "asset_number": 5,
+      "name": "Reusable Wood Panel Body",
+      "status": "LOCKED",
+      "notes": "Layout-fit rectangular dark-oak panel body with an open center for live module content.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_05_reusable_wood_panel/asset_05_reusable_wood_panel.png",
+          "source": "/mnt/data/khung_g\u1ed7_s\u1ed3i_c\u1ed5_\u0111i\u1ec3n_v\u1edbi_huy_hi\u1ec7u_v\u00e0ng_ng\u00e0.png",
+          "bytes": 2438064,
+          "sha256": "f261bdc5c9967ab1285925bff2c40c59b1059a4723d67fb0fbafd08b516f12c0",
+          "dimensions": {
+            "width": 1536,
+            "height": 1024
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "asset_number": 6,
+      "name": "Bottom Navigation Beam",
+      "status": "LOCKED",
+      "notes": "Five equal blank bays; deterministic SVG/PNG construction.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_06_bottom_navigation/asset_06_bottom_navigation.png",
+          "source": "/mnt/data/ledger_asset_06_navigation/ledger_navigation_beam_2400x300.png",
+          "bytes": 58529,
+          "sha256": "10cfcd074bfad95ebbb3fee67ffd885c78c686660b2af6c37d63daf4b5655b58",
+          "dimensions": {
+            "width": 2400,
+            "height": 300
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_06_bottom_navigation/asset_06_bottom_navigation_master.svg",
+          "source": "/mnt/data/ledger_asset_06_navigation/ledger_navigation_beam_master.svg",
+          "bytes": 7708,
+          "sha256": "d78a36070c4d3b1e6dba7ffc4f566b8478cdb7aceaa86e930101f960dbf5363c"
+        },
+        {
+          "file": "01_locked_assets/asset_06_bottom_navigation/asset_06_bottom_navigation_preview.png",
+          "source": "/mnt/data/ledger_asset_06_navigation/ledger_navigation_beam_preview.png",
+          "bytes": 59092,
+          "sha256": "8d29e1b9348e1aaf9736265bfd60bc207f3f3f64af0cd4e8285c3b0a56f0565a",
+          "dimensions": {
+            "width": 2400,
+            "height": 300
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "asset_number": 7,
+      "name": "Hanging Crest Banner",
+      "status": "LOCKED",
+      "notes": "Forest-green hanging banner with gold tree crest.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_07_hanging_crest_banner/asset_07_hanging_crest_banner.png",
+          "source": "/mnt/data/green_tree_crest_banner.png",
+          "bytes": 2803600,
+          "sha256": "c73c6722763265e0f40d60473d7c0d038eacdf2d9374badee2c8ebfecca28bbe",
+          "dimensions": {
+            "width": 1536,
+            "height": 1024
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "asset_number": 8,
+      "name": "Header Stat Plaque",
+      "status": "LOCKED",
+      "notes": "Blank parchment stat plaque; accepted with the small pointed lower edge.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_08_header_stat_plaque/asset_08_header_stat_plaque.png",
+          "source": "/mnt/data/antique_gold_medieval_parchment_plaque.png",
+          "bytes": 2781436,
+          "sha256": "759ce75841c9f01e2ff8faa5c4fb8ae5bf3e08416fbd9c898a5448d9ba0c6f64",
+          "dimensions": {
+            "width": 1536,
+            "height": 1024
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "asset_number": 9,
+      "name": "Heraldic Shield Crest",
+      "status": "LOCKED",
+      "notes": "Forest-green and antique-gold tree shield.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_09_heraldic_shield/asset_09_heraldic_shield.png",
+          "source": "/mnt/data/ornate_golden_tree_heraldic_shield.png",
+          "bytes": 3137383,
+          "sha256": "10744b2181286c09d7ccf854ed1f8863ed92ea840e2d7dd90a55d8c226897a42",
+          "dimensions": {
+            "width": 1536,
+            "height": 1024
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "asset_number": 10,
+      "name": "Crimson Wax Seal",
+      "status": "LOCKED",
+      "notes": "Deep-red hand-pressed seal with recessed gold tree stamp.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_10_crimson_wax_seal/asset_10_crimson_wax_seal.png",
+          "source": "/mnt/data/a_digital_photograph_of_a_round_wax_seal_features.png",
+          "bytes": 2666406,
+          "sha256": "f7bf8cb2db601a58e41670a9430d328a4b4a1e7e8cb4b85d8b769f44eb127618",
+          "dimensions": {
+            "width": 1536,
+            "height": 1024
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "asset_number": 11,
+      "name": "Council Message Strip",
+      "status": "LOCKED",
+      "notes": "Wide blank parchment strip for live text, timestamps, shields, and seals.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_11_council_message_strip/asset_11_council_message_strip.png",
+          "source": "/mnt/data/antique_gold_ornate_parchment_banner.png",
+          "bytes": 2501266,
+          "sha256": "0dd61eb5cb9e40460b7cf44118638454156f229526230e183f55ec50f7de84a9",
+          "dimensions": {
+            "width": 1536,
+            "height": 1024
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "asset_number": 12,
+      "name": "Council Input Bar",
+      "status": "LOCKED",
+      "notes": "Slim parchment input field; tiny center accent intentionally retained.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_12_council_input_bar/asset_12_council_input_bar.png",
+          "source": "/mnt/data/a_digital_illustration_features_a_rectangular_ant.png",
+          "bytes": 2271638,
+          "sha256": "c8116336275c3ecba69e0e8a92d4a46562e0fb9ee572c63735523af29f7c3b46",
+          "dimensions": {
+            "width": 1536,
+            "height": 1024
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "asset_number": 13,
+      "name": "Subtitle Scroll Ribbon",
+      "status": "LOCKED",
+      "notes": "Rolled outward ends and blank center for live subtitle text.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_13_subtitle_scroll/asset_13_subtitle_scroll.png",
+          "source": "/mnt/data/aged_medieval_scroll_banner.png",
+          "bytes": 2295891,
+          "sha256": "7dc5c8a498cbf2be9d87bbfa4bbe81aae9b5c87701ead7b06436bdc17cb565a0",
+          "dimensions": {
+            "width": 1536,
+            "height": 1024
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "asset_number": 14,
+      "name": "Vertical Utility Panel",
+      "status": "LOCKED",
+      "notes": "Dark-oak and antique-gold panel with three control bays.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_14_vertical_utility_panel/asset_14_vertical_utility_panel.png",
+          "source": "/mnt/data/medieval_gold_trimmed_oak_panel.png",
+          "bytes": 2409481,
+          "sha256": "3d5e599d98988d86e6bd08a0763e95a0c30206a230768e2951d830363eefa436",
+          "dimensions": {
+            "width": 1024,
+            "height": 1536
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "asset_number": 15,
+      "name": "Wall Lantern",
+      "status": "LOCKED",
+      "notes": "Compact antique-brass wall lantern with shorter bracket and amber glow.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_15_wall_lantern/asset_15_wall_lantern.png",
+          "source": "/mnt/data/medieval_amber_lantern_bracket.png",
+          "bytes": 2306051,
+          "sha256": "e8d7d988a1b4cb5eb19a0ae434052b0f7e2499534967cc1c55d07b6d742b9087",
+          "dimensions": {
+            "width": 1024,
+            "height": 1536
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "asset_number": 16,
+      "name": "Vertical Vine Overlay",
+      "status": "LOCKED",
+      "notes": "Narrow mirrorable edge vine; sparse leaves, bark, tendrils, and muted berries.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_16_vertical_vine/asset_16_vertical_vine.png",
+          "source": "/mnt/data/a_digital_illustration_of_a_climbing_ivy_vine_show.png",
+          "bytes": 2136076,
+          "sha256": "9e602202d5879749bb53f94d83fec8b3ca1481c767df1aa0a264fa626fcee97c",
+          "dimensions": {
+            "width": 1024,
+            "height": 1536
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "asset_number": 17,
+      "name": "Top Canopy Overlay",
+      "status": "RETIRED",
+      "notes": "Retired after canopy framing was integrated directly into reworked Asset 1. Historical files are preserved under 02_retired_assets and must not be integrated.",
+      "files": [
+        {
+          "file": "02_retired_assets/asset_17_top_canopy/RETIREMENT_NOTE.md",
+          "source": "retired from prior locked handoff",
+          "bytes": 192,
+          "sha256": "0b0fe89c57bec94153cda2364c27356068a63e15e4e668645e3feec692fb6c3a"
+        },
+        {
+          "file": "02_retired_assets/asset_17_top_canopy/asset_17_top_canopy.png",
+          "source": "retired from prior locked handoff",
+          "bytes": 108052,
+          "sha256": "92f83cae25149790c3238a6ddead790b580d488238487846feaaf4b43686b8ba",
+          "dimensions": {
+            "width": 2400,
+            "height": 520
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "02_retired_assets/asset_17_top_canopy/asset_17_top_canopy_preview.png",
+          "source": "retired from prior locked handoff",
+          "bytes": 103261,
+          "sha256": "157bedbd794ca974190287bf4dd0cde50671c2d50a805f27f7475e6e13e58e35",
+          "dimensions": {
+            "width": 2400,
+            "height": 520
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "02_retired_assets/asset_17_top_canopy/asset_17_top_canopy_spec.json",
+          "source": "retired from prior locked handoff",
+          "bytes": 520,
+          "sha256": "760ca1c009f5140181a6528b2e57dc3e73b422278a7da87b6e60507c63c1eb9f"
+        }
+      ]
+    },
+    {
+      "asset_number": 18,
+      "name": "Side Parchment Family v2",
+      "status": "LOCKED",
+      "notes": "Locked for now as shallow, medium, and deep fixed-ratio variants with reduced corner intrusion and enlarged safe areas.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_18_side_parchment_family/LOCK_NOTE.md",
+          "source": "generated lock note",
+          "bytes": 302,
+          "sha256": "14f3477a25f3bf9e1a245d411b88c8dac669d8c4247186d672649be037c1ab66"
+        },
+        {
+          "file": "01_locked_assets/asset_18_side_parchment_family/asset_18_deep_side_parchment_v2.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_18_Family_V2_Review/asset_18_deep_side_parchment_v2.png",
+          "bytes": 776378,
+          "sha256": "522dca21946fa1c197dedf1bdc1675d05496984e00d3b5304044a30eed7f0413",
+          "dimensions": {
+            "width": 1200,
+            "height": 800
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_18_side_parchment_family/asset_18_medium_side_parchment_v2.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_18_Family_V2_Review/asset_18_medium_side_parchment_v2.png",
+          "bytes": 691501,
+          "sha256": "24b1473df92281adde65a8e6e82e3f4d2f4f2d64da0c216b9a7d47bf423e3ee1",
+          "dimensions": {
+            "width": 1200,
+            "height": 667
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_18_side_parchment_family/asset_18_shallow_side_parchment_v2.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_18_Family_V2_Review/asset_18_shallow_side_parchment_v2.png",
+          "bytes": 596446,
+          "sha256": "ddbabe28725d03cd49b511f11c84ce6fa9ad3ef4988f1bea03a806dec0cec77c",
+          "dimensions": {
+            "width": 1200,
+            "height": 545
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_18_side_parchment_family/asset_18_side_parchment_family_v2_mapping.json",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_18_Family_V2_Review/asset_18_side_parchment_family_v2_mapping.json",
+          "bytes": 1954,
+          "sha256": "cb3228ed2e2db9ba97eb512dc413151f6361469a42ecbbc86b36be7b10aa809f"
+        },
+        {
+          "file": "01_locked_assets/asset_18_side_parchment_family/asset_18_side_parchment_family_v2_review.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_18_Family_V2_Review/asset_18_side_parchment_family_v2_review.png",
+          "bytes": 1852772,
+          "sha256": "2ca33f5658241ace854dec371c28d981fe5441e052a505ca87bae3052dc0c8ab",
+          "dimensions": {
+            "width": 2100,
+            "height": 2250
+          },
+          "mode": "RGB",
+          "has_alpha": false
+        },
+        {
+          "file": "01_locked_assets/asset_18_side_parchment_family/asset_18_side_parchment_family_v2_spec.json",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_18_Family_V2_Review/asset_18_side_parchment_family_v2_spec.json",
+          "bytes": 3560,
+          "sha256": "856c629be5f89d70e0a2c93978636857b4cefa3a912d9fd23090aea2c1650bbc"
+        }
+      ]
+    },
+    {
+      "asset_number": 19,
+      "name": "Tall Battle Report Parchment",
+      "status": "LOCKED",
+      "notes": "Native tall single-panel generation; replaces the visibly stretched attempt.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_19_tall_battle_report_parchment/asset_19_tall_battle_report_parchment.png",
+          "source": "/mnt/data/b\u1ea3ng_gi\u1ea5y_da_v\u00e0ng_hoa_v\u0103n_c\u1ed5_\u0111i\u1ec3n.png",
+          "bytes": 2834171,
+          "sha256": "55c6a8a9bb6ed99bb993d75623dd862c39520491abc912c077f2ef61f58f88af",
+          "dimensions": {
+            "width": 1024,
+            "height": 1536
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "asset_number": 20,
+      "name": "Section Header Beam v3",
+      "status": "LOCKED",
+      "notes": "Locked for now. Reference-traced slim near-black wood header with thin tarnished-gold rules and no baked title, icon, or control state.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_20_section_header_v3/LOCK_NOTE.md",
+          "source": "generated lock note",
+          "bytes": 331,
+          "sha256": "ca9c28e9c3b676cae231a388c84042b5610af89629127b5fbbb8cdf48b6dc942"
+        },
+        {
+          "file": "01_locked_assets/asset_20_section_header_v3/asset_20_section_header_v3.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_20_V3_Reference_Traced_Review/asset_20_section_header_v3.png",
+          "bytes": 29789,
+          "sha256": "a713eb16d1025141bf3af9208b7582c492596785c850832bf6f4ff745c7a1920",
+          "dimensions": {
+            "width": 1800,
+            "height": 192
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_20_section_header_v3/asset_20_section_header_v3_330px_test.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_20_V3_Reference_Traced_Review/asset_20_section_header_v3_330px_test.png",
+          "bytes": 7453,
+          "sha256": "2b7a67b2b64b06c0a4ad137b1bd7230573ed23a325ef11737010d289fb31cd17",
+          "dimensions": {
+            "width": 330,
+            "height": 35
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_20_section_header_v3/asset_20_section_header_v3_live_overlay_test.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_20_V3_Reference_Traced_Review/asset_20_section_header_v3_live_overlay_test.png",
+          "bytes": 40834,
+          "sha256": "cb756d90be1e06f22d927aea6c82fa4856d200fd7a1f2386b92ad09463f56ea8",
+          "dimensions": {
+            "width": 1800,
+            "height": 192
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_20_section_header_v3/asset_20_section_header_v3_review.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_20_V3_Reference_Traced_Review/asset_20_section_header_v3_review.png",
+          "bytes": 364727,
+          "sha256": "8520a2181ca1be153a22e10eff92be69ac2cd6c3194d58b878d889e2bdc0e8f8",
+          "dimensions": {
+            "width": 2000,
+            "height": 1340
+          },
+          "mode": "RGB",
+          "has_alpha": false
+        },
+        {
+          "file": "01_locked_assets/asset_20_section_header_v3/asset_20_section_header_v3_spec.json",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_20_V3_Reference_Traced_Review/asset_20_section_header_v3_spec.json",
+          "bytes": 2402,
+          "sha256": "830df7cc3eaaf325a025cf2394f44557d3e5d2f7f998efa6c575b068d66336fb"
+        },
+        {
+          "file": "01_locked_assets/asset_20_section_header_v3/original_design_header_reference.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_20_V3_Reference_Traced_Review/original_design_header_reference.png",
+          "bytes": 19239,
+          "sha256": "f4a675d5ab0c6dac4e2e372b61759974750a1ad1aae4c54f46527dc1bd83ba41",
+          "dimensions": {
+            "width": 319,
+            "height": 35
+          },
+          "mode": "RGB",
+          "has_alpha": false
+        }
+      ]
+    },
+    {
+      "asset_number": 21,
+      "name": "Compact Status / Readout Panel",
+      "status": "LOCKED",
+      "notes": "Blank compact dark-oak readout panel for the Current Read module; transparent exterior and no baked text or emblem.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_21_compact_status_panel/asset_21_compact_status_panel.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_21_Final_Review/asset_21_compact_status_panel.png",
+          "bytes": 1252394,
+          "sha256": "b98b460a12a8f260551e1e7c841e74bc66ab1d84d1a5f2ff217377aa5a241de9",
+          "dimensions": {
+            "width": 1117,
+            "height": 521
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_21_compact_status_panel/asset_21_compact_status_panel_review.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_21_Final_Review/asset_21_compact_status_panel_review.png",
+          "bytes": 584845,
+          "sha256": "8a3fbae8d0670c85679f53ff02cccaf95ed5bc31f7af61cb21b2a0be749bd25a",
+          "dimensions": {
+            "width": 1600,
+            "height": 980
+          },
+          "mode": "RGB",
+          "has_alpha": false
+        },
+        {
+          "file": "01_locked_assets/asset_21_compact_status_panel/asset_21_compact_status_panel_spec.json",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_21_Final_Review/asset_21_compact_status_panel_spec.json",
+          "bytes": 1788,
+          "sha256": "4ed4fdc7faf18a045192c383085cfeda3a911e4d8d18f7cf0f9c4f746493c165"
+        },
+        {
+          "file": "01_locked_assets/asset_21_compact_status_panel/asset_21_status_panel_original_generation.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_21_Final_Review/asset_21_status_panel_original_generation.png",
+          "bytes": 2583768,
+          "sha256": "3bad365c3f460cc70a4aac2a6b8c7b197c6954be818636325ee88bf55fd9de8d",
+          "dimensions": {
+            "width": 1536,
+            "height": 1024
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        }
+      ]
+    },
+    {
+      "asset_number": 22,
+      "name": "Transparent Ledger / Stat Row Overlay",
+      "status": "RETIRED",
+      "notes": "Retired. Use documented live CSS row separators instead of PNG/SVG overlays.",
+      "files": [
+        {
+          "file": "02_retired_assets/asset_22_transparent_ledger_row_overlay/RETIREMENT_NOTE.md",
+          "source": "retired from active locked set",
+          "bytes": 388,
+          "sha256": "ff0ff7123b7b460ffff4e7f163d5e8eb5001e6a4bbc024f0cf15fd700799041a"
+        },
+        {
+          "file": "02_retired_assets/asset_22_transparent_ledger_row_overlay/asset_22_optional_meter_outline.png",
+          "source": "retired from active locked set",
+          "bytes": 871,
+          "sha256": "ea289464837d9670f932aeb5d08c09d2f1f680737c8f12cf95002ee39d776357",
+          "dimensions": {
+            "width": 420,
+            "height": 34
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "02_retired_assets/asset_22_transparent_ledger_row_overlay/asset_22_optional_meter_outline.svg",
+          "source": "retired from active locked set",
+          "bytes": 427,
+          "sha256": "ae473155fe61903ec30019aba42a8eca67e31bbf5198d43ed80ca6e086452f22"
+        },
+        {
+          "file": "02_retired_assets/asset_22_transparent_ledger_row_overlay/asset_22_transparent_ledger_row_overlay.png",
+          "source": "retired from active locked set",
+          "bytes": 8974,
+          "sha256": "7b251f91b61c31db134f48210a213327f34c074867a34e1ae13b400c45296f8e",
+          "dimensions": {
+            "width": 1800,
+            "height": 88
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "02_retired_assets/asset_22_transparent_ledger_row_overlay/asset_22_transparent_ledger_row_overlay.svg",
+          "source": "retired from active locked set",
+          "bytes": 8331,
+          "sha256": "92a916147de8ce25e8342948701e197b37ecbf5894975fe282adc8d84a7fe41c"
+        },
+        {
+          "file": "02_retired_assets/asset_22_transparent_ledger_row_overlay/asset_22_transparent_ledger_row_overlay_review.png",
+          "source": "retired from active locked set",
+          "bytes": 94092,
+          "sha256": "694f09d9ce1f9fd9201fa2549b17611ef984ae53172bc9794ebd6476d36bf6f1",
+          "dimensions": {
+            "width": 1800,
+            "height": 980
+          },
+          "mode": "RGB",
+          "has_alpha": false
+        },
+        {
+          "file": "02_retired_assets/asset_22_transparent_ledger_row_overlay/asset_22_transparent_ledger_row_overlay_spec.json",
+          "source": "retired from active locked set",
+          "bytes": 2178,
+          "sha256": "944e186433903745c9dbcc3bc18c7076ac52ade4b481a10fca805790d73c135d"
+        }
+      ],
+      "replacement": {
+        "type": "live CSS",
+        "file": "LIVE_CSS_RULES.md",
+        "rules": [
+          ".ledger-row",
+          ".battle-stat-row"
+        ]
+      }
+    },
+    {
+      "asset_number": 23,
+      "name": "Compact Utility / Action Button Frame",
+      "status": "LOCKED",
+      "notes": "Deterministic 10:7 dark-oak utility tile with transparent exterior and no baked content.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_23_compact_utility_action_button/asset_23_utility_action_button_frame.svg",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_23_Under_Review/asset_23_utility_action_button_frame.svg",
+          "bytes": 13814,
+          "sha256": "8ed5793d472901e6d8e2ae97bbae3ffd9def26ec9c2a39c154da77a33822d58a"
+        },
+        {
+          "file": "01_locked_assets/asset_23_compact_utility_action_button/asset_23_utility_action_button_frame.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_23_Under_Review/asset_23_utility_action_button_frame.png",
+          "bytes": 56729,
+          "sha256": "b719e1e2f2e1d827a2d1a2726f82aab26e3ffcc01757534bd4ac80f026fea1a9",
+          "dimensions": {
+            "width": 600,
+            "height": 420
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_23_compact_utility_action_button/asset_23_utility_action_button_frame_review.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_23_Under_Review/asset_23_utility_action_button_frame_review.png",
+          "bytes": 327766,
+          "sha256": "3c7c2694495faa1de19637d255ff1b9e696e61c62d3b7495c21364f93f44e7de",
+          "dimensions": {
+            "width": 1800,
+            "height": 1500
+          },
+          "mode": "RGB",
+          "has_alpha": false
+        },
+        {
+          "file": "01_locked_assets/asset_23_compact_utility_action_button/asset_23_utility_action_button_frame_spec.json",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_23_Under_Review/asset_23_utility_action_button_frame_spec.json",
+          "bytes": 1468,
+          "sha256": "c944f9fd12d5f04650f9cc97d57e586aa25d6d74946f363b6ae27b8ca741d40b"
+        }
+      ]
+    },
+    {
+      "asset_number": 24,
+      "name": "Utility Action Icon Set",
+      "status": "LOCKED",
+      "notes": "Three antique-gold default-state icons for Chamber, Themes, and Hide/Show. No baked labels or interaction states.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_24_utility_action_icon_set/asset_24_chamber_scales.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_24_Under_Review/asset_24_chamber_scales.png",
+          "bytes": 11218,
+          "sha256": "4b9e218edca87a3f1b67404af2eed2dd36a336999286037588cf6f353d5faea2",
+          "dimensions": {
+            "width": 256,
+            "height": 256
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_24_utility_action_icon_set/asset_24_chamber_scales.svg",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_24_Under_Review/asset_24_chamber_scales.svg",
+          "bytes": 1249,
+          "sha256": "e778ba39de193bfce182900fd947da1a1c232070146149a7860ff8ed561653b0"
+        },
+        {
+          "file": "01_locked_assets/asset_24_utility_action_icon_set/asset_24_hide_show_eye.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_24_Under_Review/asset_24_hide_show_eye.png",
+          "bytes": 24395,
+          "sha256": "5173c5f827f48726524d1476454a1eac2460cbb7dd6cd481bee48875f3097aa7",
+          "dimensions": {
+            "width": 256,
+            "height": 256
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_24_utility_action_icon_set/asset_24_hide_show_eye.svg",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_24_Under_Review/asset_24_hide_show_eye.svg",
+          "bytes": 1253,
+          "sha256": "0753c964d08d005e0a53e3e78c3cace2c7d9857f9882d4eddf64efa4f9eaeb25"
+        },
+        {
+          "file": "01_locked_assets/asset_24_utility_action_icon_set/asset_24_themes_gear.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_24_Under_Review/asset_24_themes_gear.png",
+          "bytes": 18618,
+          "sha256": "15db8c35fa6475e505e8cc278eb0a52d0bbffd69cc36c61f715a3e7208c47e93",
+          "dimensions": {
+            "width": 256,
+            "height": 256
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_24_utility_action_icon_set/asset_24_themes_gear.svg",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_24_Under_Review/asset_24_themes_gear.svg",
+          "bytes": 1291,
+          "sha256": "3dd64a8ae39937cfbdea37a48bb69ae7a3e39123a3c05988a3dc8a4f766da14e"
+        },
+        {
+          "file": "01_locked_assets/asset_24_utility_action_icon_set/asset_24_utility_action_icon_set.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_24_Under_Review/asset_24_utility_action_icon_set.png",
+          "bytes": 58065,
+          "sha256": "b7ba7dd0b64ad94a333d3755b5eb827ba3af95aa836344374b07932a1a9cd723",
+          "dimensions": {
+            "width": 768,
+            "height": 256
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_24_utility_action_icon_set/asset_24_utility_action_icon_set.svg",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_24_Under_Review/asset_24_utility_action_icon_set.svg",
+          "bytes": 2925,
+          "sha256": "75637bbd96a549eaf0d8229820e3cc25cf0100599af96b363084b74303db9b50"
+        },
+        {
+          "file": "01_locked_assets/asset_24_utility_action_icon_set/asset_24_utility_action_icon_set_review.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_24_Under_Review/asset_24_utility_action_icon_set_review.png",
+          "bytes": 353644,
+          "sha256": "58eadb061ec198753dd9cb3435c2cd5878d78451d9faaa793766505c464af59a",
+          "dimensions": {
+            "width": 1800,
+            "height": 1840
+          },
+          "mode": "RGB",
+          "has_alpha": false
+        },
+        {
+          "file": "01_locked_assets/asset_24_utility_action_icon_set/asset_24_utility_action_icon_set_spec.json",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_24_Under_Review/asset_24_utility_action_icon_set_spec.json",
+          "bytes": 2697,
+          "sha256": "e2ed6143b3aca9978860754fdfa6dec6c0a69d4affc7e13a00384d7ea1a9e279"
+        }
+      ]
+    },
+    {
+      "asset_number": 25,
+      "name": "Bottom Navigation Supplemental Icon Set",
+      "status": "LOCKED",
+      "notes": "Three antique-gold navigation icons: Council Notes scroll, Closed Ledgers book, and Battle Reports crossed swords. Asset 24 scales and gear remain reused.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_25_bottom_navigation_icon_set/asset_25_battle_reports_swords.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_25_Under_Review/asset_25_battle_reports_swords.png",
+          "bytes": 11009,
+          "sha256": "7e400bd738abac20276be26a044de61ef898c284dbeded629e78729f7403b6e2",
+          "dimensions": {
+            "width": 256,
+            "height": 256
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_25_bottom_navigation_icon_set/asset_25_battle_reports_swords.svg",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_25_Under_Review/asset_25_battle_reports_swords.svg",
+          "bytes": 931,
+          "sha256": "5fc63eb0e9cac93daa7584054713678cc128ff95afeee38e549f94fb2459cf30"
+        },
+        {
+          "file": "01_locked_assets/asset_25_bottom_navigation_icon_set/asset_25_bottom_navigation_icon_mapping.json",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_25_Under_Review/asset_25_bottom_navigation_icon_mapping.json",
+          "bytes": 861,
+          "sha256": "00d9027e01747260ab321f05378d6b3231fd28c51b494a88062fcc2007aeccb8"
+        },
+        {
+          "file": "01_locked_assets/asset_25_bottom_navigation_icon_set/asset_25_bottom_navigation_icon_set.png",
+          "source": "derived packaging composite",
+          "bytes": 38775,
+          "sha256": "0cb54495d1a399ab3781ada38af04d42322c737e257e5a837eac6453d0f65dcc",
+          "dimensions": {
+            "width": 768,
+            "height": 256
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_25_bottom_navigation_icon_set/asset_25_bottom_navigation_icon_set_review.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_25_Under_Review/asset_25_bottom_navigation_icon_set_review.png",
+          "bytes": 218617,
+          "sha256": "3d4b85d8cc62dc92b89c55bb799ba85dbe5674b2837eb43450967833b0b58fe9",
+          "dimensions": {
+            "width": 1800,
+            "height": 1180
+          },
+          "mode": "RGB",
+          "has_alpha": false
+        },
+        {
+          "file": "01_locked_assets/asset_25_bottom_navigation_icon_set/asset_25_bottom_navigation_icon_set_spec.json",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_25_Under_Review/asset_25_bottom_navigation_icon_set_spec.json",
+          "bytes": 2926,
+          "sha256": "e43e10f65dd40f5a1d48e2390229a36fbb4f37d49e593c4b6aa862be557ee9bb"
+        },
+        {
+          "file": "01_locked_assets/asset_25_bottom_navigation_icon_set/asset_25_closed_ledgers_book.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_25_Under_Review/asset_25_closed_ledgers_book.png",
+          "bytes": 16339,
+          "sha256": "159b63efe35ba38f57d3ba1265798f920cf90cfbf19ee7e23017e3b960a77d10",
+          "dimensions": {
+            "width": 256,
+            "height": 256
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_25_bottom_navigation_icon_set/asset_25_closed_ledgers_book.svg",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_25_Under_Review/asset_25_closed_ledgers_book.svg",
+          "bytes": 937,
+          "sha256": "70c1a8b0237a8506eb4b8d7a0a4acd668f8f14c9ec1c3845d7a8c4927d6c806e"
+        },
+        {
+          "file": "01_locked_assets/asset_25_bottom_navigation_icon_set/asset_25_council_notes_scroll.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_25_Under_Review/asset_25_council_notes_scroll.png",
+          "bytes": 12354,
+          "sha256": "320c24cb51b0a3329ce2d46170b852e636267f4f0ea722f1695247e1eea4fea8",
+          "dimensions": {
+            "width": 256,
+            "height": 256
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_25_bottom_navigation_icon_set/asset_25_council_notes_scroll.svg",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_25_Under_Review/asset_25_council_notes_scroll.svg",
+          "bytes": 955,
+          "sha256": "59ecccfd5f6f379eabc5b93dada421647185cdaff3c80b8279d1889f79dfffa4"
+        }
+      ]
+    },
+    {
+      "asset_number": 26,
+      "name": "Generic Micro-Control Button Frame",
+      "status": "LOCKED",
+      "notes": "Reusable circular dark-oak and antique-gold frame for small live controls. The center remains blank for SVG glyph overlays.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_26_micro_control_button_frame/asset_26_micro_control_button_frame.svg",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_26_Under_Review/asset_26_micro_control_button_frame.svg",
+          "bytes": 1346,
+          "sha256": "b336c97b946a6c068bed4d837347bbd85c7c9b23434b9148484ef5beaf61e259"
+        },
+        {
+          "file": "01_locked_assets/asset_26_micro_control_button_frame/asset_26_micro_control_button_frame.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_26_Under_Review/asset_26_micro_control_button_frame.png",
+          "bytes": 20412,
+          "sha256": "7f2b7a875c666701fa9d0534ba18cb12e6ca11ce78506116e933f03fc08e6a21",
+          "dimensions": {
+            "width": 192,
+            "height": 192
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_26_micro_control_button_frame/asset_26_micro_control_button_frame_review.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_26_Under_Review/asset_26_micro_control_button_frame_review.png",
+          "bytes": 304077,
+          "sha256": "860b1ae719a60fdc946bae2de23a2e72c13a65dc037c92dfc9ef3719f0ea7fd2",
+          "dimensions": {
+            "width": 1800,
+            "height": 1360
+          },
+          "mode": "RGB",
+          "has_alpha": false
+        },
+        {
+          "file": "01_locked_assets/asset_26_micro_control_button_frame/asset_26_micro_control_button_frame_spec.json",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_26_Under_Review/asset_26_micro_control_button_frame_spec.json",
+          "bytes": 1543,
+          "sha256": "983091f8641a4a92ea4e9783b6a9ee15dd683818f12bb642419ef00a108093ef"
+        }
+      ]
+    },
+    {
+      "asset_number": 27,
+      "name": "Micro-Control Glyph Set",
+      "status": "LOCKED",
+      "notes": "Transparent antique-gold Help, Add, Collapse, Expand, and Menu glyphs for use inside Asset 26.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_add_glyph.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_27_Under_Review/asset_27_add_glyph.png",
+          "bytes": 1882,
+          "sha256": "6be65129dd3d65947eff646ef795ead67f8bdb38856af753dd6230ea5a5d355d",
+          "dimensions": {
+            "width": 192,
+            "height": 192
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_add_glyph.svg",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_27_Under_Review/asset_27_add_glyph.svg",
+          "bytes": 514,
+          "sha256": "ea14c0a488ff0e97da1f3da73c7e5bdf160ec65024ec873dc6428c0202e46793"
+        },
+        {
+          "file": "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_collapse_glyph.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_27_Under_Review/asset_27_collapse_glyph.png",
+          "bytes": 2809,
+          "sha256": "b1da54280bcef455753e03626f4ebecd08866cf77a5ba36f675e6c69919ff59b",
+          "dimensions": {
+            "width": 192,
+            "height": 192
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_collapse_glyph.svg",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_27_Under_Review/asset_27_collapse_glyph.svg",
+          "bytes": 586,
+          "sha256": "f2f425d33654a25cfc6f56f185ffc7face63defd8efeb0d2fb0a3fa1a54035a3"
+        },
+        {
+          "file": "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_expand_glyph.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_27_Under_Review/asset_27_expand_glyph.png",
+          "bytes": 2820,
+          "sha256": "f4aad331828d6a512767974699224c479f9f0de5b22744f463891fb81122eaa2",
+          "dimensions": {
+            "width": 192,
+            "height": 192
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_expand_glyph.svg",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_27_Under_Review/asset_27_expand_glyph.svg",
+          "bytes": 589,
+          "sha256": "b052a1a15cd5139705649aa5fe3c3733a50f84ee8416202b5cff0e470d349a86"
+        },
+        {
+          "file": "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_help_glyph.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_27_Under_Review/asset_27_help_glyph.png",
+          "bytes": 6813,
+          "sha256": "6100c4dd6ad27eb26ec9dc94c6ac68a060ee7507dd25cf440b5242479ee501dd",
+          "dimensions": {
+            "width": 192,
+            "height": 192
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_help_glyph.svg",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_27_Under_Review/asset_27_help_glyph.svg",
+          "bytes": 737,
+          "sha256": "9f79de0f0492be19890265c866e96f3d0bef2d65c7800e4ac413164227806182"
+        },
+        {
+          "file": "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_menu_glyph.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_27_Under_Review/asset_27_menu_glyph.png",
+          "bytes": 3428,
+          "sha256": "d0215fd13771c0e6fb2e4a0acb4d2f9ec0e381ad5a912ae55da527b87402370c",
+          "dimensions": {
+            "width": 192,
+            "height": 192
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_menu_glyph.svg",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_27_Under_Review/asset_27_menu_glyph.svg",
+          "bytes": 573,
+          "sha256": "6fd6dfdffc1fc9862e6ecf4e0d235dbacabd6e992907f0a6ebf9644424881853"
+        },
+        {
+          "file": "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_micro_control_glyph_set.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_27_Under_Review/asset_27_micro_control_glyph_set.png",
+          "bytes": 18303,
+          "sha256": "40f9efa8effb993a6da651c199660a6bcd69464df9c0b5e1764f263eddbed2f5",
+          "dimensions": {
+            "width": 960,
+            "height": 192
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_micro_control_glyph_set.svg",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_27_Under_Review/asset_27_micro_control_glyph_set.svg",
+          "bytes": 1707,
+          "sha256": "c2a5c8ec1a7188d6033f30b6baf5541b82550c74a8c2f3be6ce5b2278b7b77a1"
+        },
+        {
+          "file": "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_micro_control_glyph_set_review.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_27_Under_Review/asset_27_micro_control_glyph_set_review.png",
+          "bytes": 314608,
+          "sha256": "3dc7590d2a1890034c6c784af921e72643484fb24ccb91b9d2e1fedcc6ad8234",
+          "dimensions": {
+            "width": 1800,
+            "height": 1320
+          },
+          "mode": "RGB",
+          "has_alpha": false
+        },
+        {
+          "file": "01_locked_assets/asset_27_micro_control_glyph_set/asset_27_micro_control_glyph_set_spec.json",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_27_Under_Review/asset_27_micro_control_glyph_set_spec.json",
+          "bytes": 3631,
+          "sha256": "6e6a09fa4f7ed62c5a1c63cc7c199a8988395dfbb9edfd2e0912197294c6fc43"
+        }
+      ]
+    },
+    {
+      "asset_number": 28,
+      "name": "Minimal Comparison Meter v2",
+      "status": "LOCKED",
+      "notes": "Locked. Minimal frame matching original Battle Report; fills, colors, labels, values, and percentages remain live.",
+      "files": [
+        {
+          "file": "01_locked_assets/asset_28_minimal_comparison_meter_v2/LOCK_NOTE.md",
+          "source": "generated lock note",
+          "bytes": 226,
+          "sha256": "71b5c6aa2721c172810223ddfc11fb5e6b731020eab99ff08d6cb8e71fe77f8d"
+        },
+        {
+          "file": "01_locked_assets/asset_28_minimal_comparison_meter_v2/asset_28_minimal_comparison_meter_v2.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_28_V2_Locked_Review/asset_28_minimal_comparison_meter_v2.png",
+          "bytes": 626,
+          "sha256": "a81cf53bcc7097aa91ec04677d712a477a1311c65f5f2c772c295e3cc4486caa",
+          "dimensions": {
+            "width": 560,
+            "height": 40
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_28_minimal_comparison_meter_v2/asset_28_minimal_comparison_meter_v2_spec.json",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_28_V2_Locked_Review/asset_28_minimal_comparison_meter_v2_spec.json",
+          "bytes": 502,
+          "sha256": "b5767edcae532149e4f732d91b964e0fb20ce839805d35bd5cb4c0922125f5ad"
+        },
+        {
+          "file": "01_locked_assets/asset_28_minimal_comparison_meter_v2/asset_28_v2_fit_mockup.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_28_V2_Locked_Review/asset_28_v2_fit_mockup.png",
+          "bytes": 14268,
+          "sha256": "3953ca2e3eb1213abbbc2dc390e5c9c00778d60884bdb792dabaf5389eefcda1",
+          "dimensions": {
+            "width": 1200,
+            "height": 340
+          },
+          "mode": "RGB",
+          "has_alpha": false
+        },
+        {
+          "file": "01_locked_assets/asset_28_minimal_comparison_meter_v2/asset_28_v2_locked_review.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_28_V2_Locked_Review/asset_28_v2_locked_review.png",
+          "bytes": 109781,
+          "sha256": "f46dcc25da10586cce1ff34b402aeaa56e375fe216a767a3550f6b19f2bc7403",
+          "dimensions": {
+            "width": 1900,
+            "height": 1500
+          },
+          "mode": "RGB",
+          "has_alpha": false
+        },
+        {
+          "file": "01_locked_assets/asset_28_minimal_comparison_meter_v2/asset_28_v2_state_close.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_28_V2_Locked_Review/asset_28_v2_state_close.png",
+          "bytes": 722,
+          "sha256": "15bdf31ee967f7228b0f65262bca1cd0b3770950854018c534796c127758aa3b",
+          "dimensions": {
+            "width": 560,
+            "height": 40
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_28_minimal_comparison_meter_v2/asset_28_v2_state_even.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_28_V2_Locked_Review/asset_28_v2_state_even.png",
+          "bytes": 726,
+          "sha256": "c80b2067fde88cf061a0ed09125f04dd87505287f06151db524d134f76069286",
+          "dimensions": {
+            "width": 560,
+            "height": 40
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_28_minimal_comparison_meter_v2/asset_28_v2_state_left_leading.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_28_V2_Locked_Review/asset_28_v2_state_left_leading.png",
+          "bytes": 738,
+          "sha256": "f4b5e1efa9f68d289abecc8dd213f8afcd202fa4f3bca1b313c28016ab0cd885",
+          "dimensions": {
+            "width": 560,
+            "height": 40
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        },
+        {
+          "file": "01_locked_assets/asset_28_minimal_comparison_meter_v2/asset_28_v2_state_right_leading.png",
+          "source": "/mnt/data/The_Ledger_Hall_Asset_28_V2_Locked_Review/asset_28_v2_state_right_leading.png",
+          "bytes": 738,
+          "sha256": "1b8f76912a600129f335021eb7aa0e3c189d810700379bd6149bdd4a467aa831",
+          "dimensions": {
+            "width": 560,
+            "height": 40
+          },
+          "mode": "RGBA",
+          "has_alpha": true
+        }
+      ]
+    }
+  ],
+  "legacy_archive_note": "99_legacy_archive contains the earlier low-resolution pack for recovery only. Do not treat it as the current production set.",
+  "asset_range": "01-28",
+  "correction_note": "Assets 01-05 were accidentally omitted from the first handoff ZIP and restored in this corrected package.",
+  "last_locked_asset": 28,
+  "next_asset": null,
+  "locked_asset_integrity_check": {
+    "manifest_records_checked": 101,
+    "manifest_file_errors": 0,
+    "images_decoded": 73,
+    "image_decode_errors": 0,
+    "svg_files_parsed": 20,
+    "svg_errors": 0,
+    "json_files_parsed": 31,
+    "json_errors": 0,
+    "active_duplicate_binary_groups": 0,
+    "result": "PASS"
+  },
+  "next_step": "Begin controlled live-page integration \u2014 Phase 0 baseline and branch setup",
+  "provisional_finalization_order": [],
+  "updated": "2026-07-31",
+  "active_assets": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    18,
+    19,
+    20,
+    21,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+  ],
+  "retired_assets": [
+    17,
+    22
+  ],
+  "audit_status": "PASS_WITH_METADATA_CORRECTIONS",
+  "audit_date": "2026-07-31",
+  "audit_report": "03_audit/LOCKED_SET_AUDIT_REPORT.md",
+  "integration_allowlist": "03_audit/INTEGRATION_ASSET_ALLOWLIST.json",
+  "integration_blueprint": "03_pre_live_blueprint/PRE_LIVE_INTEGRATION_BLUEPRINT.md"
+}
