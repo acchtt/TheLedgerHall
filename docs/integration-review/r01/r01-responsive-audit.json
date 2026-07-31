@@ -1,0 +1,214 @@
+[
+  {
+    "name": "desktop-1920",
+    "documentWidth": 1920,
+    "leftClearance": 77.0625,
+    "leftDisplay": "flex",
+    "leftPlaque": {
+      "bottom": 189.984375,
+      "height": 156.21875,
+      "right": 648.21875,
+      "width": 178.546875,
+      "x": 469.671875,
+      "y": 33.765625
+    },
+    "masthead": {
+      "bottom": 211.125,
+      "height": 211.125,
+      "right": 1679.984375,
+      "width": 1439.984375,
+      "x": 240,
+      "y": 0
+    },
+    "rightClearance": 47.53125,
+    "rightDisplay": "flex",
+    "rightPlaque": {
+      "bottom": 189.984375,
+      "height": 156.21875,
+      "right": 1478.375,
+      "width": 236.15625,
+      "x": 1242.21875,
+      "y": 33.765625
+    },
+    "skinState": "skin-v23-ready",
+    "subtitle": {
+      "bottom": 202.65625,
+      "height": 62.625,
+      "right": 1183.1875,
+      "width": 446.390625,
+      "x": 736.796875,
+      "y": 140.03125
+    },
+    "title": {
+      "bottom": 126.140625,
+      "height": 41.203125,
+      "right": 1194.6875,
+      "width": 469.40625,
+      "x": 725.28125,
+      "y": 84.9375
+    },
+    "viewport": {
+      "height": 1080,
+      "width": 1920
+    }
+  },
+  {
+    "name": "desktop-1440",
+    "documentWidth": 1440,
+    "leftClearance": 71.390625,
+    "leftDisplay": "flex",
+    "leftPlaque": {
+      "bottom": 175.921875,
+      "height": 144.65625,
+      "right": 431.3125,
+      "width": 165.328125,
+      "x": 265.984375,
+      "y": 31.265625
+    },
+    "masthead": {
+      "bottom": 195.484375,
+      "height": 195.484375,
+      "right": 1386.65625,
+      "width": 1333.328125,
+      "x": 53.328125,
+      "y": 0
+    },
+    "rightClearance": 44.046875,
+    "rightDisplay": "flex",
+    "rightPlaque": {
+      "bottom": 175.921875,
+      "height": 144.65625,
+      "right": 1199.96875,
+      "width": 218.65625,
+      "x": 981.3125,
+      "y": 31.265625
+    },
+    "skinState": "skin-v23-ready",
+    "subtitle": {
+      "bottom": 187.65625,
+      "height": 57.984375,
+      "right": 926.65625,
+      "width": 413.328125,
+      "x": 513.328125,
+      "y": 129.671875
+    },
+    "title": {
+      "bottom": 116.8125,
+      "height": 38.15625,
+      "right": 937.265625,
+      "width": 434.5625,
+      "x": 502.703125,
+      "y": 78.65625
+    },
+    "viewport": {
+      "height": 1000,
+      "width": 1440
+    }
+  },
+  {
+    "name": "tablet-1024",
+    "documentWidth": 1024,
+    "leftClearance": 61.640625,
+    "leftDisplay": "flex",
+    "leftPlaque": {
+      "bottom": 135.109375,
+      "height": 111.09375,
+      "right": 290.28125,
+      "width": 126.96875,
+      "x": 163.3125,
+      "y": 24.015625
+    },
+    "masthead": {
+      "bottom": 150.140625,
+      "height": 150.140625,
+      "right": 1024,
+      "width": 1024,
+      "x": 0,
+      "y": 0
+    },
+    "rightClearance": 40.625,
+    "rightDisplay": "flex",
+    "rightPlaque": {
+      "bottom": 135.109375,
+      "height": 111.09375,
+      "right": 880.625,
+      "width": 167.921875,
+      "x": 712.703125,
+      "y": 24.015625
+    },
+    "skinState": "skin-v23-ready",
+    "subtitle": {
+      "bottom": 144.109375,
+      "height": 44.53125,
+      "right": 686.078125,
+      "width": 348.15625,
+      "x": 337.921875,
+      "y": 99.578125
+    },
+    "title": {
+      "bottom": 89.109375,
+      "height": 28.109375,
+      "right": 672.078125,
+      "width": 320.15625,
+      "x": 351.921875,
+      "y": 61
+    },
+    "viewport": {
+      "height": 900,
+      "width": 1024
+    }
+  },
+  {
+    "name": "mobile-390",
+    "documentWidth": 1024,
+    "leftClearance": null,
+    "leftDisplay": "none",
+    "leftPlaque": {
+      "bottom": 0,
+      "height": 0,
+      "right": 0,
+      "width": 0,
+      "x": 0,
+      "y": 0
+    },
+    "masthead": {
+      "bottom": 150.140625,
+      "height": 150.140625,
+      "right": 390,
+      "width": 390,
+      "x": 0,
+      "y": 0
+    },
+    "rightClearance": null,
+    "rightDisplay": "none",
+    "rightPlaque": {
+      "bottom": 0,
+      "height": 0,
+      "right": 0,
+      "width": 0,
+      "x": 0,
+      "y": 0
+    },
+    "skinState": "skin-v23-ready",
+    "subtitle": {
+      "bottom": 144.109375,
+      "height": 44.53125,
+      "right": 368.546875,
+      "width": 347.09375,
+      "x": 21.453125,
+      "y": 99.578125
+    },
+    "title": {
+      "bottom": 88.90625,
+      "height": 27.71875,
+      "right": 352.921875,
+      "width": 315.84375,
+      "x": 37.078125,
+      "y": 61.1875
+    },
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  }
+]

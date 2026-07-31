@@ -1,0 +1,131 @@
+@import url("ledger-v24.css?build=blob24");
+
+/* Phase 1 / R01 — audited header assets with live title and subtitle text. */
+.masthead {
+  overflow: hidden;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 8, 5, 0.08) 0%,
+      rgba(8, 8, 5, 0.02) 58%,
+      rgba(12, 8, 4, 0.48) 100%
+    ),
+    url("assets/locked/r01-header/asset_01_header_panorama.png") center 42% / cover no-repeat;
+  box-shadow:
+    inset 0 -0.18cqw 0 rgba(181, 127, 46, 0.44),
+    inset 0 -1.2cqw 1.8cqw rgba(13, 8, 4, 0.34);
+}
+
+.brand {
+  position: absolute;
+  top: 4%;
+  right: 27%;
+  bottom: 4%;
+  left: 27%;
+  z-index: 12;
+  display: grid !important;
+  grid-template-rows: 31% 38% 31%;
+  place-items: center;
+  min-width: 0;
+  color: #1d160f;
+  text-align: center;
+  pointer-events: none;
+}
+
+.brand-crest {
+  align-self: start;
+  width: 5.25cqw;
+  height: 4.1cqw;
+  max-height: 100%;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0.12cqw 0 rgba(255, 214, 116, 0.34))
+    drop-shadow(0 0.24cqw 0.25cqw rgba(0, 0, 0, 0.66));
+}
+
+.brand h1 {
+  align-self: center;
+  margin: 0;
+  color: #241b12;
+  font: 700 clamp(25px, 3.18cqw, 46px) / 0.9 var(--heading);
+  letter-spacing: 0.035em;
+  white-space: nowrap;
+  text-transform: uppercase;
+  -webkit-text-stroke: 0.065cqw rgba(218, 168, 79, 0.92);
+  paint-order: stroke fill;
+  text-shadow:
+    0 0.1cqw 0 rgba(255, 226, 154, 0.7),
+    0 0.22cqw 0 rgba(69, 40, 16, 0.94),
+    0 0.42cqw 0.55cqw rgba(0, 0, 0, 0.55);
+}
+
+.brand p {
+  align-self: end;
+  width: min(31cqw, 100%);
+  min-height: 4.35cqw;
+  margin: 0;
+  padding: 1.5cqw 3.6cqw 1.25cqw;
+  display: grid;
+  place-items: center;
+  background: url("assets/locked/r01-header/asset_13_subtitle_scroll.png") center / 100% 100% no-repeat;
+  color: #382617;
+  font: 600 clamp(11px, 1.08cqw, 16px) / 1.05 var(--body);
+  letter-spacing: 0.012em;
+  white-space: nowrap;
+  text-shadow: 0 0.07cqw rgba(255, 246, 207, 0.72);
+  filter: drop-shadow(0 0.22cqw 0.28cqw rgba(0, 0, 0, 0.42));
+}
+
+/* Retain live header data above the panorama. Later phases replace their frames. */
+.summary-card,
+.utility-nav {
+  z-index: 15;
+}
+
+@media (max-width: 1100px) {
+  .brand {
+    right: 25%;
+    left: 25%;
+  }
+
+  .brand h1 {
+    font-size: clamp(24px, 3.05cqw, 34px);
+  }
+
+  .brand p {
+    width: min(34cqw, 100%);
+    font-size: clamp(10px, 1.02cqw, 13px);
+  }
+}
+
+@media (max-width: 900px) {
+  /* The legacy dashboard remains 1024 px until the responsive phase.
+     Keep R01 independently centered in the real viewport. */
+  .masthead {
+    right: auto;
+    width: 100vw;
+    background-position: center 42%;
+  }
+
+  .masthead .summary-card,
+  .masthead .utility-nav {
+    display: none !important;
+  }
+
+  .brand {
+    top: 4%;
+    right: 5%;
+    bottom: 4%;
+    left: 5%;
+  }
+
+  .brand h1 {
+    max-width: 90vw;
+    font-size: clamp(24px, 7.9vw, 31px);
+  }
+
+  .brand p {
+    width: min(89vw, 348px);
+    font-size: clamp(10px, 2.8vw, 12px);
+  }
+}
