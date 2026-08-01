@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ledger Hall — Desktop Final Review</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 20px; background: #090806; color: #dcc795; font-family: Georgia, serif; }
+    h1 { margin: 0 0 6px; color: #e6bd63; font-size: 25px; font-weight: 500; }
+    p { margin: 0 0 18px; color: #a99367; }
+    .comparison { display: grid; grid-template-columns: repeat(2, 800px); gap: 18px; width: max-content; }
+    figure { margin: 0; padding: 8px; background: #15110b; border: 1px solid #684b20; box-shadow: inset 0 0 0 1px #0a0704, 0 4px 14px #000; }
+    figcaption { height: 31px; display: flex; align-items: center; padding: 0 8px; color: #dfbd70; text-transform: uppercase; letter-spacing: .06em; }
+    .stage { position: relative; width: 782px; height: 489px; overflow: hidden; background: #000; }
+    .stage img { display: block; width: 782px; height: 489px; object-fit: fill; }
+    .stage iframe { width: 1600px; height: 1000px; border: 0; transform: scale(.48875); transform-origin: top left; pointer-events: none; }
+    .note { margin-top: 16px; color: #9f8a61; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h1>The Ledger Hall — Desktop Final Review</h1>
+  <p>Locked desktop baseline v65 at 1600 × 1000. Mobile layout and final team logos are intentionally excluded.</p>
+  <main class="comparison">
+    <figure>
+      <figcaption>Marked original</figcaption>
+      <div class="stage"><img src="ORIGINAL_DESIGN.png" alt="Marked original Ledger Hall design"></div>
+    </figure>
+    <figure>
+      <figcaption>Locked desktop baseline v65</figcaption>
+      <div class="stage"><iframe src="index.html?v=65" title="Ledger Hall locked desktop baseline v65"></iframe></div>
+    </figure>
+  </main>
+  <p class="note">Review target: composition, proportions, hierarchy, panel alignment, border continuity, parchment treatment, and footer placement.</p>
+</body>
+</html>
