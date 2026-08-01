@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Ledger Hall — Simplified Concept v1</title>
+  <link rel="stylesheet" href="styles.css?v=65">
+</head>
+<body>
+  <main class="ledger-shell">
+    <img class="frame-corner frame-corner--tl" src="assets/frame-corner-v1.png" alt="">
+    <img class="frame-corner frame-corner--tr" src="assets/frame-corner-v1.png" alt="">
+    <img class="frame-corner frame-corner--bl" src="assets/frame-corner-v1.png" alt="">
+    <img class="frame-corner frame-corner--br" src="assets/frame-corner-v1.png" alt="">
+    <header class="hero" aria-label="Ledger Hall overview">
+      <section class="summary-card summary-card--left">
+        <img class="summary-emblem lifetime-mark" src="assets/lifetime-golden-tree-v1.png" alt="">
+        <div>
+          <p class="eyebrow">Lifetime P/L</p>
+          <strong id="live-lifetime-pl" class="summary-value positive">+2.882u</strong>
+          <p>Settled: 9.234u</p>
+          <p>ROI: +31.2%</p>
+        </div>
+      </section>
+
+      <div class="hero-title">
+        <h1>The Ledger Hall</h1>
+        <p><span></span>Council Notes, Wagers &amp; Battle Reports<span></span></p>
+      </div>
+
+      <section class="summary-card summary-card--right">
+        <img class="summary-icon" src="assets/utility-chamber-v1.png" alt="">
+        <div>
+          <p class="eyebrow">Trial Record</p>
+          <strong id="live-trial-summary-pl" class="summary-value positive">+0.194u</strong>
+          <p>Record: 3W–2L</p>
+          <p>Pending: 0.25u</p>
+        </div>
+      </section>
+
+      <nav class="hero-tools" aria-label="Utility controls">
+        <button><img class="tool-icon" src="assets/utility-chamber-v1.png" alt=""><span class="tool-label">Chamber</span></button>
+        <button><img class="tool-icon" src="assets/nav-chamber-settings-v1.png" alt=""><span class="tool-label">Settings</span></button>
+        <button><img class="tool-icon" src="assets/utility-help-v1.png" alt=""><span class="tool-label">Help</span></button>
+      </nav>
+    </header>
+
+    <section class="dashboard">
+      <aside class="column column--left">
+        <article class="panel panel--compact">
+          <h2 class="panel-title"><img class="category-icon" src="assets/nav-open-wagers-v1.png" alt="">Open Wagers</h2>
+          <div id="live-open-wager" class="parchment wager-card">
+            <img class="mini-emblem" src="assets/ledger-hall-emblem-production.png" alt="">
+            <div>
+              <strong>Wisla Kraków vs GKS Katowice</strong>
+              <b>GKS Katowice +0.25 @1.980</b>
+              <small>0.25u&nbsp;&nbsp;•&nbsp;&nbsp;125,000 VND</small>
+            </div>
+            <i class="seal">Pending</i>
+          </div>
+        </article>
+
+        <article class="panel panel--compact">
+          <h2 class="panel-title"><img class="category-icon" src="assets/utility-chamber-v1.png" alt="">Trial Record</h2>
+          <dl id="live-trial-record" class="parchment stat-list">
+            <div><dt>Wins</dt><dd>3</dd></div>
+            <div><dt>Losses</dt><dd>2</dd></div>
+            <div><dt>Settled P/L</dt><dd class="positive">+0.194u</dd></div>
+            <div><dt>Pending Exposure</dt><dd>0.25u</dd></div>
+            <div><dt>Min Odds</dt><dd>1.60</dd></div>
+          </dl>
+        </article>
+
+        <article class="panel results-panel">
+          <h2 class="panel-title"><img class="category-icon" src="assets/category-recent-results-v1.png" alt="">Recent Results</h2>
+          <div id="live-recent-results" class="parchment results-list">
+            <p><span>KC +12.5 kills (vs G2)</span><b>W</b></p>
+            <p><span>Over 2.5 maps (G2 vs KC)</span><b>W</b></p>
+            <p><span>Astralis vs HOTU Under 24.5</span><b>W</b></p>
+            <p><span>Vietnam vs East Timor Over 3.0</span><b class="negative">L</b></p>
+            <p><span>Herediano vs Puntarenas Over 1.75</span><b class="negative">L</b></p>
+            <a href="#">View all results →</a>
+          </div>
+        </article>
+      </aside>
+
+      <section class="column column--center">
+        <article class="panel notes-panel">
+          <h2 class="panel-title"><img class="category-icon" src="assets/nav-council-notes-v1.png" alt="">Council Notes</h2>
+          <div id="live-council-notes" class="parchment notes-sheet" aria-live="polite">
+            <article class="message message--you">
+              <img class="mini-emblem" src="assets/ledger-hall-emblem-production.png" alt="">
+              <div><header><b>You</b><time>03:10</time></header><p>G2 is constantly applying pressure and KC is unable to get return kills.</p></div>
+            </article>
+            <article class="message">
+              <img class="mini-emblem" src="assets/ledger-hall-emblem-production.png" alt="">
+              <div><header><b>Council</b><time>03:11</time></header><p>The raw score understates G2’s control. KC +10.5 is withdrawn until the handicap expands.</p></div>
+            </article>
+            <article class="message message--candidate">
+              <img class="mini-emblem" src="assets/ledger-hall-emblem-production.png" alt="">
+              <div><header><b>Council · Official Bet Candidate</b><time>03:19</time></header><p>KC have started generating return kills and the gold lead has narrowed.</p><strong>Karmine Corp +12.5 kills @1.886&nbsp; · &nbsp;Stake: 0.25u</strong></div>
+            </article>
+            <article class="message message--you">
+              <img class="mini-emblem" src="assets/ledger-hall-emblem-production.png" alt="">
+              <div><header><b>You</b><time>03:22</time></header><p>Confirmed. Karmine Corp +12.5 @1.778 — 0.5u.</p></div>
+            </article>
+            <article class="message">
+              <img class="mini-emblem" src="assets/ledger-hall-emblem-production.png" alt="">
+              <div><header><b>Council · Result</b><time>Settled</time></header><p>KC +12.5 kills and Over 2.5 maps both won.</p><strong>Combined profit: +0.762u / +380,750 VND.</strong></div>
+            </article>
+            <form id="live-message-form" class="message-input">
+              <input aria-label="Write your message" placeholder="Write your message…">
+              <button type="submit" aria-label="Send message"><img class="send-icon" src="assets/control-send-v1.png" alt=""></button>
+            </form>
+          </div>
+        </article>
+      </section>
+
+      <aside class="column column--right">
+        <article class="panel battle-panel">
+          <h2 class="panel-title"><img class="category-icon" src="assets/nav-open-wagers-v1.png" alt="">Battle Report</h2>
+          <div class="parchment battle-card">
+            <h3>G2 Esports vs Karmine Corp</h3>
+            <small>LEC 2026 Summer · Game 2</small>
+            <div class="scoreboard"><b class="team-mark">G2</b><strong>10 – 4</strong><b class="team-mark team-mark--blue">KC</b></div>
+            <time>19:45</time>
+          </div>
+        </article>
+
+        <article class="panel odds-panel" data-live-excluded="true">
+          <h2 class="panel-title"><img class="category-icon" src="assets/category-odds-snapshot-v1.png" alt="">Odds Snapshot</h2>
+          <div class="parchment odds-table">
+            <p><span>KC +12.5 kills</span><b>1.886</b><i>–</i></p>
+            <p><span>G2 -12.5 kills</span><b>1.886</b><i>–</i></p>
+            <p><span>Over 29.5 kills</span><b>2.389</b><i class="positive">+0.06</i></p>
+            <p><span>Under 29.5 kills</span><b>1.546</b><i class="negative">−0.04</i></p>
+            <p><span>Over 30.0 min</span><b>1.578</b><i class="positive">+0.03</i></p>
+            <p><span>Under 30.0 min</span><b>2.344</b><i class="negative">−0.05</i></p>
+          </div>
+        </article>
+
+        <article class="panel current-panel">
+          <h2 class="panel-title"><img class="category-icon" src="assets/category-current-read-v1.png" alt="">Current Read</h2>
+          <div id="live-current-read" class="parchment current-read">
+            <p>Lean KC on kills. Gold nearly even.</p>
+            <p>Tempo swings favor extended game.</p>
+          </div>
+        </article>
+      </aside>
+    </section>
+
+    <nav class="bottom-nav" aria-label="Primary navigation">
+      <a class="active" href="#"><img class="nav-icon" src="assets/nav-council-notes-v1.png" alt=""><span>Council Notes</span></a>
+      <a href="#"><img class="nav-icon" src="assets/nav-open-wagers-v1.png" alt=""><span>Open Wagers</span></a>
+      <a href="#"><img class="nav-icon" src="assets/nav-closed-ledgers-v1.png" alt=""><span>Closed Ledgers</span></a>
+      <a href="#"><img class="nav-icon" src="assets/nav-battle-reports-v1.png" alt=""><span>Battle Reports</span></a>
+      <a href="#"><img class="nav-icon" src="assets/nav-chamber-settings-v1.png" alt=""><span>Chamber Settings</span></a>
+    </nav>
+  </main>
+  <textarea id="ledger-hall-live-patch" aria-hidden="true" tabindex="-1" style="position:fixed;right:0;bottom:0;width:1px;height:1px;padding:0;border:0;opacity:0;pointer-events:none">{}</textarea>
+  <script id="ledger-hall-live-data" src="live-data.js?v=6" data-endpoint="./live-data.json" data-poll-ms="15000" defer></script>
+</body>
+</html>

@@ -1,1 +1,0 @@
-V19 composite assets are generated from the approved Ledger Hall reference image.
