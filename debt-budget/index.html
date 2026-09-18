@@ -49,17 +49,100 @@
     input::placeholder { color: #6b7a90; }
     .btn { border: 0; padding: 11px 14px; border-radius: 12px; cursor: pointer; font-weight: 700; }
     .btn-primary { background: var(--accent); color: white; }
-    .debt-form { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr auto; gap: 10px; margin-bottom: 14px; }
-    .debt-list { display: flex; flex-direction: column; gap: 9px; }
-    .debt-row { display: grid; grid-template-columns: minmax(0, 1.35fr) .9fr .9fr .9fr 1fr minmax(220px, 1.3fr) auto; gap: 10px; align-items: center; padding: 12px; background: var(--panel-soft); border: 1px solid var(--line); border-radius: 14px; }
-    .debt-name { font-weight: 750; overflow-wrap: anywhere; }
-    .metric { font-size: .87rem; }
-    .metric small { display: block; color: var(--muted); font-size: .72rem; margin-bottom: 2px; }
-    .delete { border: 0; background: transparent; color: var(--danger); font-size: 1.05rem; cursor: pointer; padding: 8px; }
-    .debt-actions { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
-    .mini-btn { border: 1px solid var(--line); background: #0b1324; color: var(--text); padding: 7px 9px; border-radius: 9px; cursor: pointer; font-size: .76rem; font-weight: 700; }
-    .mini-btn:hover { border-color: var(--accent); color: var(--accent); }
-    .remaining-input { width: 82px; padding: 7px 8px; border-radius: 9px; font-size: .8rem; }
+    .debt-form {
+      display: grid;
+      grid-template-columns: minmax(150px, 1.5fr) minmax(105px, .9fr) minmax(120px, 1fr) minmax(110px, 1fr) auto;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .debt-list { display: flex; flex-direction: column; gap: 12px; }
+    .debt-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px 16px;
+      padding: 16px;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+    .debt-card-head {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-width: 0;
+    }
+    .debt-name {
+      min-width: 0;
+      font-size: .98rem;
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+    .debt-metrics {
+      min-width: 0;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(90px, 1fr));
+      gap: 10px;
+      align-items: start;
+    }
+    .metric {
+      min-width: 0;
+      font-size: .86rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .metric small {
+      display: block;
+      color: var(--muted);
+      font-size: .7rem;
+      font-weight: 500;
+      margin-bottom: 4px;
+      white-space: nowrap;
+    }
+    .metric-value { white-space: nowrap; }
+    .delete {
+      flex: 0 0 auto;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--danger);
+      font-size: 1.05rem;
+      cursor: pointer;
+      padding: 7px 9px;
+      border-radius: 9px;
+    }
+    .delete:hover { background: rgba(248, 113, 113, .10); border-color: rgba(248, 113, 113, .25); }
+    .debt-actions {
+      display: grid;
+      grid-template-columns: auto auto minmax(92px, 110px);
+      gap: 8px;
+      align-items: end;
+      justify-content: end;
+    }
+    .remaining-control {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .remaining-control small {
+      color: var(--muted);
+      font-size: .68rem;
+      white-space: nowrap;
+    }
+    .mini-btn {
+      min-height: 38px;
+      border: 1px solid var(--line);
+      background: #0b1324;
+      color: var(--text);
+      padding: 8px 11px;
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: .76rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .mini-btn:hover { border-color: var(--accent); color: #bfdbfe; background: rgba(59,130,246,.08); }
+    .remaining-input { width: 100%; min-height: 38px; padding: 8px 9px; border-radius: 9px; font-size: .8rem; }
     .empty { color: var(--muted); text-align: center; padding: 24px 10px; border: 1px dashed var(--line); border-radius: 14px; font-size: .88rem; }
     .result-box { margin-top: 16px; padding: 14px; border-radius: 14px; background: var(--panel-soft); border: 1px solid var(--line); }
     .result-row { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; font-size: .9rem; }
@@ -74,6 +157,19 @@
     @media (max-width: 900px) {
       .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .layout { grid-template-columns: 1fr; }
+      .debt-form { grid-template-columns: 1.35fr .9fr 1fr 1fr auto; }
+      .debt-metrics { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    }
+    @media (max-width: 760px) {
+      .debt-form { grid-template-columns: 1fr 1fr; }
+      .debt-form .name-input { grid-column: 1 / -1; }
+      .debt-form button { grid-column: 1 / -1; }
+      .debt-row { grid-template-columns: 1fr; }
+      .debt-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .debt-actions {
+        grid-template-columns: 1fr 1fr minmax(100px, 1fr);
+        justify-content: stretch;
+      }
     }
     @media (max-width: 600px) {
       .app { padding: 14px; }
@@ -83,15 +179,10 @@
       .summary-card .value { font-size: 1.18rem; }
       .panel { padding: 15px; border-radius: 15px; }
       .field-grid { grid-template-columns: 1fr; }
-      .debt-form { grid-template-columns: 1fr 1fr; }
-      .debt-form .name-input { grid-column: 1 / -1; }
-      .debt-form button { grid-column: 1 / -1; }
-      .debt-row { grid-template-columns: 1fr 1fr auto; }
-      .debt-row .debt-name { grid-column: 1 / 3; }
-      .debt-row .metric { grid-column: span 1; }
-      .debt-row .debt-actions { grid-column: 1 / -1; }
-      .debt-row .delete { grid-column: 3; grid-row: 1; }
-      .remaining-input { flex: 1; min-width: 90px; }
+      .debt-row { padding: 14px; }
+      .debt-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .debt-actions { grid-template-columns: 1fr 1fr; }
+      .remaining-control { grid-column: 1 / -1; }
     }
   </style>
 </head>
@@ -298,18 +389,25 @@
         const remaining = remainingDebtDays(debt);
         const original = debtDaysLeft(debt.totalDays);
         row.innerHTML = `
-          <div class="debt-name">${escapeHtml(debt.name)}</div>
-          <div class="metric"><small>Original days</small>${original} days</div>
-          <div class="metric"><small>Remaining</small>${remaining} days</div>
-          <div class="metric"><small>Monthly</small>${money(debt.payment)}</div>
-          <div class="metric"><small>Daily</small>${money(debt.dailyPay || 0)}</div>
-          <div class="metric"><small>Outstanding est.</small>${money(estimatedDebtAmount(debt))}</div>
+          <div class="debt-card-head">
+            <div class="debt-name">${escapeHtml(debt.name)}</div>
+            <button class="delete" aria-label="Delete debt" title="Delete debt" data-index="${index}">✕</button>
+          </div>
+          <div class="debt-metrics">
+            <div class="metric"><small>Original days</small><span class="metric-value">${original} days</span></div>
+            <div class="metric"><small>Remaining</small><span class="metric-value">${remaining} days</span></div>
+            <div class="metric"><small>Monthly</small><span class="metric-value">${money(debt.payment)}</span></div>
+            <div class="metric"><small>Daily</small><span class="metric-value">${money(debt.dailyPay || 0)}</span></div>
+            <div class="metric"><small>Outstanding est.</small><span class="metric-value">${money(estimatedDebtAmount(debt))}</span></div>
+          </div>
           <div class="debt-actions">
             <button class="mini-btn pay-days" data-index="${index}" data-days="1" type="button">Paid 1 day</button>
             <button class="mini-btn pay-days" data-index="${index}" data-days="2" type="button">Paid 2 days</button>
-            <input class="remaining-input" data-index="${index}" type="number" min="0" step="1" value="${remaining}" aria-label="Remaining days" title="Remaining days" />
-          </div>
-          <button class="delete" aria-label="Delete debt" title="Delete debt" data-index="${index}">✕</button>`;
+            <label class="remaining-control">
+              <small>Remaining days</small>
+              <input class="remaining-input" data-index="${index}" type="number" min="0" step="1" value="${remaining}" aria-label="Remaining days" />
+            </label>
+          </div>`;
         list.appendChild(row);
       });
 
