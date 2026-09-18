@@ -186,6 +186,10 @@
               <input id="goalDate" type="date" />
             </div>
             <div class="field">
+              <label for="monthlyPay">Monthly pay toward target</label>
+              <input id="monthlyPay" type="number" min="0" step="100000" placeholder="Optional, e.g. 3,000,000" />
+            </div>
+            <div class="field">
               <label for="extraBudget">Extra monthly contribution</label>
               <input id="extraBudget" type="number" min="0" step="100000" placeholder="Optional" />
             </div>
@@ -197,8 +201,9 @@
           <div class="result-box">
             <div class="result-row"><span>Still needed</span><strong id="remainingGoal">₫0</strong></div>
             <div class="result-row"><span>Months remaining</span><strong id="monthsLeft">—</strong></div>
-            <div class="result-row"><span>Required monthly saving</span><strong id="monthlyNeeded">₫0</strong></div>
-            <div class="result-row"><span>Suggested weekly saving</span><strong id="weeklyNeeded">₫0</strong></div>
+            <div class="result-row"><span>Monthly pay</span><strong id="monthlyNeeded">₫0</strong></div>
+            <div class="result-row"><span>Weekly equivalent</span><strong id="weeklyNeeded">₫0</strong></div>
+            <div class="result-row"><span>Estimated finish</span><strong id="finishDate">—</strong></div>
           </div>
           <div class="budget-status" id="budgetStatus">
             Enter a target amount and date to calculate the monthly budget needed.
@@ -212,7 +217,7 @@
 
   <script>
     const KEY = 'debtBudgetTracker_v1';
-    const state = { income: 0, expenses: 0, debts: [], goalAmount: 0, currentSavings: 0, goalDate: '', extraBudget: 0 };
+    const state = { income: 0, expenses: 0, debts: [], goalAmount: 0, currentSavings: 0, goalDate: '', monthlyPay: 0, extraBudget: 0 };
     const $ = (id) => document.getElementById(id);
     const currency = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND', maximumFractionDigits: 0 });
     const money = (n) => currency.format(Number.isFinite(+n) ? +n : 0);
@@ -228,6 +233,7 @@
       $('goalAmount').value = state.goalAmount || '';
       $('currentSavings').value = state.currentSavings || '';
       $('goalDate').value = state.goalDate || '';
+      $('monthlyPay').value = state.monthlyPay || '';
       $('extraBudget').value = state.extraBudget || '';
     }
 
@@ -289,10 +295,27 @@
       const saved = num(state.currentSavings);
       const remaining = Math.max(0, goal - saved);
       const pct = goal > 0 ? Math.min(100, (saved / goal) * 100) : 0;
-      const months = monthsBetweenNowAnd(state.goalDate);
-      const requiredMonthly = months === null ? 0 : (months === 0 ? remaining : remaining / months);
+      const dateMonths = monthsBetweenNowAnd(state.goalDate);
+      const chosenMonthlyPay = num(state.monthlyPay);
+      const usingMonthlyPay = chosenMonthlyPay > 0;
+      const months = usingMonthlyPay
+        ? (remaining > 0 ? Math.ceil(remaining / chosenMonthlyPay) : 0)
+        : dateMonths;
+      const requiredMonthly = usingMonthlyPay
+        ? chosenMonthlyPay
+        : (months === null ? 0 : (months === 0 ? remaining : remaining / months));
       const requiredWeekly = requiredMonthly / 4.345;
       const availableForGoal = Math.max(0, freeCash) + num(state.extraBudget);
+
+      let estimatedFinish = '—';
+      if (usingMonthlyPay && remaining > 0) {
+        const finish = new Date();
+        finish.setMonth(finish.getMonth() + months);
+        estimatedFinish = finish.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
+      } else if (!usingMonthlyPay && state.goalDate) {
+        const finish = new Date(state.goalDate + 'T00:00:00');
+        if (!isNaN(finish)) estimatedFinish = finish.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+      }
 
       $('goalPercent').textContent = `${Math.round(pct)}%`;
       $('progressText').textContent = `${money(saved)} / ${money(goal)}`;
@@ -301,10 +324,18 @@
       $('monthsLeft').textContent = months === null ? '—' : months === 0 ? 'Due now' : String(months);
       $('monthlyNeeded').textContent = money(requiredMonthly);
       $('weeklyNeeded').textContent = money(requiredWeekly);
+      $('finishDate').textContent = estimatedFinish;
 
-      let status = 'Enter a target amount and date to calculate the monthly budget needed.';
+      let status = 'Enter a target amount and either a target date or monthly pay.';
       if (goal > 0 && remaining === 0) {
         status = 'Target reached. Your current savings already cover this goal.';
+      } else if (goal > 0 && usingMonthlyPay) {
+        if (availableForGoal >= requiredMonthly) {
+          status = `At ${money(requiredMonthly)} per month, you can reach the target in about ${months} month${months === 1 ? '' : 's'}.`;
+        } else {
+          const gap = requiredMonthly - availableForGoal;
+          status = `Your chosen monthly pay is ${money(requiredMonthly)}. Based on the current budget, you are short by about ${money(gap)} per month.`;
+        }
       } else if (goal > 0 && months !== null && months > 0) {
         if (availableForGoal >= requiredMonthly) {
           status = `On track: your available monthly amount (${money(availableForGoal)}) can cover the required ${money(requiredMonthly)} per month.`;
@@ -313,7 +344,7 @@
           status = `Budget gap: you need about ${money(gap)} more per month to reach this target by the selected date.`;
         }
       } else if (goal > 0 && months === 0) {
-        status = 'The selected target date has already arrived. Choose a future date for a monthly plan.';
+        status = 'The selected target date has already arrived. Choose a future date or enter a monthly pay amount.';
       }
       $('budgetStatus').textContent = status;
       renderDebts();
@@ -331,7 +362,7 @@
       update();
     });
 
-    ['income','expenses','goalAmount','currentSavings','extraBudget'].forEach(id => {
+    ['income','expenses','goalAmount','currentSavings','monthlyPay','extraBudget'].forEach(id => {
       $(id).addEventListener('input', () => {
         state[id] = num($(id).value);
         update();
@@ -346,8 +377,8 @@
     $('resetBtn').addEventListener('click', () => {
       if (!confirm('Reset all debt and budget data?')) return;
       localStorage.removeItem(KEY);
-      Object.assign(state, { income: 0, expenses: 0, debts: [], goalAmount: 0, currentSavings: 0, goalDate: '', extraBudget: 0 });
-      ['income','expenses','goalAmount','currentSavings','goalDate','extraBudget'].forEach(id => $(id).value = '');
+      Object.assign(state, { income: 0, expenses: 0, debts: [], goalAmount: 0, currentSavings: 0, goalDate: '', monthlyPay: 0, extraBudget: 0 });
+      ['income','expenses','goalAmount','currentSavings','goalDate','monthlyPay','extraBudget'].forEach(id => $(id).value = '');
       update();
     });
 
