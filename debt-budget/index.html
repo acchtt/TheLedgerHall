@@ -201,6 +201,7 @@
           <div class="result-box">
             <div class="result-row"><span>Still needed</span><strong id="remainingGoal">₫0</strong></div>
             <div class="result-row"><span>Months remaining</span><strong id="monthsLeft">—</strong></div>
+            <div class="result-row"><span>Total days left</span><strong id="daysLeft">—</strong></div>
             <div class="result-row"><span>Monthly pay</span><strong id="monthlyNeeded">₫0</strong></div>
             <div class="result-row"><span>Weekly equivalent</span><strong id="weeklyNeeded">₫0</strong></div>
             <div class="result-row"><span>Estimated finish</span><strong id="finishDate">—</strong></div>
@@ -239,12 +240,18 @@
 
     function save() { localStorage.setItem(KEY, JSON.stringify(state)); }
 
-    function monthsBetweenNowAnd(dateString) {
+    function daysBetweenNowAnd(dateString) {
       if (!dateString) return null;
       const now = new Date();
       const end = new Date(dateString + 'T23:59:59');
       if (isNaN(end) || end <= now) return 0;
-      const days = (end - now) / 86400000;
+      return Math.max(1, Math.ceil((end - now) / 86400000));
+    }
+
+    function monthsBetweenNowAnd(dateString) {
+      const days = daysBetweenNowAnd(dateString);
+      if (days === null) return null;
+      if (days === 0) return 0;
       return Math.max(1, Math.ceil(days / 30.4375));
     }
 
@@ -295,6 +302,7 @@
       const saved = num(state.currentSavings);
       const remaining = Math.max(0, goal - saved);
       const pct = goal > 0 ? Math.min(100, (saved / goal) * 100) : 0;
+      const dateDays = daysBetweenNowAnd(state.goalDate);
       const dateMonths = monthsBetweenNowAnd(state.goalDate);
       const chosenMonthlyPay = num(state.monthlyPay);
       const usingMonthlyPay = chosenMonthlyPay > 0;
@@ -306,6 +314,9 @@
         : (months === null ? 0 : (months === 0 ? remaining : remaining / months));
       const requiredWeekly = requiredMonthly / 4.345;
       const availableForGoal = Math.max(0, freeCash) + num(state.extraBudget);
+      const totalDaysLeft = usingMonthlyPay
+        ? (remaining > 0 ? Math.ceil((remaining / chosenMonthlyPay) * 30.4375) : 0)
+        : dateDays;
 
       let estimatedFinish = '—';
       if (usingMonthlyPay && remaining > 0) {
@@ -322,6 +333,7 @@
       $('progressBar').style.width = `${pct}%`;
       $('remainingGoal').textContent = money(remaining);
       $('monthsLeft').textContent = months === null ? '—' : months === 0 ? 'Due now' : String(months);
+      $('daysLeft').textContent = totalDaysLeft === null ? '—' : totalDaysLeft === 0 ? '0 days' : `${totalDaysLeft} days`;
       $('monthlyNeeded').textContent = money(requiredMonthly);
       $('weeklyNeeded').textContent = money(requiredWeekly);
       $('finishDate').textContent = estimatedFinish;
