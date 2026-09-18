@@ -50,11 +50,15 @@
     .btn-primary { background: var(--accent); color: white; }
     .debt-form { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr auto; gap: 10px; margin-bottom: 14px; }
     .debt-list { display: flex; flex-direction: column; gap: 9px; }
-    .debt-row { display: grid; grid-template-columns: minmax(0, 1.5fr) 1fr 1fr 1fr 1fr auto; gap: 10px; align-items: center; padding: 12px; background: var(--panel-soft); border: 1px solid var(--line); border-radius: 14px; }
+    .debt-row { display: grid; grid-template-columns: minmax(0, 1.35fr) .9fr .9fr .9fr 1fr minmax(220px, 1.3fr) auto; gap: 10px; align-items: center; padding: 12px; background: var(--panel-soft); border: 1px solid var(--line); border-radius: 14px; }
     .debt-name { font-weight: 750; overflow-wrap: anywhere; }
     .metric { font-size: .87rem; }
     .metric small { display: block; color: var(--muted); font-size: .72rem; margin-bottom: 2px; }
     .delete { border: 0; background: transparent; color: var(--danger); font-size: 1.05rem; cursor: pointer; padding: 8px; }
+    .debt-actions { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+    .mini-btn { border: 1px solid var(--line); background: #fff; color: var(--text); padding: 7px 9px; border-radius: 9px; cursor: pointer; font-size: .76rem; font-weight: 700; }
+    .mini-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .remaining-input { width: 82px; padding: 7px 8px; border-radius: 9px; font-size: .8rem; }
     .empty { color: var(--muted); text-align: center; padding: 24px 10px; border: 1px dashed var(--line); border-radius: 14px; font-size: .88rem; }
     .result-box { margin-top: 16px; padding: 14px; border-radius: 14px; background: var(--panel-soft); border: 1px solid var(--line); }
     .result-row { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; font-size: .9rem; }
@@ -84,7 +88,9 @@
       .debt-row { grid-template-columns: 1fr 1fr auto; }
       .debt-row .debt-name { grid-column: 1 / 3; }
       .debt-row .metric { grid-column: span 1; }
+      .debt-row .debt-actions { grid-column: 1 / -1; }
       .debt-row .delete { grid-column: 3; grid-row: 1; }
+      .remaining-input { flex: 1; min-width: 90px; }
     }
   </style>
 </head>
@@ -261,13 +267,16 @@
       return String(str).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
     }
 
-    function debtDaysLeft(totalDays) {
-      const days = Math.max(0, Math.ceil(Number(totalDays) || 0));
-      return days;
+    function debtDaysLeft(value) {
+      return Math.max(0, Math.ceil(Number(value) || 0));
+    }
+
+    function remainingDebtDays(debt) {
+      return debtDaysLeft(debt.remainingDays ?? debt.totalDays);
     }
 
     function estimatedDebtAmount(debt) {
-      const days = debtDaysLeft(debt.totalDays);
+      const days = remainingDebtDays(debt);
       const dailyPayment = num(debt.dailyPay);
       const monthlyPayment = num(debt.payment);
       if (dailyPayment > 0) return days * dailyPayment;
@@ -285,15 +294,43 @@
       state.debts.forEach((debt, index) => {
         const row = document.createElement('div');
         row.className = 'debt-row';
+        const remaining = remainingDebtDays(debt);
+        const original = debtDaysLeft(debt.totalDays);
         row.innerHTML = `
           <div class="debt-name">${escapeHtml(debt.name)}</div>
-          <div class="metric"><small>Total days</small>${debtDaysLeft(debt.totalDays)} days</div>
+          <div class="metric"><small>Original days</small>${original} days</div>
+          <div class="metric"><small>Remaining</small>${remaining} days</div>
           <div class="metric"><small>Monthly</small>${money(debt.payment)}</div>
           <div class="metric"><small>Daily</small>${money(debt.dailyPay || 0)}</div>
-          <div class="metric"><small>Estimated total</small>${money(estimatedDebtAmount(debt))}</div>
+          <div class="metric"><small>Outstanding est.</small>${money(estimatedDebtAmount(debt))}</div>
+          <div class="debt-actions">
+            <button class="mini-btn pay-days" data-index="${index}" data-days="1" type="button">Paid 1 day</button>
+            <button class="mini-btn pay-days" data-index="${index}" data-days="2" type="button">Paid 2 days</button>
+            <input class="remaining-input" data-index="${index}" type="number" min="0" step="1" value="${remaining}" aria-label="Remaining days" title="Remaining days" />
+          </div>
           <button class="delete" aria-label="Delete debt" title="Delete debt" data-index="${index}">✕</button>`;
         list.appendChild(row);
       });
+
+      list.querySelectorAll('.pay-days').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const index = Number(btn.dataset.index);
+          const days = Number(btn.dataset.days) || 0;
+          const debt = state.debts[index];
+          const current = remainingDebtDays(debt);
+          debt.remainingDays = Math.max(0, current - days);
+          update();
+        });
+      });
+
+      list.querySelectorAll('.remaining-input').forEach(input => {
+        input.addEventListener('change', () => {
+          const index = Number(input.dataset.index);
+          state.debts[index].remainingDays = debtDaysLeft(input.value);
+          update();
+        });
+      });
+
       list.querySelectorAll('.delete').forEach(btn => {
         btn.addEventListener('click', () => {
           state.debts.splice(Number(btn.dataset.index), 1);
@@ -391,7 +428,7 @@
       const payment = num($('debtPayment').value);
       const dailyPay = num($('debtDailyPay').value);
       if (!name || totalDays <= 0 || (payment <= 0 && dailyPay <= 0)) return;
-      state.debts.push({ name, totalDays, payment, dailyPay });
+      state.debts.push({ name, totalDays, remainingDays: totalDays, payment, dailyPay });
       $('debtForm').reset();
       update();
     });
