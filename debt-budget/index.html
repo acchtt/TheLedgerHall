@@ -148,6 +148,16 @@
     .mini-btn:hover { border-color: var(--accent); color: #bfdbfe; background: rgba(59,130,246,.08); }
     .remaining-input { width: 100%; min-height: 38px; padding: 8px 9px; border-radius: 9px; font-size: .8rem; }
     .empty { color: var(--muted); text-align: center; padding: 24px 10px; border: 1px dashed var(--line); border-radius: 14px; font-size: .88rem; }
+    .income-log { margin-top: 16px; }
+    .income-log-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 9px; }
+    .income-log-head strong { font-size: .88rem; }
+    .income-log-head span { color: var(--muted); font-size: .74rem; }
+    .income-form { display: grid; grid-template-columns: minmax(135px, .8fr) minmax(150px, 1fr) auto; gap: 9px; }
+    .income-entries { display: flex; flex-direction: column; gap: 7px; margin-top: 10px; }
+    .income-entry { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; align-items: center; padding: 9px 11px; border-radius: 11px; background: var(--panel-soft); border: 1px solid var(--line); }
+    .income-entry-date { color: var(--muted); font-size: .78rem; }
+    .income-entry-amount { font-weight: 800; font-size: .84rem; white-space: nowrap; }
+    .income-entry .delete { padding: 3px 6px; font-size: .92rem; }
     .result-box { margin-top: 16px; padding: 14px; border-radius: 14px; background: var(--panel-soft); border: 1px solid var(--line); }
     .result-row { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; font-size: .9rem; }
     .result-row span:first-child { color: var(--muted); }
@@ -179,6 +189,8 @@
       .summary-card .value { font-size: 1.18rem; }
       .panel { padding: 15px; border-radius: 15px; }
       .field-grid { grid-template-columns: 1fr; }
+      .income-form { grid-template-columns: 1fr; }
+      .income-form button { width: 100%; }
       .debt-row { padding: 14px; }
       .debt-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
       .debt-actions { display: grid; grid-template-columns: 1fr 1fr; }
@@ -231,24 +243,31 @@
           <div class="field-grid">
             <div class="field">
               <label for="income">Fixed monthly income</label>
-              <input id="income" type="number" min="0" step="100000" placeholder="Optional, e.g. 15,000,000" />
-            </div>
-            <div class="field">
-              <label for="dailyIncome">Daily income</label>
-              <input id="dailyIncome" type="number" min="0" step="10000" placeholder="e.g. 500,000" />
-            </div>
-            <div class="field">
-              <label for="incomeDays">Paid days per month</label>
-              <input id="incomeDays" type="number" min="0" max="31" step="1" placeholder="e.g. 26" />
+              <input id="income" type="number" min="0" step="100000" placeholder="Optional" />
             </div>
             <div class="field">
               <label for="expenses">Living / fixed expenses</label>
               <input id="expenses" type="number" min="0" step="100000" placeholder="e.g. 7,000,000" />
             </div>
           </div>
+
+          <div class="income-log">
+            <div class="income-log-head">
+              <strong>Daily income log</strong>
+              <span id="incomeMonthLabel">Current month</span>
+            </div>
+            <form class="income-form" id="incomeForm">
+              <input id="incomeDate" type="date" required />
+              <input id="incomeAmount" type="number" min="0" step="1000" placeholder="Income for this day" required />
+              <button class="btn btn-primary" type="submit">Add income</button>
+            </form>
+            <div id="incomeEntries" class="income-entries"></div>
+          </div>
+
           <div class="result-box">
             <div class="result-row"><span>Fixed monthly income</span><strong id="incomeResult">₫0</strong></div>
-            <div class="result-row"><span>Daily income equivalent</span><strong id="dailyIncomeResult">₫0</strong></div>
+            <div class="result-row"><span>Logged income this month</span><strong id="loggedIncomeResult">₫0</strong></div>
+            <div class="result-row"><span>Average per recorded day</span><strong id="avgDailyIncomeResult">₫0</strong></div>
             <div class="result-row"><span>Total monthly income</span><strong id="totalIncomeResult">₫0</strong></div>
             <div class="result-row"><span>Fixed expenses</span><strong id="expenseResult">₫0</strong></div>
             <div class="result-row"><span>Debt payments</span><strong id="debtPaymentResult">₫0</strong></div>
@@ -328,7 +347,7 @@
 
   <script>
     const KEY = 'debtBudgetTracker_v1';
-    const state = { income: 0, dailyIncome: 0, incomeDays: 0, expenses: 0, debts: [], goalAmount: 0, currentSavings: 0, goalDate: '', monthlyPay: 0, extraBudget: 0 };
+    const state = { income: 0, expenses: 0, dailyIncomeEntries: [], debts: [], goalAmount: 0, currentSavings: 0, goalDate: '', monthlyPay: 0, extraBudget: 0 };
     const $ = (id) => document.getElementById(id);
     const currency = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND', maximumFractionDigits: 0 });
     const money = (n) => currency.format(Number.isFinite(+n) ? +n : 0);
@@ -339,9 +358,8 @@
         const saved = JSON.parse(localStorage.getItem(KEY));
         if (saved && typeof saved === 'object') Object.assign(state, saved);
       } catch (_) {}
+      if (!Array.isArray(state.dailyIncomeEntries)) state.dailyIncomeEntries = [];
       $('income').value = state.income || '';
-      $('dailyIncome').value = state.dailyIncome || '';
-      $('incomeDays').value = state.incomeDays || '';
       $('expenses').value = state.expenses || '';
       $('goalAmount').value = state.goalAmount || '';
       $('currentSavings').value = state.currentSavings || '';
@@ -369,6 +387,57 @@
 
     function escapeHtml(str) {
       return String(str).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+    }
+
+    function localDateString(date = new Date()) {
+      const y = date.getFullYear();
+      const m = String(date.getMonth() + 1).padStart(2, '0');
+      const d = String(date.getDate()).padStart(2, '0');
+      return `${y}-${m}-${d}`;
+    }
+
+    function currentMonthKey() {
+      return localDateString().slice(0, 7);
+    }
+
+    function currentMonthIncomeEntries() {
+      const key = currentMonthKey();
+      return state.dailyIncomeEntries.filter(entry => String(entry.date || '').slice(0, 7) === key);
+    }
+
+    function renderIncomeEntries() {
+      const list = $('incomeEntries');
+      const entries = currentMonthIncomeEntries()
+        .slice()
+        .sort((a, b) => String(b.date).localeCompare(String(a.date)));
+
+      const month = new Date();
+      $('incomeMonthLabel').textContent = month.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+      if (!entries.length) {
+        list.innerHTML = '<div class="empty">No daily income recorded this month.</div>';
+        return;
+      }
+
+      list.innerHTML = '';
+      entries.forEach(entry => {
+        const originalIndex = state.dailyIncomeEntries.indexOf(entry);
+        const row = document.createElement('div');
+        row.className = 'income-entry';
+        const prettyDate = new Date(entry.date + 'T00:00:00').toLocaleDateString('en-GB', { day: '2-digit', month: 'short' });
+        row.innerHTML = `
+          <div class="income-entry-date">${prettyDate}</div>
+          <div class="income-entry-amount">${money(entry.amount)}</div>
+          <button class="delete income-delete" data-index="${originalIndex}" type="button" aria-label="Delete income entry">✕</button>`;
+        list.appendChild(row);
+      });
+
+      list.querySelectorAll('.income-delete').forEach(btn => {
+        btn.addEventListener('click', () => {
+          state.dailyIncomeEntries.splice(Number(btn.dataset.index), 1);
+          update();
+        });
+      });
     }
 
     function debtDaysLeft(value) {
@@ -456,15 +525,19 @@
         const daily = num(d.dailyPay);
         return sum + (daily > 0 ? daily * 30.4375 : num(d.payment));
       }, 0);
-      const dailyIncomeEquivalent = num(state.dailyIncome) * num(state.incomeDays);
-      const totalMonthlyIncome = num(state.income) + dailyIncomeEquivalent;
+      const monthEntries = currentMonthIncomeEntries();
+      const loggedMonthlyIncome = monthEntries.reduce((sum, entry) => sum + num(entry.amount), 0);
+      const recordedDays = new Set(monthEntries.map(entry => entry.date)).size;
+      const averageDailyIncome = recordedDays > 0 ? loggedMonthlyIncome / recordedDays : 0;
+      const totalMonthlyIncome = num(state.income) + loggedMonthlyIncome;
       const freeCash = totalMonthlyIncome - state.expenses - monthlyDebt;
       $('totalDebt').textContent = money(totalDebt);
       $('monthlyDebt').textContent = money(monthlyDebt);
       $('freeCash').textContent = money(freeCash);
       $('freeCash').style.color = freeCash < 0 ? 'var(--danger)' : 'var(--text)';
       $('incomeResult').textContent = money(state.income);
-      $('dailyIncomeResult').textContent = money(dailyIncomeEquivalent);
+      $('loggedIncomeResult').textContent = money(loggedMonthlyIncome);
+      $('avgDailyIncomeResult').textContent = money(averageDailyIncome);
       $('totalIncomeResult').textContent = money(totalMonthlyIncome);
       $('expenseResult').textContent = money(state.expenses);
       $('debtPaymentResult').textContent = money(monthlyDebt);
@@ -532,9 +605,24 @@
         status = 'The selected target date has already arrived. Choose a future date or enter a monthly pay amount.';
       }
       $('budgetStatus').textContent = status;
+      renderIncomeEntries();
       renderDebts();
       save();
     }
+
+    $('incomeForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const date = $('incomeDate').value;
+      const amount = num($('incomeAmount').value);
+      if (!date || amount <= 0) return;
+
+      const existing = state.dailyIncomeEntries.find(entry => entry.date === date);
+      if (existing) existing.amount = num(existing.amount) + amount;
+      else state.dailyIncomeEntries.push({ date, amount });
+
+      $('incomeAmount').value = '';
+      update();
+    });
 
     $('debtForm').addEventListener('submit', (e) => {
       e.preventDefault();
@@ -548,7 +636,7 @@
       update();
     });
 
-    ['income','dailyIncome','incomeDays','expenses','goalAmount','currentSavings','monthlyPay','extraBudget'].forEach(id => {
+    ['income','expenses','goalAmount','currentSavings','monthlyPay','extraBudget'].forEach(id => {
       $(id).addEventListener('input', () => {
         state[id] = num($(id).value);
         update();
@@ -563,12 +651,14 @@
     $('resetBtn').addEventListener('click', () => {
       if (!confirm('Reset all debt and budget data?')) return;
       localStorage.removeItem(KEY);
-      Object.assign(state, { income: 0, dailyIncome: 0, incomeDays: 0, expenses: 0, debts: [], goalAmount: 0, currentSavings: 0, goalDate: '', monthlyPay: 0, extraBudget: 0 });
-      ['income','dailyIncome','incomeDays','expenses','goalAmount','currentSavings','goalDate','monthlyPay','extraBudget'].forEach(id => $(id).value = '');
+      Object.assign(state, { income: 0, expenses: 0, dailyIncomeEntries: [], debts: [], goalAmount: 0, currentSavings: 0, goalDate: '', monthlyPay: 0, extraBudget: 0 });
+      ['income','expenses','goalAmount','currentSavings','goalDate','monthlyPay','extraBudget','incomeAmount'].forEach(id => $(id).value = '');
+      $('incomeDate').value = localDateString();
       update();
     });
 
     load();
+    $('incomeDate').value = localDateString();
     update();
   </script>
 </body>
