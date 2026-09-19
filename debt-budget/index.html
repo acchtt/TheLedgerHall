@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0f172a" />
+  <meta name="theme-color" content="#0b1220" />
   <title>Debt & Budget Tracker</title>
   <style>
     :root {
@@ -58,8 +58,8 @@
     .debt-list { display: flex; flex-direction: column; gap: 12px; }
     .debt-row {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 14px 16px;
+      grid-template-columns: 1fr;
+      gap: 14px;
       padding: 16px;
       background: var(--panel-soft);
       border: 1px solid var(--line);
@@ -80,10 +80,11 @@
       overflow-wrap: anywhere;
     }
     .debt-metrics {
+      width: 100%;
       min-width: 0;
       display: grid;
-      grid-template-columns: repeat(5, minmax(90px, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 12px;
       align-items: start;
     }
     .metric {
@@ -113,16 +114,19 @@
     }
     .delete:hover { background: rgba(248, 113, 113, .10); border-color: rgba(248, 113, 113, .25); }
     .debt-actions {
-      display: grid;
-      grid-template-columns: auto auto minmax(92px, 110px);
+      width: 100%;
+      display: flex;
       gap: 8px;
       align-items: end;
-      justify-content: end;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      padding-top: 2px;
     }
     .remaining-control {
       display: flex;
       flex-direction: column;
       gap: 4px;
+      width: 120px;
     }
     .remaining-control small {
       color: var(--muted);
@@ -158,18 +162,14 @@
       .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .layout { grid-template-columns: 1fr; }
       .debt-form { grid-template-columns: 1.35fr .9fr 1fr 1fr auto; }
-      .debt-metrics { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .debt-metrics { grid-template-columns: repeat(auto-fit, minmax(115px, 1fr)); }
     }
     @media (max-width: 760px) {
       .debt-form { grid-template-columns: 1fr 1fr; }
       .debt-form .name-input { grid-column: 1 / -1; }
       .debt-form button { grid-column: 1 / -1; }
-      .debt-row { grid-template-columns: 1fr; }
       .debt-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .debt-actions {
-        grid-template-columns: 1fr 1fr minmax(100px, 1fr);
-        justify-content: stretch;
-      }
+      .debt-actions { justify-content: flex-start; }
     }
     @media (max-width: 600px) {
       .app { padding: 14px; }
@@ -181,8 +181,8 @@
       .field-grid { grid-template-columns: 1fr; }
       .debt-row { padding: 14px; }
       .debt-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-      .debt-actions { grid-template-columns: 1fr 1fr; }
-      .remaining-control { grid-column: 1 / -1; }
+      .debt-actions { display: grid; grid-template-columns: 1fr 1fr; }
+      .remaining-control { grid-column: 1 / -1; width: 100%; }
     }
   </style>
 </head>
@@ -230,8 +230,16 @@
           </div>
           <div class="field-grid">
             <div class="field">
-              <label for="income">Monthly income</label>
-              <input id="income" type="number" min="0" step="100000" placeholder="e.g. 15,000,000" />
+              <label for="income">Fixed monthly income</label>
+              <input id="income" type="number" min="0" step="100000" placeholder="Optional, e.g. 15,000,000" />
+            </div>
+            <div class="field">
+              <label for="dailyIncome">Daily income</label>
+              <input id="dailyIncome" type="number" min="0" step="10000" placeholder="e.g. 500,000" />
+            </div>
+            <div class="field">
+              <label for="incomeDays">Paid days per month</label>
+              <input id="incomeDays" type="number" min="0" max="31" step="1" placeholder="e.g. 26" />
             </div>
             <div class="field">
               <label for="expenses">Living / fixed expenses</label>
@@ -239,7 +247,9 @@
             </div>
           </div>
           <div class="result-box">
-            <div class="result-row"><span>Income</span><strong id="incomeResult">₫0</strong></div>
+            <div class="result-row"><span>Fixed monthly income</span><strong id="incomeResult">₫0</strong></div>
+            <div class="result-row"><span>Daily income equivalent</span><strong id="dailyIncomeResult">₫0</strong></div>
+            <div class="result-row"><span>Total monthly income</span><strong id="totalIncomeResult">₫0</strong></div>
             <div class="result-row"><span>Fixed expenses</span><strong id="expenseResult">₫0</strong></div>
             <div class="result-row"><span>Debt payments</span><strong id="debtPaymentResult">₫0</strong></div>
             <div class="result-row"><span>Available after commitments</span><strong id="availableResult">₫0</strong></div>
@@ -318,7 +328,7 @@
 
   <script>
     const KEY = 'debtBudgetTracker_v1';
-    const state = { income: 0, expenses: 0, debts: [], goalAmount: 0, currentSavings: 0, goalDate: '', monthlyPay: 0, extraBudget: 0 };
+    const state = { income: 0, dailyIncome: 0, incomeDays: 0, expenses: 0, debts: [], goalAmount: 0, currentSavings: 0, goalDate: '', monthlyPay: 0, extraBudget: 0 };
     const $ = (id) => document.getElementById(id);
     const currency = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND', maximumFractionDigits: 0 });
     const money = (n) => currency.format(Number.isFinite(+n) ? +n : 0);
@@ -330,6 +340,8 @@
         if (saved && typeof saved === 'object') Object.assign(state, saved);
       } catch (_) {}
       $('income').value = state.income || '';
+      $('dailyIncome').value = state.dailyIncome || '';
+      $('incomeDays').value = state.incomeDays || '';
       $('expenses').value = state.expenses || '';
       $('goalAmount').value = state.goalAmount || '';
       $('currentSavings').value = state.currentSavings || '';
@@ -444,12 +456,16 @@
         const daily = num(d.dailyPay);
         return sum + (daily > 0 ? daily * 30.4375 : num(d.payment));
       }, 0);
-      const freeCash = state.income - state.expenses - monthlyDebt;
+      const dailyIncomeEquivalent = num(state.dailyIncome) * num(state.incomeDays);
+      const totalMonthlyIncome = num(state.income) + dailyIncomeEquivalent;
+      const freeCash = totalMonthlyIncome - state.expenses - monthlyDebt;
       $('totalDebt').textContent = money(totalDebt);
       $('monthlyDebt').textContent = money(monthlyDebt);
       $('freeCash').textContent = money(freeCash);
       $('freeCash').style.color = freeCash < 0 ? 'var(--danger)' : 'var(--text)';
       $('incomeResult').textContent = money(state.income);
+      $('dailyIncomeResult').textContent = money(dailyIncomeEquivalent);
+      $('totalIncomeResult').textContent = money(totalMonthlyIncome);
       $('expenseResult').textContent = money(state.expenses);
       $('debtPaymentResult').textContent = money(monthlyDebt);
       $('availableResult').textContent = money(freeCash);
@@ -532,7 +548,7 @@
       update();
     });
 
-    ['income','expenses','goalAmount','currentSavings','monthlyPay','extraBudget'].forEach(id => {
+    ['income','dailyIncome','incomeDays','expenses','goalAmount','currentSavings','monthlyPay','extraBudget'].forEach(id => {
       $(id).addEventListener('input', () => {
         state[id] = num($(id).value);
         update();
@@ -547,8 +563,8 @@
     $('resetBtn').addEventListener('click', () => {
       if (!confirm('Reset all debt and budget data?')) return;
       localStorage.removeItem(KEY);
-      Object.assign(state, { income: 0, expenses: 0, debts: [], goalAmount: 0, currentSavings: 0, goalDate: '', monthlyPay: 0, extraBudget: 0 });
-      ['income','expenses','goalAmount','currentSavings','goalDate','monthlyPay','extraBudget'].forEach(id => $(id).value = '');
+      Object.assign(state, { income: 0, dailyIncome: 0, incomeDays: 0, expenses: 0, debts: [], goalAmount: 0, currentSavings: 0, goalDate: '', monthlyPay: 0, extraBudget: 0 });
+      ['income','dailyIncome','incomeDays','expenses','goalAmount','currentSavings','goalDate','monthlyPay','extraBudget'].forEach(id => $(id).value = '');
       update();
     });
 
