@@ -1,0 +1,24 @@
+{
+  "updatedAt": "2026-08-01T02:30:00+07:00",
+  "lifetime": { "pl": 2.882, "settled": 9.234, "roi": 31.2 },
+  "trial": { "wins": 3, "losses": 2, "pl": 0.194, "pending": 0.25, "minOdds": 1.6 },
+  "wagers": [
+    { "id": "wisla-gks-025", "match": "Wisla Kraków vs GKS Katowice", "pick": "GKS Katowice +0.25", "odds": 1.98, "stakeUnits": 0.25, "stakeVnd": 125000, "status": "Pending" }
+  ],
+  "results": [
+    { "label": "KC +12.5 kills (vs G2)", "result": "W" },
+    { "label": "Over 2.5 maps (G2 vs KC)", "result": "W" },
+    { "label": "Astralis vs HOTU Under 24.5", "result": "W" },
+    { "label": "Vietnam vs East Timor Over 3.0", "result": "L" },
+    { "label": "Herediano vs Puntarenas Over 1.75", "result": "L" }
+  ],
+  "messages": [
+    { "who": "You", "time": "03:10", "text": "G2 is constantly applying pressure and KC is unable to get return kills.", "type": "user" },
+    { "who": "Council", "time": "03:11", "text": "The raw score understates G2's control. KC +10.5 is withdrawn until the handicap expands.", "type": "council" },
+    { "who": "Council · Official Bet Candidate", "time": "03:19", "text": "KC have started generating return kills and the gold lead has narrowed.", "detail": "Karmine Corp +12.5 kills @1.886 · Stake: 0.25u", "type": "candidate" },
+    { "who": "You", "time": "03:22", "text": "Confirmed. Karmine Corp +12.5 @1.778 — 0.5u.", "type": "user" },
+    { "who": "Council · Result", "time": "Settled", "text": "KC +12.5 kills and Over 2.5 maps both won.", "detail": "Combined profit: +0.762u / +380,750 VND.", "type": "council" }
+  ],
+  "battle": { "match": "G2 Esports vs Karmine Corp", "event": "LEC 2026 Summer · Game 2", "leftTeam": "G2", "rightTeam": "KC", "leftScore": 10, "rightScore": 4, "time": "19:45" },
+  "currentRead": ["Lean KC on kills. Gold nearly even.", "Tempo swings favor extended game."]
+}

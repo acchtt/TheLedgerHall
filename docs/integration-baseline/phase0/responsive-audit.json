@@ -1,0 +1,212 @@
+[
+  {
+    "name": "desktop-1920",
+    "dashboard": {
+      "height": 746.265625,
+      "width": 1330.53125,
+      "x": 259.4375,
+      "y": 206.8125
+    },
+    "footer": {
+      "height": 82.609375,
+      "width": 1149.09375,
+      "x": 385.4375,
+      "y": 963.875
+    },
+    "masthead": {
+      "height": 211.125,
+      "width": 1439.984375,
+      "x": 240,
+      "y": 0
+    },
+    "scroll": {
+      "height": 1080,
+      "width": 1920
+    },
+    "skinReady": true,
+    "viewport": {
+      "height": 1080,
+      "width": 1920
+    }
+  },
+  {
+    "name": "desktop-1440",
+    "dashboard": {
+      "height": 690.984375,
+      "width": 1231.984375,
+      "x": 71.3125,
+      "y": 191.484375
+    },
+    "footer": {
+      "height": 76.484375,
+      "width": 1063.984375,
+      "x": 187.984375,
+      "y": 892.484375
+    },
+    "masthead": {
+      "height": 195.484375,
+      "width": 1333.328125,
+      "x": 53.328125,
+      "y": 0
+    },
+    "scroll": {
+      "height": 1000,
+      "width": 1440
+    },
+    "skinReady": true,
+    "viewport": {
+      "height": 1000,
+      "width": 1440
+    }
+  },
+  {
+    "name": "tablet-1024",
+    "dashboard": {
+      "height": 530.6875,
+      "width": 946.171875,
+      "x": 13.8125,
+      "y": 147.0625
+    },
+    "footer": {
+      "height": 58.75,
+      "width": 817.140625,
+      "x": 103.421875,
+      "y": 685.4375
+    },
+    "masthead": {
+      "height": 150.140625,
+      "width": 1024,
+      "x": 0,
+      "y": 0
+    },
+    "scroll": {
+      "height": 900,
+      "width": 1024
+    },
+    "skinReady": true,
+    "viewport": {
+      "height": 900,
+      "width": 1024
+    }
+  },
+  {
+    "name": "tablet-768",
+    "dashboard": {
+      "height": 530.6875,
+      "width": 946.171875,
+      "x": 13.8125,
+      "y": 147.0625
+    },
+    "footer": {
+      "height": 58.75,
+      "width": 817.140625,
+      "x": 103.421875,
+      "y": 685.4375
+    },
+    "masthead": {
+      "height": 150.140625,
+      "width": 1024,
+      "x": 0,
+      "y": 0
+    },
+    "scroll": {
+      "height": 900,
+      "width": 1024
+    },
+    "skinReady": true,
+    "viewport": {
+      "height": 900,
+      "width": 768
+    }
+  },
+  {
+    "name": "mobile-430",
+    "dashboard": {
+      "height": 530.6875,
+      "width": 946.171875,
+      "x": 13.8125,
+      "y": 147.0625
+    },
+    "footer": {
+      "height": 58.75,
+      "width": 817.140625,
+      "x": 103.421875,
+      "y": 685.4375
+    },
+    "masthead": {
+      "height": 150.140625,
+      "width": 1024,
+      "x": 0,
+      "y": 0
+    },
+    "scroll": {
+      "height": 900,
+      "width": 1024
+    },
+    "skinReady": true,
+    "viewport": {
+      "height": 900,
+      "width": 430
+    }
+  },
+  {
+    "name": "mobile-390",
+    "dashboard": {
+      "height": 530.6875,
+      "width": 946.171875,
+      "x": 13.8125,
+      "y": 147.0625
+    },
+    "footer": {
+      "height": 58.75,
+      "width": 817.140625,
+      "x": 103.421875,
+      "y": 685.4375
+    },
+    "masthead": {
+      "height": 150.140625,
+      "width": 1024,
+      "x": 0,
+      "y": 0
+    },
+    "scroll": {
+      "height": 844,
+      "width": 1024
+    },
+    "skinReady": true,
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  },
+  {
+    "name": "mobile-360",
+    "dashboard": {
+      "height": 530.6875,
+      "width": 946.171875,
+      "x": 13.8125,
+      "y": 147.0625
+    },
+    "footer": {
+      "height": 58.75,
+      "width": 817.140625,
+      "x": 103.421875,
+      "y": 685.4375
+    },
+    "masthead": {
+      "height": 150.140625,
+      "width": 1024,
+      "x": 0,
+      "y": 0
+    },
+    "scroll": {
+      "height": 800,
+      "width": 1024
+    },
+    "skinReady": true,
+    "viewport": {
+      "height": 800,
+      "width": 360
+    }
+  }
+]
