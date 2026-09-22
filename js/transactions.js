@@ -9,3 +9,50 @@ function transactionTypeLabel(type){return {'debt-payment':'Debt payment','goal-
 function tableEmpty(cols,msg){return `<tr><td colspan="${cols}"><div class="empty-state">${escapeHtml(msg)}</div></td></tr>`;}
 function emptyState(title,text){return `<div class="empty-state"><strong>${escapeHtml(title)}</strong>${escapeHtml(text)}</div>`;}
 
+
+
+function openPaymentModal(preselectedId=''){
+  const activeDebts=state.debts.filter(d=>n(d.balance)>0);
+  if(!activeDebts.length){toast('Add a debt with a remaining balance before logging a payment.');return;}
+  const modal=$('#paymentModal'),select=$('#paymentModalDebt');
+  select.innerHTML=activeDebts.map(d=>`<option value="${d.id}">${escapeHtml(d.name)}</option>`).join('');
+  if(preselectedId&&activeDebts.some(d=>d.id===preselectedId))select.value=preselectedId;
+  $('#paymentModalDate').value=isoDate(new Date());
+  $('#paymentModalAmount').value='';
+  $('#paymentModalNote').value='';
+  updatePaymentModalBalance();
+  modal.showModal();
+  setTimeout(()=>$('#paymentModalAmount').focus(),50);
+}
+
+function closePaymentModal(){
+  const modal=$('#paymentModal');
+  if(modal.open)modal.close();
+  $('#paymentModalForm').reset();
+  $('#paymentModalBalance').innerHTML='';
+}
+
+function updatePaymentModalBalance(){
+  const debt=state.debts.find(d=>d.id===$('#paymentModalDebt').value);
+  if(!debt){$('#paymentModalBalance').innerHTML='';return;}
+  const cadence=debt.frequency==='daily'?'per day':'per month';
+  $('#paymentModalBalance').innerHTML=`<span>Remaining balance</span><strong>${money(debt.balance)}</strong><small>Planned: ${money(debt.scheduledPayment)} ${cadence}</small>`;
+}
+
+function savePaymentModal(event){
+  event.preventDefault();
+  const targetId=$('#paymentModalDebt').value;
+  const debt=state.debts.find(d=>d.id===targetId);
+  const amount=n($('#paymentModalAmount').value);
+  const date=$('#paymentModalDate').value;
+  const note=$('#paymentModalNote').value.trim();
+  if(!debt)return toast('Select a debt account.');
+  if(!amount||amount<=0||!date)return toast('Enter a payment amount and date.');
+  if(amount>n(debt.balance)+0.0001)return toast('Payment cannot be larger than the remaining balance.');
+  debt.balance=Math.max(0,n(debt.balance)-amount);
+  state.transactions.unshift({id:uid('tx'),type:'debt-payment',targetId,amount,date,description:note||'Debt payment',createdAt:Date.now()});
+  saveState();
+  closePaymentModal();
+  renderAll();
+  toast('Payment logged.');
+}
