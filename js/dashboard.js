@@ -8,10 +8,10 @@ function renderSummary() {
   const monthPayments = state.transactions.filter(t => t.type === 'debt-payment' && t.date.startsWith(monthKey)).reduce((s,t) => s+n(t.amount),0);
   const monthlyScheduled = state.debts.reduce((s,d) => s + scheduledMonthlyAmount(d),0);
   const metrics = [
-    ['Total debt', money(totalDebt,true), totalOriginal ? percent((debtPaid/totalOriginal)*100) + ' reduced' : 'No debt accounts'],
-    ['Paid this month', money(monthPayments,true), monthlyScheduled ? money(monthlyScheduled,true) + ' scheduled / month' : 'No payment schedule'],
-    ['Goal savings', money(goalSaved,true), goalTarget ? percent((goalSaved/goalTarget)*100) + ' of targets funded' : 'No budget goals'],
-    ['Net this month', money(monthNet(monthKey),true), 'Income minus expenses & allocations']
+    ['Total debt', money(totalDebt), totalOriginal ? percent((debtPaid/totalOriginal)*100) + ' reduced' : 'No debt accounts'],
+    ['Paid this month', money(monthPayments), monthlyScheduled ? money(monthlyScheduled) + ' scheduled / month' : 'No payment schedule'],
+    ['Goal savings', money(goalSaved), goalTarget ? percent((goalSaved/goalTarget)*100) + ' of targets funded' : 'No budget goals'],
+    ['Net this month', money(monthNet(monthKey)), 'Income minus expenses & allocations']
   ];
   $('#summaryMetrics').innerHTML = metrics.map(([label,value,sub]) => `<article class="metric"><div class="metric-label"><span>${escapeHtml(label)}</span><span>●</span></div><div class="metric-value">${escapeHtml(value)}</div><div class="metric-sub">${escapeHtml(sub)}</div></article>`).join('');
 }
