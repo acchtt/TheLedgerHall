@@ -91,6 +91,8 @@ function bindForms() {
   $('#goalForm').addEventListener('submit', saveGoal);
   $('#debtForm').addEventListener('submit', saveDebt);
   $('#transactionForm').addEventListener('submit', saveTransaction);
+  $('#paymentModalForm').addEventListener('submit', savePaymentModal);
+  $('#paymentModalDebt').addEventListener('change', updatePaymentModalBalance);
   $('#plannerForm').addEventListener('submit', runPlanner);
   $('#settingsForm').addEventListener('submit', saveSettings);
   $('#debtFrequency').addEventListener('change', toggleDueDay);
@@ -102,12 +104,15 @@ function bindForms() {
 }
 function bindActions() {
   $('#themeToggle').addEventListener('click', () => { state.settings.theme = state.settings.theme === 'light' ? 'dark' : 'light'; saveState(); applyTheme(); });
-  $('#quickPaymentButton').addEventListener('click', () => { navigate('transactions'); $('#transactionType').value = 'debt-payment'; renderTransactionTargets(); setTimeout(() => $('#transactionAmount').focus(), 120); });
+  $('#quickPaymentButton').addEventListener('click', () => openPaymentModal());
   $('#exportCsv').addEventListener('click', exportCsv);
   $('#exportJson').addEventListener('click', exportJson);
   $('#printReport').addEventListener('click', () => { renderReport(); window.print(); });
   $('#importJson').addEventListener('change', importJson);
   $('#resetData').addEventListener('click', resetAllData);
+  $('#paymentModalClose').addEventListener('click', closePaymentModal);
+  $('#paymentModalCancel').addEventListener('click', closePaymentModal);
+  $('#paymentModal').addEventListener('click', event => { if (event.target === $('#paymentModal')) closePaymentModal(); });
   document.addEventListener('click', event => {
     const el = event.target.closest('[data-action]'); if (!el) return;
     const { action, id } = el.dataset;
