@@ -107,16 +107,59 @@
           <div class="split-layout">
             <article class="panel sticky-form">
               <div class="panel-heading"><div><p class="eyebrow">DEBT EDITOR</p><h2 id="debtFormTitle">Add a debt</h2></div></div>
-              <form id="debtForm" class="form-grid">
+              <form id="debtForm" class="form-grid debt-form">
                 <input type="hidden" id="debtId" />
-                <label class="field span-2">Debt name<input id="debtName" required maxlength="60" placeholder="Credit card" /></label>
-                <label class="field">Original balance<input id="debtOriginal" required type="number" min="0" step="0.01" inputmode="decimal" /></label>
-                <label class="field">Current balance<input id="debtBalance" required type="number" min="0" step="0.01" inputmode="decimal" /></label>
-                <label class="field">APR (%)<input id="debtApr" type="number" min="0" max="100" step="0.01" inputmode="decimal" value="0" /></label>
-                <label class="field">Scheduled payment<input id="debtPayment" required type="number" min="0" step="0.01" inputmode="decimal" /></label>
-                <label class="field">Schedule<select id="debtFrequency"><option value="monthly">Monthly</option><option value="daily">Daily</option></select></label>
-                <label class="field" id="dueDayField">Due day<input id="debtDueDay" type="number" min="1" max="31" value="1" /></label>
-                <label class="field span-2">Notes<input id="debtNotes" maxlength="120" placeholder="Optional account note" /></label>
+                <p class="form-intro span-2">Start with what you owe now. The starting balance and interest rate are optional and only improve progress and payoff estimates.</p>
+
+                <div class="form-section span-2">
+                  <div class="form-section-heading"><span class="step-number">1</span><div><strong>Debt details</strong><small>What account is this, and how much do you owe today?</small></div></div>
+                  <div class="form-grid">
+                    <label class="field span-2">
+                      <span class="field-label">Name or lender <em>Required</em></span>
+                      <input id="debtName" required maxlength="60" placeholder="Visa card, bank loan…" />
+                    </label>
+                    <label class="field span-2">
+                      <span class="field-label">Amount you owe now <em>Required</em></span>
+                      <input id="debtBalance" required type="number" min="0" step="0.01" inputmode="decimal" placeholder="0" />
+                      <small class="field-help">Your current outstanding balance.</small>
+                    </label>
+                    <label class="field">
+                      <span class="field-label">Starting balance <em class="optional">Optional</em></span>
+                      <input id="debtOriginal" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Same as current" />
+                      <small class="field-help">Used to show how much you've already paid down.</small>
+                    </label>
+                    <label class="field">
+                      <span class="field-label">Interest rate <em class="optional">Optional</em></span>
+                      <div class="input-suffix"><input id="debtApr" type="number" min="0" max="100" step="0.01" inputmode="decimal" value="0" /><span>% APR</span></div>
+                      <small class="field-help">Leave at 0 if there is no interest.</small>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-section span-2">
+                  <div class="form-section-heading"><span class="step-number">2</span><div><strong>Payment plan</strong><small>How often do you plan to make payments?</small></div></div>
+                  <div class="form-grid">
+                    <label class="field">
+                      <span class="field-label">Payment frequency</span>
+                      <select id="debtFrequency"><option value="monthly">Monthly</option><option value="daily">Daily</option></select>
+                    </label>
+                    <label class="field" id="dueDayField">
+                      <span class="field-label">Monthly due day</span>
+                      <input id="debtDueDay" type="number" min="1" max="31" value="1" />
+                      <small class="field-help">Day of the month, from 1–31.</small>
+                    </label>
+                    <label class="field span-2">
+                      <span class="field-label" id="debtPaymentLabel">Amount you plan to pay each month <em>Required</em></span>
+                      <input id="debtPayment" required type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="0" />
+                      <small class="field-help" id="debtPaymentHelp">Used for monthly reminders and the payoff planner.</small>
+                    </label>
+                  </div>
+                </div>
+
+                <label class="field span-2">
+                  <span class="field-label">Notes <em class="optional">Optional</em></span>
+                  <input id="debtNotes" maxlength="120" placeholder="Account nickname, lender, or anything useful" />
+                </label>
                 <div class="form-actions span-2"><button class="button primary" type="submit">Save debt</button><button class="button ghost hidden" id="cancelDebtEdit" type="button">Cancel edit</button></div>
               </form>
             </article>
