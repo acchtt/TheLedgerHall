@@ -1,0 +1,12 @@
+{
+  "name": "theledgerhall",
+  "pages_build_output_dir": ".",
+  "compatibility_date": "2026-09-22",
+  "d1_databases": [
+    {
+      "binding": "LEDGER_DB",
+      "database_name": "theledgerhall-db",
+      "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+    }
+  ]
+}
