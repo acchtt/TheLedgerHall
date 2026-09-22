@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 210">
-<defs><linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f4dc78"/><stop offset="1" stop-color="#a86e20"/></linearGradient><filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000" flood-opacity=".55"/></filter></defs>
-<g filter="url(#shadow)"><path d="M90 8 151 29v71c0 44-24 80-61 101-37-21-61-57-61-101V29Z" fill="#17391f" stroke="#170b06" stroke-width="9"/><path d="M90 15 143 34v64c0 37-20 68-53 87-33-19-53-50-53-87V34Z" fill="none" stroke="#b98834" stroke-width="3"/>
-<g fill="none" stroke="url(#gold)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M90 158V77M90 80 61 58M90 86l29-28M78 69 55 41M103 70l25-29M73 88 46 76M108 88l28-13M90 103 63 96M90 103l27-7M82 120 61 135M99 120l20 16M90 75V42"/><path d="M69 157c12-12 31-12 43 0M78 168h25"/></g>
-<g fill="#d8b454"><circle cx="55" cy="41" r="5"/><circle cx="128" cy="41" r="5"/><circle cx="46" cy="76" r="5"/><circle cx="136" cy="75" r="5"/><circle cx="63" cy="96" r="5"/><circle cx="117" cy="96" r="5"/></g></g>
-</svg>

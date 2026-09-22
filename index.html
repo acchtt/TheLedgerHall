@@ -1,118 +1,141 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#2b190f" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f1720" />
+  <meta name="description" content="The Ledger Hall — personal budget goals, debt management, payment tracking, and payoff planning." />
   <title>The Ledger Hall</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="ledger-v24.css?build=blob24" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="landscape" aria-hidden="true"><span class="distant-castle"></span><span class="distant-hills"></span></div>
-
-  <div class="page-frame">
-    <span class="frame-decor vine-left" aria-hidden="true"></span>
-    <span class="frame-decor vine-right" aria-hidden="true"></span>
-    <span class="frame-decor lantern-decor" aria-hidden="true"></span>
-    <span class="frame-decor props-left" aria-hidden="true"></span>
-    <span class="frame-decor props-right" aria-hidden="true"></span>
-
-    <header class="masthead">
-      <div class="hanging-banner" aria-hidden="true"><img src="assets/tree-crest.svg" alt="" /></div>
-      <section class="summary-card lifetime-card">
-        <span class="eyebrow">Lifetime P/L</span>
-        <strong id="lifetime-pl" class="money">−2.882u</strong>
-        <small>Settled: <span id="lifetime-stake" class="money">9.234u</span></small>
-        <small>ROI: <span id="lifetime-roi">−31.2%</span></small>
-        <button class="help-dot" type="button" aria-label="About lifetime statistics">?</button>
-      </section>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
       <div class="brand">
-        <img class="brand-crest" src="assets/tree-crest.svg" alt="" />
-        <h1>The Ledger Hall</h1>
-        <p>Council Notes, Wagers &amp; Battle Reports</p>
+        <div class="brand-mark" aria-hidden="true">LH</div>
+        <div><strong>The Ledger Hall</strong><span>Personal finance ledger</span></div>
       </div>
-      <section class="summary-card positive">
-        <span class="eyebrow">Trial Record <small>(Current Phase)</small></span>
-        <strong id="trial-pl" class="money">+0.194u</strong>
-        <small>Record: <span id="trial-record">3W–2L</span></small>
-        <small>Pending: <span id="trial-pending" class="money">0.25u</span></small>
-        <button class="help-dot" type="button" aria-label="About trial statistics">?</button>
-      </section>
-      <nav class="utility-nav" aria-label="Page controls">
-        <button id="chamber-button" type="button"><span>☼</span>Chamber</button>
-        <button id="theme-button" type="button"><span>◉</span>Themes</button>
-        <button id="money-button" type="button"><span>◌</span>Hide $</button>
+      <nav class="main-nav" aria-label="Primary">
+        <button class="nav-item active" data-view="dashboard"><span>Overview</span><kbd>1</kbd></button>
+        <button class="nav-item" data-view="goals"><span>Budget Goals</span><kbd>2</kbd></button>
+        <button class="nav-item" data-view="debts"><span>Debts</span><kbd>3</kbd></button>
+        <button class="nav-item" data-view="transactions"><span>Transactions</span><kbd>4</kbd></button>
+        <button class="nav-item" data-view="planner"><span>Payoff Planner</span><kbd>5</kbd></button>
+        <button class="nav-item" data-view="reports"><span>Reports & Settings</span><kbd>6</kbd></button>
       </nav>
-    </header>
+      <div class="sidebar-footer">
+        <div class="privacy-note"><span class="status-dot"></span><div><strong>Local storage</strong><small>Your data stays in this browser.</small></div></div>
+        <button class="button ghost full" id="themeToggle" type="button">Toggle theme</button>
+      </div>
+    </aside>
 
-    <main class="dashboard">
-      <aside class="left-column">
-        <section class="wood-panel">
-          <div class="panel-heading"><h2>Open Wagers</h2><button type="button" aria-label="Collapse Open Wagers">−</button></div>
-          <div id="open-wagers" class="panel-body"></div>
-        </section>
-        <section class="wood-panel">
-          <div class="panel-heading"><h2>Trial Record</h2><button type="button" aria-label="Collapse Trial Record">−</button></div>
-          <dl id="trial-details" class="record-grid"></dl>
-        </section>
-        <section class="wood-panel recent-panel">
-          <div class="panel-heading"><h2>Recent Results</h2></div>
-          <ul id="recent-results" class="results-list"></ul>
-          <blockquote>“Fortune favors the prepared mind.”<cite>— The Old Scrolls</cite></blockquote>
-        </section>
-      </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-button mobile-only" id="menuButton" aria-label="Open navigation">☰</button>
+        <div><p class="eyebrow" id="viewEyebrow">FINANCIAL OVERVIEW</p><h1 id="viewTitle">Overview</h1></div>
+        <div class="top-actions"><div class="date-chip" id="todayLabel"></div><button class="button primary" id="quickPaymentButton" type="button">+ Log payment</button></div>
+      </header>
 
-      <section class="chat-panel">
-        <span class="scroll-corner top-left">❧</span><span class="scroll-corner top-right">❧</span>
-        <h2><span>Council Notes</span></h2>
-        <div id="chat-feed" class="chat-feed"></div>
-        <form id="message-form" class="message-box">
-          <input id="message-input" autocomplete="off" placeholder="Write your message…" aria-label="Council note" />
-          <button type="submit" aria-label="Send">➤</button>
-        </form>
-      </section>
-
-      <aside class="right-column">
-        <section class="wood-panel battle-panel">
-          <div class="panel-heading"><h2>Battle Report</h2><button type="button" aria-label="Collapse Battle Report">−</button></div>
-          <div class="battle-head"><strong>G2 Esports vs Karmine Corp</strong><small>LEC 2026 Summer · Game 2</small></div>
-          <div class="scoreboard">
-            <span class="team-mark shield-mark">G2</span>
-            <div class="score-center"><strong>10–4</strong><small>19:45</small></div>
-            <span class="team-mark cyan">KC</span>
+      <div class="content">
+        <section class="view active" id="view-dashboard" data-view-section="dashboard">
+          <div class="metric-grid" id="summaryMetrics"></div>
+          <div class="grid two-wide">
+            <article class="panel"><div class="panel-heading"><div><p class="eyebrow">DEBT TRACKING</p><h2>Reduction progress</h2></div><button class="text-button" data-jump="debts">Manage debts →</button></div><div id="debtProgressList" class="stack-list"></div></article>
+            <article class="panel"><div class="panel-heading"><div><p class="eyebrow">PAYMENT SCHEDULE</p><h2>Reminders</h2></div><span class="badge" id="reminderCount">0 due</span></div><div id="reminderList" class="stack-list"></div></article>
           </div>
-          <div class="battle-stats">
-            <div><span>Gold</span><b>38.4k</b><b>35.9k</b></div>
-            <div><span>Gold diff.</span><b></b><b class="positive-text">+2.5k</b></div>
-            <div><span>Towers</span><b>4</b><b>1</b></div>
-            <div><span>Dragons</span><b>1</b><b>1</b></div>
-            <div><span>Barons</span><b>0</b><b>0</b></div>
-            <div><span>Inhibitors</span><b>0</b><b>0</b></div>
+          <div class="grid two-wide">
+            <article class="panel"><div class="panel-heading"><div><p class="eyebrow">GOALS</p><h2>Budget goal progress</h2></div><button class="text-button" data-jump="goals">View goals →</button></div><div id="goalProgressList" class="stack-list"></div></article>
+            <article class="panel"><div class="panel-heading"><div><p class="eyebrow">14-DAY ACTIVITY</p><h2>Money movement</h2></div><div class="chart-legend"><span><i class="legend-in"></i>In</span><span><i class="legend-out"></i>Out</span></div></div><div class="mini-chart" id="activityChart" aria-label="Fourteen day income and outgoing activity chart"></div></article>
+          </div>
+          <article class="panel"><div class="panel-heading"><div><p class="eyebrow">RECENT LEDGER</p><h2>Latest transactions</h2></div><button class="text-button" data-jump="transactions">Open ledger →</button></div><div class="table-wrap"><table><thead><tr><th>Date</th><th>Type</th><th>Description</th><th>Account</th><th class="numeric">Amount</th></tr></thead><tbody id="recentTransactions"></tbody></table></div></article>
+        </section>
+
+        <section class="view" id="view-goals" data-view-section="goals">
+          <div class="split-layout">
+            <article class="panel sticky-form">
+              <div class="panel-heading"><div><p class="eyebrow">GOAL EDITOR</p><h2 id="goalFormTitle">Create a budget goal</h2></div></div>
+              <form id="goalForm" class="form-grid">
+                <input type="hidden" id="goalId" />
+                <label class="field span-2">Goal name<input id="goalName" required maxlength="60" placeholder="Emergency fund" /></label>
+                <label class="field">Target amount<input id="goalTarget" required type="number" min="0" step="0.01" inputmode="decimal" /></label>
+                <label class="field">Saved so far<input id="goalCurrent" required type="number" min="0" step="0.01" inputmode="decimal" /></label>
+                <label class="field span-2">Target date<input id="goalDate" type="date" /></label>
+                <div class="form-actions span-2"><button class="button primary" type="submit">Save goal</button><button class="button ghost hidden" id="cancelGoalEdit" type="button">Cancel edit</button></div>
+              </form>
+            </article>
+            <div><div class="section-toolbar"><div><p class="eyebrow">YOUR TARGETS</p><h2>Budget goals</h2></div><span class="muted" id="goalCountLabel"></span></div><div class="card-grid" id="goalsGrid"></div></div>
           </div>
         </section>
-        <section class="wood-panel">
-          <div class="panel-heading"><h2>Odds Snapshot</h2></div>
-          <div id="odds-list" class="odds-list"></div>
+
+        <section class="view" id="view-debts" data-view-section="debts">
+          <div class="split-layout">
+            <article class="panel sticky-form">
+              <div class="panel-heading"><div><p class="eyebrow">DEBT EDITOR</p><h2 id="debtFormTitle">Add a debt</h2></div></div>
+              <form id="debtForm" class="form-grid">
+                <input type="hidden" id="debtId" />
+                <label class="field span-2">Debt name<input id="debtName" required maxlength="60" placeholder="Credit card" /></label>
+                <label class="field">Original balance<input id="debtOriginal" required type="number" min="0" step="0.01" inputmode="decimal" /></label>
+                <label class="field">Current balance<input id="debtBalance" required type="number" min="0" step="0.01" inputmode="decimal" /></label>
+                <label class="field">APR (%)<input id="debtApr" type="number" min="0" max="100" step="0.01" inputmode="decimal" value="0" /></label>
+                <label class="field">Scheduled payment<input id="debtPayment" required type="number" min="0" step="0.01" inputmode="decimal" /></label>
+                <label class="field">Schedule<select id="debtFrequency"><option value="monthly">Monthly</option><option value="daily">Daily</option></select></label>
+                <label class="field" id="dueDayField">Due day<input id="debtDueDay" type="number" min="1" max="31" value="1" /></label>
+                <label class="field span-2">Notes<input id="debtNotes" maxlength="120" placeholder="Optional account note" /></label>
+                <div class="form-actions span-2"><button class="button primary" type="submit">Save debt</button><button class="button ghost hidden" id="cancelDebtEdit" type="button">Cancel edit</button></div>
+              </form>
+            </article>
+            <div><div class="section-toolbar"><div><p class="eyebrow">LIABILITIES</p><h2>Debt accounts</h2></div><span class="muted" id="debtCountLabel"></span></div><div class="card-grid" id="debtsGrid"></div></div>
+          </div>
         </section>
-        <section class="wood-panel current-read">
-          <span>Current Read</span><strong>No Official Bet</strong>
-          <img src="assets/council-shield.svg" alt="" />
+
+        <section class="view" id="view-transactions" data-view-section="transactions">
+          <div class="split-layout wide-form">
+            <article class="panel sticky-form">
+              <div class="panel-heading"><div><p class="eyebrow">NEW ENTRY</p><h2>Log transaction</h2></div></div>
+              <form id="transactionForm" class="form-grid">
+                <label class="field span-2">Type<select id="transactionType"><option value="debt-payment">Debt payment</option><option value="goal-contribution">Goal contribution</option><option value="income">Income</option><option value="expense">Expense</option></select></label>
+                <label class="field span-2" id="transactionTargetField">Account<select id="transactionTarget"></select></label>
+                <label class="field">Amount<input id="transactionAmount" required type="number" min="0.01" step="0.01" inputmode="decimal" /></label>
+                <label class="field">Date<input id="transactionDate" required type="date" /></label>
+                <label class="field span-2">Description<input id="transactionDescription" maxlength="100" placeholder="Payment note" /></label>
+                <button class="button primary span-2" type="submit">Add to ledger</button>
+              </form>
+            </article>
+            <article class="panel">
+              <div class="panel-heading responsive-heading"><div><p class="eyebrow">TRANSACTION HISTORY</p><h2>Ledger</h2></div><div class="inline-controls"><select id="transactionFilter" aria-label="Filter transaction type"><option value="all">All types</option><option value="debt-payment">Debt payments</option><option value="goal-contribution">Goal contributions</option><option value="income">Income</option><option value="expense">Expenses</option></select><input id="transactionSearch" type="search" placeholder="Search ledger" aria-label="Search ledger" /></div></div>
+              <div class="table-wrap"><table><thead><tr><th>Date</th><th>Type</th><th>Description</th><th>Account</th><th class="numeric">Amount</th><th></th></tr></thead><tbody id="transactionsTable"></tbody></table></div>
+            </article>
+          </div>
         </section>
-      </aside>
+
+        <section class="view" id="view-planner" data-view-section="planner">
+          <div class="grid planner-grid">
+            <article class="panel"><div class="panel-heading"><div><p class="eyebrow">PAYOFF MODEL</p><h2>Debt payoff calculator</h2></div></div><form id="plannerForm" class="form-grid"><label class="field span-2">Strategy<select id="plannerMethod"><option value="snowball">Snowball — lowest balance first</option><option value="avalanche">Avalanche — highest APR first</option></select></label><label class="field span-2">Extra monthly payment<input id="plannerExtra" type="number" min="0" step="0.01" value="0" inputmode="decimal" /></label><button class="button primary span-2" type="submit">Calculate payoff</button></form><p class="fine-print">The calculator uses each debt's scheduled payment as its minimum. Daily schedules are converted to an average month. This is a planning estimate, not lender accounting.</p></article>
+            <article class="panel result-panel"><div class="panel-heading"><div><p class="eyebrow">PROJECTION</p><h2>Payoff result</h2></div></div><div id="plannerSummary" class="projection-empty">Add debts and run the calculator to see a projection.</div><div id="payoffOrder" class="timeline"></div></article>
+          </div>
+        </section>
+
+        <section class="view" id="view-reports" data-view-section="reports">
+          <div class="grid two-wide">
+            <article class="panel"><div class="panel-heading"><div><p class="eyebrow">EXPORT</p><h2>Reports & backup</h2></div></div><div class="action-list">
+              <button class="action-row" id="exportCsv"><span><strong>Export transactions CSV</strong><small>Download the ledger for spreadsheets.</small></span><b>CSV</b></button>
+              <button class="action-row" id="printReport"><span><strong>Print financial report</strong><small>Use your browser's Save as PDF option.</small></span><b>PDF</b></button>
+              <button class="action-row" id="exportJson"><span><strong>Export full backup</strong><small>Goals, debts, transactions, and preferences.</small></span><b>JSON</b></button>
+              <label class="action-row file-action"><span><strong>Import backup</strong><small>Restore a previously exported JSON file.</small></span><b>JSON</b><input id="importJson" type="file" accept="application/json,.json" /></label>
+            </div></article>
+            <article class="panel"><div class="panel-heading"><div><p class="eyebrow">PREFERENCES</p><h2>Settings</h2></div></div><form id="settingsForm" class="form-grid"><label class="field">Currency<select id="currencySelect"><option value="VND">VND — ₫</option><option value="USD">USD — $</option><option value="EUR">EUR — €</option><option value="GBP">GBP — £</option><option value="JPY">JPY — ¥</option><option value="KRW">KRW — ₩</option></select></label><label class="field">Reminder lead days<input id="reminderLeadDays" type="number" min="0" max="30" value="3" /></label><button class="button primary span-2" type="submit">Save settings</button></form><hr /><div class="danger-zone"><div><strong>Reset local data</strong><small>Delete all finance data stored by this browser.</small></div><button class="button danger" id="resetData" type="button">Reset data</button></div></article>
+          </div>
+          <article class="panel print-report" id="printableReport"><div class="panel-heading"><div><p class="eyebrow">SUMMARY REPORT</p><h2>Current financial snapshot</h2></div><span id="reportGenerated"></span></div><div id="reportBody"></div></article>
+        </section>
+      </div>
     </main>
-
-    <footer class="bottom-nav">
-      <button class="active" type="button"><span>▤</span>Council Notes</button>
-      <button type="button"><span>⚖</span>Open Wagers</button>
-      <button type="button"><span>▥</span>Closed Ledgers</button>
-      <button type="button"><span>⚔</span>Battle Reports</button>
-      <button type="button"><span>⚙</span>Chamber Settings</button>
-    </footer>
   </div>
-  <script src="skin-loader-v23.js?build=blob24"></script>
-  <script src="chat.js?build=blob24"></script>
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+  <script src="js/core.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+  <script src="js/accounts.js" defer></script>
+  <script src="js/transactions.js" defer></script>
+  <script src="js/planner.js" defer></script>
+  <script src="js/reports.js" defer></script>
 </body>
 </html>
