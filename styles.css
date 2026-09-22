@@ -52,3 +52,9 @@ html[data-theme="light"]{color-scheme:light;--bg:#f3f6f7;--panel:#fff;--soft:#f0
 .payment-modal[open]{animation:paymentModalIn .14s ease-out}
 @keyframes paymentModalIn{from{opacity:0;transform:translateY(8px) scale(.985)}to{opacity:1;transform:none}}
 @media(max-width:580px){.payment-modal{width:calc(100vw - 24px)}.modal-card{padding:16px}.payment-balance{grid-template-columns:1fr}.payment-balance strong{grid-row:auto;grid-column:auto}.modal-actions .button{flex:1}}
+
+/* Cloud sync status */
+.status-dot[data-sync="connecting"]{background:var(--warn)}
+.status-dot[data-sync="synced"]{background:var(--accent)}
+.status-dot[data-sync="local"]{background:var(--warn)}
+.status-dot[data-sync="locked"]{background:var(--danger)}
