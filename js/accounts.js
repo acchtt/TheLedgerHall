@@ -19,7 +19,7 @@ function editDebt(id){const d=state.debts.find(x=>x.id===id);if(!d)return;naviga
 function resetDebtForm(){$('#debtForm').reset();$('#debtId').value='';$('#debtApr').value='0';$('#debtFrequency').value='monthly';$('#debtDueDay').value='1';$('#debtFormTitle').textContent='Add a debt';$('#cancelDebtEdit').classList.add('hidden');toggleDueDay();}
 function toggleDueDay(){const daily=$('#debtFrequency').value==='daily';$('#dueDayField').classList.toggle('hidden',daily);const label=$('#debtPaymentLabel'),help=$('#debtPaymentHelp');if(label)label.innerHTML=daily?'Amount you plan to pay each day <em>Required</em>':'Amount you plan to pay each month <em>Required</em>';if(help)help.textContent=daily?'Used for daily tracking and converted to a monthly average in the payoff planner.':'Used for monthly reminders and the payoff planner.';}
 function deleteDebt(id){const d=state.debts.find(x=>x.id===id);if(!d||!confirm('Delete "'+d.name+'"? Historical transactions will remain.'))return;state.debts=state.debts.filter(x=>x.id!==id);saveState();renderAll();toast('Debt deleted.');}
-function quickDebtPayment(id){navigate('transactions');$('#transactionType').value='debt-payment';renderTransactionTargets();$('#transactionTarget').value=id;$('#transactionDescription').value='Debt payment';$('#transactionAmount').focus();}
+function quickDebtPayment(id){openPaymentModal(id);}
 function paymentsForDebt(id){return state.transactions.filter(t=>t.type==='debt-payment'&&t.targetId===id);}
 function scheduledMonthlyAmount(d){return d.frequency==='daily'?n(d.scheduledPayment)*30.4375:n(d.scheduledPayment);}
 
