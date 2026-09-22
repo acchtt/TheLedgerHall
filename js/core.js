@@ -90,17 +90,20 @@ function navigate(view) {
 function bindForms() {
   $('#goalForm').addEventListener('submit', saveGoal);
   $('#debtForm').addEventListener('submit', saveDebt);
+  $('#debtFrequency').addEventListener('change', toggleDueDay);
   $('#transactionForm').addEventListener('submit', saveTransaction);
-  $('#paymentModalForm').addEventListener('submit', savePaymentModal);
-  $('#paymentModalDebt').addEventListener('change', updatePaymentModalBalance);
   $('#plannerForm').addEventListener('submit', runPlanner);
   $('#settingsForm').addEventListener('submit', saveSettings);
-  $('#debtFrequency').addEventListener('change', toggleDueDay);
   $('#transactionType').addEventListener('change', renderTransactionTargets);
   $('#transactionFilter').addEventListener('change', renderTransactions);
   $('#transactionSearch').addEventListener('input', renderTransactions);
   $('#cancelGoalEdit').addEventListener('click', resetGoalForm);
   $('#cancelDebtEdit').addEventListener('click', resetDebtForm);
+
+  const paymentModalForm = $('#paymentModalForm');
+  const paymentModalDebt = $('#paymentModalDebt');
+  if (paymentModalForm) paymentModalForm.addEventListener('submit', savePaymentModal);
+  if (paymentModalDebt) paymentModalDebt.addEventListener('change', updatePaymentModalBalance);
 }
 function bindActions() {
   $('#themeToggle').addEventListener('click', () => { state.settings.theme = state.settings.theme === 'light' ? 'dark' : 'light'; saveState(); applyTheme(); });
@@ -110,9 +113,12 @@ function bindActions() {
   $('#printReport').addEventListener('click', () => { renderReport(); window.print(); });
   $('#importJson').addEventListener('change', importJson);
   $('#resetData').addEventListener('click', resetAllData);
-  $('#paymentModalClose').addEventListener('click', closePaymentModal);
-  $('#paymentModalCancel').addEventListener('click', closePaymentModal);
-  $('#paymentModal').addEventListener('click', event => { if (event.target === $('#paymentModal')) closePaymentModal(); });
+  const paymentModal = $('#paymentModal');
+  const paymentModalClose = $('#paymentModalClose');
+  const paymentModalCancel = $('#paymentModalCancel');
+  if (paymentModalClose) paymentModalClose.addEventListener('click', closePaymentModal);
+  if (paymentModalCancel) paymentModalCancel.addEventListener('click', closePaymentModal);
+  if (paymentModal) paymentModal.addEventListener('click', event => { if (event.target === paymentModal) closePaymentModal(); });
   document.addEventListener('click', event => {
     const el = event.target.closest('[data-action]'); if (!el) return;
     const { action, id } = el.dataset;
