@@ -10,6 +10,9 @@ const defaultState = {
 };
 let state = loadState();
 let activeView = 'dashboard';
+let cloudReady = false;
+let cloudDirty = false;
+let cloudSaveTimer = null;
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
@@ -23,6 +26,7 @@ function init() {
   $('#transactionDate').value = isoDate(new Date());
   $('#todayLabel').textContent = new Intl.DateTimeFormat(undefined, { weekday: 'short', month: 'short', day: 'numeric' }).format(new Date());
   renderAll();
+  syncFromCloud();
 }
 
 function loadState() {
@@ -41,7 +45,11 @@ function loadState() {
     return structuredClone(defaultState);
   }
 }
-function saveState() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+function saveState() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  if (cloudReady) scheduleCloudSave();
+  else cloudDirty = true;
+}
 function uid(prefix) { return prefix + '-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 8); }
 function n(value) { const parsed = Number(value); return Number.isFinite(parsed) ? parsed : 0; }
 function clamp(value, min, max) { return Math.min(max, Math.max(min, value)); }
@@ -62,6 +70,104 @@ function money(value, compact = false) {
 function percent(value) { return clamp(n(value), 0, 100).toFixed(0) + '%'; }
 function escapeHtml(value = '') { return String(value).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#039;' }[c])); }
 function toast(message) { const el = document.createElement('div'); el.className = 'toast'; el.textContent = message; $('#toastRegion').appendChild(el); setTimeout(() => el.remove(), 2800); }
+
+function normalizeState(candidate) {
+  if (!candidate || typeof candidate !== 'object') return structuredClone(defaultState);
+  return {
+    ...structuredClone(defaultState),
+    ...candidate,
+    settings: { ...defaultState.settings, ...(candidate.settings || {}) },
+    goals: Array.isArray(candidate.goals) ? candidate.goals : [],
+    debts: Array.isArray(candidate.debts) ? candidate.debts : [],
+    transactions: Array.isArray(candidate.transactions) ? candidate.transactions : []
+  };
+}
+
+function setSyncStatus(mode, detail) {
+  const title = $('#syncStatusTitle');
+  const text = $('#syncStatusText');
+  const dot = $('#syncStatusDot');
+  if (!title || !text || !dot) return;
+  const labels = {
+    connecting: ['Cloudflare D1', detail || 'Connecting…'],
+    synced: ['Cloudflare D1', detail || 'Synced across devices'],
+    local: ['Local cache', detail || 'Cloud sync unavailable'],
+    locked: ['Cloud sync locked', detail || 'Enable Cloudflare Access']
+  };
+  const current = labels[mode] || labels.local;
+  title.textContent = current[0];
+  text.textContent = current[1];
+  dot.dataset.sync = mode;
+}
+
+async function syncFromCloud() {
+  setSyncStatus('connecting');
+  try {
+    const response = await fetch('/api/state', { method: 'GET', headers: { Accept: 'application/json' }, cache: 'no-store' });
+    if (response.status === 401 || response.status === 403) {
+      cloudReady = false;
+      setSyncStatus('locked', 'Sign in through Cloudflare Access');
+      return;
+    }
+    if (!response.ok) throw new Error('Cloud sync unavailable');
+    const payload = await response.json();
+    cloudReady = true;
+
+    if (payload.state && !cloudDirty) {
+      state = normalizeState(payload.state);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      renderAll();
+    } else {
+      await pushStateToCloud();
+    }
+
+    cloudDirty = false;
+    setSyncStatus('synced', payload.updatedAt ? 'Last synced ' + formatCloudTime(payload.updatedAt) : 'Synced across devices');
+  } catch (error) {
+    cloudReady = false;
+    setSyncStatus('local', 'Using browser storage only');
+  }
+}
+
+function scheduleCloudSave() {
+  cloudDirty = true;
+  clearTimeout(cloudSaveTimer);
+  cloudSaveTimer = setTimeout(pushStateToCloud, 250);
+}
+
+async function pushStateToCloud() {
+  if (!cloudReady) return;
+  try {
+    const response = await fetch('/api/state', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ state })
+    });
+    if (response.status === 401 || response.status === 403) {
+      cloudReady = false;
+      setSyncStatus('locked', 'Sign in through Cloudflare Access');
+      return;
+    }
+    if (!response.ok) throw new Error('Cloud save failed');
+    const payload = await response.json();
+    cloudDirty = false;
+    setSyncStatus('synced', payload.updatedAt ? 'Last synced ' + formatCloudTime(payload.updatedAt) : 'Synced across devices');
+  } catch (error) {
+    cloudDirty = true;
+    setSyncStatus('local', 'Saved locally; cloud retry pending');
+  }
+}
+
+function formatCloudTime(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return 'recently';
+  return new Intl.DateTimeFormat(undefined, { hour: '2-digit', minute: '2-digit' }).format(date);
+}
+
+window.addEventListener('online', () => {
+  if (cloudReady) pushStateToCloud();
+  else syncFromCloud();
+});
 
 function bindNavigation() {
   $$('.nav-item').forEach(btn => btn.addEventListener('click', () => navigate(btn.dataset.view)));
