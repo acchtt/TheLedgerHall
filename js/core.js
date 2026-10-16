@@ -92,7 +92,7 @@ function setSyncStatus(mode, detail) {
     connecting: ['Cloudflare D1', detail || 'Connecting…'],
     synced: ['Cloudflare D1', detail || 'Synced across devices'],
     local: ['Local cache', detail || 'Cloud sync unavailable'],
-    locked: ['Cloud sync locked', detail || 'Enable Cloudflare Access']
+    locked: ['Cloud sync blocked', detail || 'API access denied']
   };
   const current = labels[mode] || labels.local;
   title.textContent = current[0];
@@ -106,7 +106,7 @@ async function syncFromCloud() {
     const response = await fetch('/api/state', { method: 'GET', headers: { Accept: 'application/json' }, cache: 'no-store' });
     if (response.status === 401 || response.status === 403) {
       cloudReady = false;
-      setSyncStatus('locked', 'Sign in through Cloudflare Access');
+      setSyncStatus('locked', 'API request denied (401/403)');
       return;
     }
     if (!response.ok) throw new Error('Cloud sync unavailable');
@@ -145,7 +145,7 @@ async function pushStateToCloud() {
     });
     if (response.status === 401 || response.status === 403) {
       cloudReady = false;
-      setSyncStatus('locked', 'Sign in through Cloudflare Access');
+      setSyncStatus('locked', 'API request denied (401/403)');
       return;
     }
     if (!response.ok) throw new Error('Cloud save failed');
