@@ -9,10 +9,10 @@ The production setup is designed for **Cloudflare Pages + Pages Functions + D1**
 - Static frontend: HTML, CSS, vanilla JavaScript
 - Server API: Cloudflare Pages Functions (Workers runtime)
 - Persistent database: Cloudflare D1
-- Authentication perimeter: Cloudflare Access
+- API access: public, shared D1 state (no Cloudflare Access)
 - Local fallback/cache: browser `localStorage`
 
-The frontend loads the authenticated user's state from D1 on startup and writes changes back to D1 automatically. If the API is unavailable, the app continues to work with the local browser cache and displays the sync state in the sidebar.
+The frontend loads the shared state from D1 on startup and writes changes back to D1 automatically. If the API is unavailable, the app continues to work with the local browser cache and displays the sync state in the sidebar.
 
 ## Features
 
@@ -24,7 +24,7 @@ The frontend loads the authenticated user's state from D1 on startup and writes 
 - **Debt payoff calculator** — snowball and avalanche strategies, extra monthly payments, payoff date, interest estimate, and payoff order.
 - **Reports and portability** — CSV export, print/Save-as-PDF report, full JSON backup, and JSON restore.
 - **Responsive UI** — desktop, tablet, and mobile layouts with dark/light themes.
-- **Cloud sync** — per-user state stored in D1 using the authenticated Cloudflare Access email.
+- **Cloud sync** — one shared public D1 state record, with no sign-in.
 - **Offline fallback** — local browser cache remains available when cloud sync is temporarily unavailable.
 
 ## File structure
@@ -91,7 +91,7 @@ From the repository directory:
 npx wrangler d1 execute theledgerhall-db --remote --file=migrations/0001_init.sql
 ```
 
-The migration creates one `user_state` row per authenticated Cloudflare Access email.
+The migration creates the `user_state` table. The public API uses `default` as the record key.
 
 ### 3. Connect the GitHub repository to Pages
 
@@ -125,19 +125,33 @@ Redeploy the Pages project after adding the binding.
 
 The server function at `/api/state` expects the binding name to be exactly `LEDGER_DB`.
 
-### 5. Protect the app with Cloudflare Access
+### 5. Public D1 API (no Cloudflare Access)
 
-The D1 API intentionally refuses unauthenticated requests. Protect the Pages application with **Cloudflare Access** and allow only your email/account.
+No Cloudflare Access application is required. The API at `/api/state` uses the fixed D1 record key `default` for every visitor. The Pages Function checks only that the `LEDGER_DB` D1 binding is configured.
 
-The API reads:
+**Warning:** anyone on the internet can read and replace your synced financial records, including debt and transaction data. Only use this deployment if you intentionally accept public access to that information. D1 remains reachable through the server-side binding; browser code does not connect directly to D1.
 
+#### Preserving data from the old Access-based deployment
+
+Rows previously stored under a Cloudflare Access email are left untouched, but they are **not** automatically selected by the new API. If you need that data, back it up and copy it to `default` **before opening the new site from an empty browser**.
+
+In Cloudflare D1's SQL console, first inspect the available keys:
+
+```sql
+SELECT user_email, updated_at FROM user_state;
 ```
-Cf-Access-Authenticated-User-Email
+
+Then replace `YOUR_PREVIOUS_ACCESS_EMAIL` with the actual email that was used to log in:
+
+```sql
+INSERT INTO user_state (user_email, payload, updated_at)
+SELECT 'default', payload, CURRENT_TIMESTAMP
+FROM user_state
+WHERE user_email = 'YOUR_PREVIOUS_ACCESS_EMAIL'
+ON CONFLICT(user_email) DO NOTHING;
 ```
 
-and uses that verified identity as the D1 key. Different allowed users therefore receive separate finance data.
-
-Until Access is configured, the frontend will show **Cloud sync locked** and continue using local browser storage.
+This keeps the old row and does not overwrite an existing `default` record. Export a JSON backup from the app or your D1 database first. If `default` already exists, inspect it before making changes. The browser may automatically seed a missing shared row from localStorage, but an empty browser cannot recover data stored under the former Access email.
 
 ## Optional Wrangler configuration
 
@@ -171,7 +185,7 @@ npx wrangler pages dev .
 
 ## Data model
 
-D1 stores one JSON finance state per authenticated Access user:
+D1 stores one shared JSON finance state at `user_email = 'default'` (the column name remains for backward compatibility):
 
 ```text
 user_state
