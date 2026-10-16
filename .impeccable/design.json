@@ -1,0 +1,511 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-16T16:37:00.417Z",
+  "title": "Design System: The Ledger Hall",
+  "extensions": {
+    "colorMeta": {
+      "night-background": {
+        "role": "neutral",
+        "displayName": "Night Background",
+        "canonical": "#0b1016",
+        "tonalRamp": [
+          "oklch(15.0% 0.015 253.2)",
+          "oklch(26.4% 0.015 253.2)",
+          "oklch(37.9% 0.015 253.2)",
+          "oklch(49.3% 0.015 253.2)",
+          "oklch(60.7% 0.015 253.2)",
+          "oklch(72.1% 0.015 253.2)",
+          "oklch(83.6% 0.015 253.2)",
+          "oklch(95.0% 0.015 253.2)"
+        ]
+      },
+      "night-panel": {
+        "role": "neutral",
+        "displayName": "Night Panel",
+        "canonical": "#111922",
+        "tonalRamp": [
+          "oklch(15.0% 0.022 251.8)",
+          "oklch(26.4% 0.022 251.8)",
+          "oklch(37.9% 0.022 251.8)",
+          "oklch(49.3% 0.022 251.8)",
+          "oklch(60.7% 0.022 251.8)",
+          "oklch(72.1% 0.022 251.8)",
+          "oklch(83.6% 0.022 251.8)",
+          "oklch(95.0% 0.022 251.8)"
+        ]
+      },
+      "night-inset": {
+        "role": "neutral",
+        "displayName": "Night Inset",
+        "canonical": "#17222d",
+        "tonalRamp": [
+          "oklch(15.0% 0.026 248.9)",
+          "oklch(26.4% 0.026 248.9)",
+          "oklch(37.9% 0.026 248.9)",
+          "oklch(49.3% 0.026 248.9)",
+          "oklch(60.7% 0.026 248.9)",
+          "oklch(72.1% 0.026 248.9)",
+          "oklch(83.6% 0.026 248.9)",
+          "oklch(95.0% 0.026 248.9)"
+        ]
+      },
+      "night-line": {
+        "role": "neutral",
+        "displayName": "Night Line",
+        "canonical": "#263543",
+        "tonalRamp": [
+          "oklch(15.0% 0.032 247.1)",
+          "oklch(26.4% 0.032 247.1)",
+          "oklch(37.9% 0.032 247.1)",
+          "oklch(49.3% 0.032 247.1)",
+          "oklch(60.7% 0.032 247.1)",
+          "oklch(72.1% 0.032 247.1)",
+          "oklch(83.6% 0.032 247.1)",
+          "oklch(95.0% 0.032 247.1)"
+        ]
+      },
+      "night-text": {
+        "role": "neutral",
+        "displayName": "Night Text",
+        "canonical": "#edf3f6",
+        "tonalRamp": [
+          "oklch(15.0% 0.008 228.9)",
+          "oklch(26.4% 0.008 228.9)",
+          "oklch(37.9% 0.008 228.9)",
+          "oklch(49.3% 0.008 228.9)",
+          "oklch(60.7% 0.008 228.9)",
+          "oklch(72.1% 0.008 228.9)",
+          "oklch(83.6% 0.008 228.9)",
+          "oklch(95.0% 0.008 228.9)"
+        ]
+      },
+      "night-muted": {
+        "role": "neutral",
+        "displayName": "Night Muted",
+        "canonical": "#8fa1ae",
+        "tonalRamp": [
+          "oklch(15.0% 0.028 239.3)",
+          "oklch(26.4% 0.028 239.3)",
+          "oklch(37.9% 0.028 239.3)",
+          "oklch(49.3% 0.028 239.3)",
+          "oklch(60.7% 0.028 239.3)",
+          "oklch(72.1% 0.028 239.3)",
+          "oklch(83.6% 0.028 239.3)",
+          "oklch(95.0% 0.028 239.3)"
+        ]
+      },
+      "night-accent": {
+        "role": "primary",
+        "displayName": "Night Accent",
+        "canonical": "#70d3ad",
+        "tonalRamp": [
+          "oklch(15.0% 0.109 166.5)",
+          "oklch(26.4% 0.109 166.5)",
+          "oklch(37.9% 0.109 166.5)",
+          "oklch(49.3% 0.109 166.5)",
+          "oklch(60.7% 0.109 166.5)",
+          "oklch(72.1% 0.109 166.5)",
+          "oklch(83.6% 0.109 166.5)",
+          "oklch(95.0% 0.109 166.5)"
+        ]
+      },
+      "night-danger": {
+        "role": "status",
+        "displayName": "Night Danger",
+        "canonical": "#ee7b7b",
+        "tonalRamp": [
+          "oklch(15.0% 0.142 21.3)",
+          "oklch(26.4% 0.142 21.3)",
+          "oklch(37.9% 0.142 21.3)",
+          "oklch(49.3% 0.142 21.3)",
+          "oklch(60.7% 0.142 21.3)",
+          "oklch(72.1% 0.142 21.3)",
+          "oklch(83.6% 0.142 21.3)",
+          "oklch(95.0% 0.142 21.3)"
+        ]
+      },
+      "night-warning": {
+        "role": "status",
+        "displayName": "Night Warning",
+        "canonical": "#e6b85f",
+        "tonalRamp": [
+          "oklch(15.0% 0.120 82.1)",
+          "oklch(26.4% 0.120 82.1)",
+          "oklch(37.9% 0.120 82.1)",
+          "oklch(49.3% 0.120 82.1)",
+          "oklch(60.7% 0.120 82.1)",
+          "oklch(72.1% 0.120 82.1)",
+          "oklch(83.6% 0.120 82.1)",
+          "oklch(95.0% 0.120 82.1)"
+        ]
+      },
+      "day-background": {
+        "role": "neutral",
+        "displayName": "Day Background",
+        "canonical": "#f3f6f7",
+        "tonalRamp": [
+          "oklch(15.0% 0.003 219.5)",
+          "oklch(26.4% 0.003 219.5)",
+          "oklch(37.9% 0.003 219.5)",
+          "oklch(49.3% 0.003 219.5)",
+          "oklch(60.7% 0.003 219.5)",
+          "oklch(72.1% 0.003 219.5)",
+          "oklch(83.6% 0.003 219.5)",
+          "oklch(95.0% 0.003 219.5)"
+        ]
+      },
+      "day-panel": {
+        "role": "neutral",
+        "displayName": "Day Panel",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 89.9)",
+          "oklch(26.4% 0.000 89.9)",
+          "oklch(37.9% 0.000 89.9)",
+          "oklch(49.3% 0.000 89.9)",
+          "oklch(60.7% 0.000 89.9)",
+          "oklch(72.1% 0.000 89.9)",
+          "oklch(83.6% 0.000 89.9)",
+          "oklch(95.0% 0.000 89.9)"
+        ]
+      },
+      "day-inset": {
+        "role": "neutral",
+        "displayName": "Day Inset",
+        "canonical": "#f0f4f5",
+        "tonalRamp": [
+          "oklch(15.0% 0.004 214.3)",
+          "oklch(26.4% 0.004 214.3)",
+          "oklch(37.9% 0.004 214.3)",
+          "oklch(49.3% 0.004 214.3)",
+          "oklch(60.7% 0.004 214.3)",
+          "oklch(72.1% 0.004 214.3)",
+          "oklch(83.6% 0.004 214.3)",
+          "oklch(95.0% 0.004 214.3)"
+        ]
+      },
+      "day-line": {
+        "role": "neutral",
+        "displayName": "Day Line",
+        "canonical": "#dce5e8",
+        "tonalRamp": [
+          "oklch(15.0% 0.011 219.6)",
+          "oklch(26.4% 0.011 219.6)",
+          "oklch(37.9% 0.011 219.6)",
+          "oklch(49.3% 0.011 219.6)",
+          "oklch(60.7% 0.011 219.6)",
+          "oklch(72.1% 0.011 219.6)",
+          "oklch(83.6% 0.011 219.6)",
+          "oklch(95.0% 0.011 219.6)"
+        ]
+      },
+      "day-text": {
+        "role": "neutral",
+        "displayName": "Day Text",
+        "canonical": "#162128",
+        "tonalRamp": [
+          "oklch(15.0% 0.021 236.7)",
+          "oklch(26.4% 0.021 236.7)",
+          "oklch(37.9% 0.021 236.7)",
+          "oklch(49.3% 0.021 236.7)",
+          "oklch(60.7% 0.021 236.7)",
+          "oklch(72.1% 0.021 236.7)",
+          "oklch(83.6% 0.021 236.7)",
+          "oklch(95.0% 0.021 236.7)"
+        ]
+      },
+      "day-muted": {
+        "role": "neutral",
+        "displayName": "Day Muted",
+        "canonical": "#657680",
+        "tonalRamp": [
+          "oklch(15.0% 0.025 233.7)",
+          "oklch(26.4% 0.025 233.7)",
+          "oklch(37.9% 0.025 233.7)",
+          "oklch(49.3% 0.025 233.7)",
+          "oklch(60.7% 0.025 233.7)",
+          "oklch(72.1% 0.025 233.7)",
+          "oklch(83.6% 0.025 233.7)",
+          "oklch(95.0% 0.025 233.7)"
+        ]
+      },
+      "day-accent": {
+        "role": "primary",
+        "displayName": "Day Accent",
+        "canonical": "#187d64",
+        "tonalRamp": [
+          "oklch(15.0% 0.096 171.2)",
+          "oklch(26.4% 0.096 171.2)",
+          "oklch(37.9% 0.096 171.2)",
+          "oklch(49.3% 0.096 171.2)",
+          "oklch(60.7% 0.096 171.2)",
+          "oklch(72.1% 0.096 171.2)",
+          "oklch(83.6% 0.096 171.2)",
+          "oklch(95.0% 0.096 171.2)"
+        ]
+      },
+      "day-danger": {
+        "role": "status",
+        "displayName": "Day Danger",
+        "canonical": "#bd4e4e",
+        "tonalRamp": [
+          "oklch(15.0% 0.144 22.8)",
+          "oklch(26.4% 0.144 22.8)",
+          "oklch(37.9% 0.144 22.8)",
+          "oklch(49.3% 0.144 22.8)",
+          "oklch(60.7% 0.144 22.8)",
+          "oklch(72.1% 0.144 22.8)",
+          "oklch(83.6% 0.144 22.8)",
+          "oklch(95.0% 0.144 22.8)"
+        ]
+      },
+      "day-warning": {
+        "role": "status",
+        "displayName": "Day Warning",
+        "canonical": "#906716",
+        "tonalRamp": [
+          "oklch(15.0% 0.105 78.9)",
+          "oklch(26.4% 0.105 78.9)",
+          "oklch(37.9% 0.105 78.9)",
+          "oklch(49.3% 0.105 78.9)",
+          "oklch(60.7% 0.105 78.9)",
+          "oklch(72.1% 0.105 78.9)",
+          "oklch(83.6% 0.105 78.9)",
+          "oklch(95.0% 0.105 78.9)"
+        ]
+      },
+      "outgoing": {
+        "role": "status",
+        "displayName": "Outgoing",
+        "canonical": "#cf8a78",
+        "tonalRamp": [
+          "oklch(15.0% 0.089 35.3)",
+          "oklch(26.4% 0.089 35.3)",
+          "oklch(37.9% 0.089 35.3)",
+          "oklch(49.3% 0.089 35.3)",
+          "oklch(60.7% 0.089 35.3)",
+          "oklch(72.1% 0.089 35.3)",
+          "oklch(83.6% 0.089 35.3)",
+          "oklch(95.0% 0.089 35.3)"
+        ]
+      },
+      "primary-button-ink": {
+        "role": "neutral",
+        "displayName": "Primary Button Ink",
+        "canonical": "#09251d",
+        "tonalRamp": [
+          "oklch(15.0% 0.037 171.3)",
+          "oklch(26.4% 0.037 171.3)",
+          "oklch(37.9% 0.037 171.3)",
+          "oklch(49.3% 0.037 171.3)",
+          "oklch(60.7% 0.037 171.3)",
+          "oklch(72.1% 0.037 171.3)",
+          "oklch(83.6% 0.037 171.3)",
+          "oklch(95.0% 0.037 171.3)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Page headline",
+        "purpose": "Sticky top bar title."
+      },
+      "title": {
+        "displayName": "Section title",
+        "purpose": "Dashboard panels and editors."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "General descriptive interface text."
+      },
+      "metric": {
+        "displayName": "Financial value",
+        "purpose": "Primary balances and metric figures."
+      },
+      "action": {
+        "displayName": "Action label",
+        "purpose": "Buttons and actions."
+      },
+      "eyebrow": {
+        "displayName": "Section eyebrow",
+        "purpose": "Compact uppercase context before headings."
+      }
+    },
+    "shadows": [
+      {
+        "name": "panel-dark",
+        "value": "0 16px 40px rgba(0,0,0,.18)",
+        "purpose": "Standard panel and card shadow in dark mode."
+      },
+      {
+        "name": "panel-light",
+        "value": "0 12px 30px rgba(31,47,58,.08)",
+        "purpose": "Standard panel and card shadow in light mode."
+      },
+      {
+        "name": "mobile-drawer",
+        "value": "20px 0 50px rgba(0,0,0,.3)",
+        "purpose": "Raised off-canvas navigation."
+      },
+      {
+        "name": "dialog",
+        "value": "0 28px 80px rgba(0,0,0,.45)",
+        "purpose": "Payment dialog over backdrop."
+      }
+    ],
+    "motion": [
+      {
+        "name": "nav-icon",
+        "value": "color .16s ease, transform .16s ease",
+        "purpose": "Small navigation icon emphasis on hover."
+      },
+      {
+        "name": "sidebar",
+        "value": "transform .2s",
+        "purpose": "Existing mobile drawer slide in and out."
+      },
+      {
+        "name": "payment-modal",
+        "value": "paymentModalIn .14s ease-out",
+        "purpose": "Payment dialog open animation, 8px translation and .985 scale."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-to-medium",
+        "value": "1100px"
+      },
+      {
+        "name": "desktop-to-mobile-nav",
+        "value": "820px"
+      },
+      {
+        "name": "compact-mobile",
+        "value": "580px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Accent-filled primary finance action. Example mirrors the existing .button.primary shape.",
+      "html": "<button type=\"button\" class=\"ds-btn ds-btn-primary\">Save payment</button>",
+      "css": ".ds-btn{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;box-sizing:border-box;min-height:38px;padding:0 14px;border:1px solid var(--line,#263543);border-radius:9px;background:var(--soft,#17222d);color:var(--text,#edf3f6);font-size:12px;font-weight:700;cursor:pointer}.ds-btn-primary{background:var(--accent,#70d3ad);border-color:var(--accent,#70d3ad);color:#09251d}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Default compact filled action for secondary tasks.",
+      "html": "<button type=\"button\" class=\"ds-btn-secondary\">Cancel</button>",
+      "css": ".ds-btn-secondary{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:38px;padding:0 14px;border:1px solid var(--line,#263543);border-radius:9px;background:var(--soft,#17222d);color:var(--text,#edf3f6);font-size:12px;font-weight:700;cursor:pointer}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Transparent action used in forms and sidebar controls.",
+      "html": "<button type=\"button\" class=\"ds-btn-ghost\">Toggle theme</button>",
+      "css": ".ds-btn-ghost{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:38px;padding:0 14px;border:1px solid var(--line,#263543);border-radius:9px;background:transparent;color:var(--text,#edf3f6);font-size:12px;font-weight:700;cursor:pointer}"
+    },
+    {
+      "name": "Labeled Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Compact input with small bold label and inset control, matching existing form rules.",
+      "html": "<label class=\"ds-field\">Goal name<input class=\"ds-field-input\" type=\"text\" placeholder=\"Emergency fund\"></label>",
+      "css": ".ds-field{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;display:grid;gap:5px;color:var(--muted,#8fa1ae);font-size:10px;font-weight:700}.ds-field-input{box-sizing:border-box;min-height:40px;width:100%;padding:0 10px;border:1px solid var(--line,#263543);border-radius:8px;background:var(--soft,#17222d);color:var(--text,#edf3f6);font:inherit;outline:0}"
+    },
+    {
+      "name": "Active Sidebar Item",
+      "kind": "nav",
+      "refersTo": "navigation-item",
+      "description": "Sidebar navigation active state with 2px inset accent indicator.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Example navigation\"><button type=\"button\" class=\"ds-nav-item ds-active\">Overview <kbd>1</kbd></button></nav>",
+      "css": ".ds-nav{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;display:grid;gap:5px}.ds-nav-item{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:44px;padding:0 12px;border:0;border-radius:10px;background:transparent;color:var(--muted,#8fa1ae);text-align:left;cursor:pointer}.ds-nav-item.ds-active{background:color-mix(in srgb,var(--accent,#70d3ad) 12%,transparent);color:var(--text,#edf3f6);box-shadow:inset 2px 0 var(--accent,#70d3ad)}.ds-nav-item:hover{background:var(--soft,#17222d);color:var(--text,#edf3f6)}.ds-nav-item kbd{padding:2px 5px;border:1px solid var(--line,#263543);border-radius:5px;font-size:10px;color:var(--muted,#8fa1ae)}"
+    },
+    {
+      "name": "Dashboard Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Shared border/shadow panel used for dashboard sections.",
+      "html": "<section class=\"ds-panel\"><span class=\"ds-eyebrow\">PAYMENT SCHEDULE</span><h2>Reminders</h2><p>Upcoming payments appear here.</p></section>",
+      "css": ".ds-panel{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;box-sizing:border-box;padding:20px;min-width:0;border:1px solid var(--line,#263543);border-radius:15px;background:var(--panel,#111922);color:var(--text,#edf3f6);box-shadow:var(--shadow,0 16px 40px rgba(0,0,0,.18))}.ds-eyebrow{display:block;color:var(--accent,#70d3ad);font-size:10px;font-weight:800;letter-spacing:.12em}.ds-panel h2{margin:3px 0 12px;font-size:18px}.ds-panel p{margin:0;color:var(--muted,#8fa1ae);font-size:11px}"
+    },
+    {
+      "name": "Finance Record Card",
+      "kind": "card",
+      "refersTo": "finance-card",
+      "description": "Named financial record with prominent amount, matching card dimensions.",
+      "html": "<article class=\"ds-finance-card\"><h3>Example debt</h3><strong>₫0</strong><small>Current balance</small></article>",
+      "css": ".ds-finance-card{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;display:grid;gap:8px;box-sizing:border-box;padding:17px;border:1px solid var(--line,#263543);border-radius:14px;background:var(--panel,#111922);color:var(--text,#edf3f6);box-shadow:var(--shadow,0 16px 40px rgba(0,0,0,.18))}.ds-finance-card h3{margin:0;font-size:14px}.ds-finance-card strong{font-size:21px}.ds-finance-card small{color:var(--muted,#8fa1ae);font-size:9px}"
+    },
+    {
+      "name": "Status Chip",
+      "kind": "chip",
+      "refersTo": "status-chip",
+      "description": "Neutral bordered pill for date or count metadata.",
+      "html": "<span class=\"ds-status-chip\">0 due</span>",
+      "css": ".ds-status-chip{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;display:inline-block;padding:7px 10px;border:1px solid var(--line,#263543);border-radius:999px;background:var(--panel,#111922);color:var(--muted,#8fa1ae);font-size:11px}"
+    },
+    {
+      "name": "Progress Track",
+      "kind": "custom",
+      "refersTo": "panel",
+      "description": "Seven-pixel inset progress track with accent fill; representative 60% example only.",
+      "html": "<div class=\"ds-progress-track\" role=\"progressbar\" aria-label=\"Example progress\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\"><span class=\"ds-progress-fill\"></span></div>",
+      "css": ".ds-progress-track{height:7px;overflow:hidden;border-radius:999px;background:var(--soft,#17222d)}.ds-progress-fill{display:block;width:60%;height:100%;border-radius:inherit;background:var(--accent,#70d3ad)}"
+    },
+    {
+      "name": "Metric Tile",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Compact summary cell with heavy numeric hierarchy.",
+      "html": "<div class=\"ds-metric\"><span>Outstanding debt</span><strong>₫0</strong><small>Current balance</small></div>",
+      "css": ".ds-metric{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;display:grid;gap:5px;box-sizing:border-box;min-height:118px;padding:18px;border:1px solid var(--line,#263543);border-radius:15px;background:var(--panel,#111922);color:var(--text,#edf3f6);box-shadow:var(--shadow,0 16px 40px rgba(0,0,0,.18))}.ds-metric span{color:var(--muted,#8fa1ae);font-size:11px}.ds-metric strong{margin-top:9px;font-size:clamp(21px,2.2vw,30px);font-weight:800;letter-spacing:-.04em}.ds-metric small{color:var(--muted,#8fa1ae);font-size:10px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Compact Finance Console",
+    "overview": "The incumbent application is an operational finance workspace: a dark slate shell, gently separated navy surfaces, small dense utility text, and conspicuous numeric summaries. Its single mint accent links primary actions, active navigation, positive amounts, and progress. The light theme preserves the same hierarchy while switching the surfaces and foreground palette. No redesign or reinterpretation is authorized by this document.\n\nThe UI expresses information primarily through typography, rectangular data regions, restrained iconography, borders, and progress indicators. Navigation and editing share the same component language across six product sections. The browser's print variant deliberately abandons the app chrome for a plain finance report.",
+    "keyCharacteristics": [
+      "Compact, data-forward finance layout rather than an image-led promotional surface.",
+      "Dark-by-default, light-capable paired palettes mapped through existing CSS custom properties.",
+      "Fine borders, subtle panel elevation, mint state cues, and warm outgoing/warning colors.",
+      "Reusable form, financial card, table, progress, reminder, and modal patterns."
+    ],
+    "rules": [
+      {
+        "name": "The Semantic Pairing Rule",
+        "body": "Existing semantic CSS variables have paired dark and light values. Extend both themes when a future change adds a semantic UI color; do not assume a dark-only value will remain readable in light mode.",
+        "section": "status and chart colors"
+      },
+      {
+        "name": "The Numeric Emphasis Rule",
+        "body": "Major balances are the largest/heaviest text in a card; the supporting captions remain smaller and muted.",
+        "section": "hierarchy"
+      },
+      {
+        "name": "The Workspace-First Rule",
+        "body": "Preserve the separation between navigation, primary action/header, and active working content. Layout documentation does not authorize adding promotional hero sections or removing finance controls.",
+        "section": "layout"
+      }
+    ],
+    "dos": [
+      "**Do** use the existing semantic theme variables and retain dark/light parity for new state colors.",
+      "**Do** prioritize balances, due dates, and transactions over decorative copy within the operational workspace.",
+      "**Do** keep existing compact panel, input, and navigation patterns when extending the same interface.",
+      "**Do** preserve desktop/mobile/sidebar and print-report behaviors when implementing new frontend features.",
+      "**Do** represent cloud sync as a sync status, not as a security or privacy guarantee."
+    ],
+    "donts": [
+      "**Don't** introduce unrelated marketing composition into the finance workflow as though it were incumbent identity.",
+      "**Don't** claim Inter is bundled or guaranteed; it is presently a preferred font in a fallback stack.",
+      "**Don't** describe global focus rings or universal button hover states as existing; these are not implemented in the inspected CSS.",
+      "**Don't** substitute danger red for the distinct warm outgoing transaction color.",
+      "**Don't** treat the documentation's descriptive metaphor as approval for changing the current visual design."
+    ]
+  }
+}
